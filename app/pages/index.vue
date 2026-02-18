@@ -549,7 +549,7 @@
           operational complexity and long-term objectives.
         </p>
 
-        <button
+        <NuxtLink to="/about"
           class="mt-8 inline-flex items-center justify-center
                  rounded-[12px] bg-[#FDC101] px-7 py-4
                  text-[#1a1a1a] text-[16px] font-semibold
@@ -557,7 +557,7 @@
           type="button"
         >
           Learn more
-        </button>
+        </NuxtLink>
       </div>
 
       <!-- RIGHT SIDE -->
@@ -731,23 +731,24 @@
           </p>
 
           <div class="mt-8 flex flex-wrap items-center gap-5">
-            <button
+            <NuxtLink to="/about"
               class="rounded-[10px] border border-[#FDC101]
                      px-6 py-3.5 text-[15px] font-semibold text-[#1a1a1a]
                      hover:bg-[#FDC101]/10 transition"
               type="button"
             >
               Learn More
-            </button>
+            </NuxtLink>
 
-            <button
+            <NuxtLink
+              to="/contact"
               class="inline-flex items-center gap-2 text-[15px] font-medium text-[#1a1a1a]
                      hover:opacity-70 transition"
               type="button"
             >
               Contact Us
               <span aria-hidden="true">›</span>
-            </button>
+            </NuxtLink>
           </div>
         </div>
 
@@ -1159,7 +1160,8 @@
         performance-driven facilities management environment.
       </p>
 
-      <button
+      <NuxtLink
+         to="/careers"
         class="mt-10 inline-flex items-center justify-center
                rounded-[12px] bg-[#FDC101]
                px-10 py-4
@@ -1169,7 +1171,7 @@
         type="button"
       >
         Join our team
-      </button>
+      </NuxtLink>
 
     </div>
   </section>
