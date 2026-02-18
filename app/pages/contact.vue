@@ -1,7 +1,7 @@
 <template>
 
 <body class="bg-[#3F2E83]">
-    <section class="bg-[#3F2E83] text-white" data-aos="fade-up">
+    <section class="bg-[#3F2E83] text-white" >
     <div class="py-20 px-4 md:px-8 lg:px-28">
 
       <h1 class="font-semibold
@@ -28,7 +28,7 @@
      
   </section>
 <section class="bg-white">
-  <div class="py-20 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+  <div class="py-20 px-4 md:px-8 lg:px-28" >
 
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-16">
 

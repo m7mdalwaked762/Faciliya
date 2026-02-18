@@ -2,7 +2,7 @@
   <body class="bg-[#3f2e83]">
     <!-- TOP HERO -->
     <section class="bg-[#3F2E83] text-white">
-      <div class="py-20 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+      <div class="py-20 px-4 md:px-8 lg:px-28" >
         <h1 class="font-semibold text-[38px] sm:text-[48px] lg:text-[64px]">
           Our Services
         </h1>
@@ -23,7 +23,7 @@
     <!-- CORPORATE & EXECUTIVE EVENTS -->
     <!-- ============================= -->
     <section class="bg-[#f5f5f5] min-h-screen flex items-center">
-      <div class="w-full py-16 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+      <div class="w-full py-16 px-4 md:px-8 lg:px-28" >
         <div class="text-center">
           <h2 class="text-[#1a1a1a] font-semibold text-[30px] sm:text-[40px] lg:text-[52px]">
             Corporate &amp; Executive Event Services
@@ -161,7 +161,7 @@
     <!-- PERSONAL SERVICES -->
     <!-- ============================= -->
     <section class="bg-white min-h-screen flex items-center" >
-      <div class="w-full py-16 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+      <div class="w-full py-16 px-4 md:px-8 lg:px-28" >
         <div class="text-center">
           <h2 class="text-[#1a1a1a] font-semibold text-[30px] sm:text-[40px] lg:text-[52px]">
             Personal Services

@@ -4,7 +4,7 @@
     
 
  <section class="bg-[#3F2E83] text-white">
-    <div class="py-20 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+    <div class="py-20 px-4 md:px-8 lg:px-28" >
 
       <h1 class="font-semibold
                     text-[38px] sm:text-[48px] lg:text-[64px]">
@@ -30,7 +30,7 @@
      
   </section>
 <section class="bg-white">
-    <div class="py-20 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+    <div class="py-20 px-4 md:px-8 lg:px-28" >
       <!-- Header -->
       <div class="max-w-[820px]">
         <h2 class="text-[#1a1a1a] font-semibold text-[28px] sm:text-[34px] lg:text-[40px]">

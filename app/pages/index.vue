@@ -32,12 +32,12 @@
 
     <!-- STRONGER DARK OVERLAY -->
     <div class="pointer-events-none absolute inset-0 
-                bg-gradient-to-r 
+                 
                 from-black/85 via-black/75 to-black/60">
     </div>
 
     <!-- FIXED CONTENT -->
-    <div class="absolute inset-0 z-10 flex items-center "  data-aos="fade-up">
+    <div class="absolute inset-0 z-10 flex items-center "  >
       <div class="w-full px-4 md:px-8 lg:px-28">
         <div class="max-w-[680px]">
 
@@ -60,7 +60,7 @@
           <!-- Buttons -->
           <div class="mt-8 flex flex-wrap gap-5">
 
-            <button class="bg-[#ffbe17]
+            <NuxtLink to="/contact" class="bg-[#ffbe17]
                            text-[#1a1a1a]
                            px-7 py-3.5
                            rounded-xl
@@ -69,18 +69,18 @@
                            hover:scale-[1.03]
                            transition duration-300">
               Request a Proposal
-            </button>
+            </NuxtLink>
 
-            <button class="bg-white/95
-                           text-[#1a1a1a]
-                           px-7 py-3.5
-                           rounded-xl
-                           font-semibold
-                           shadow-lg
-                           hover:bg-white
-                           transition duration-300">
-              Talk to an Expert
-            </button>
+            <button
+  type="button"
+  @click="isCallOpen = true"
+  class="bg-white/95 text-[#1a1a1a]
+         px-7 py-3.5 rounded-xl font-semibold shadow-lg
+         hover:bg-white transition duration-300
+         focus:outline-none focus:ring-2 focus:ring-white/60"
+>
+  Talk to an Expert
+</button>
 
           </div>
 
@@ -90,13 +90,91 @@
 
   </div>
  
+  <div
+  v-if="isCallOpen"
+  class="fixed inset-0 z-[999] flex items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Call an expert"
+>
+  <!-- Backdrop -->
+  <button
+    type="button"
+    class="absolute inset-0 bg-black/70"
+    aria-label="Close"
+    @click="isCallOpen = false"
+  ></button>
+
+  <!-- Modal Card -->
+  <div
+    class="relative w-full max-w-[520px] rounded-2xl bg-white text-[#1a1a1a]
+           shadow-2xl border border-black/10"
+  >
+    <!-- Header -->
+    <div class="px-6 py-5 sm:px-7 sm:py-6 border-b border-black/10">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <p class="text-[18px] sm:text-[20px] font-semibold">
+            Call an Expert
+          </p>
+          <p class="mt-1 text-[13px] sm:text-[14px] text-[#1a1a1a]/70">
+            Tap the number below to start a call.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          @click="isCallOpen = false"
+          class="h-10 w-10 rounded-xl border border-black/10
+                 hover:bg-black/5 transition flex items-center justify-center"
+          aria-label="Close"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="px-6 py-6 sm:px-7 sm:py-7">
+      <a
+        href="tel:+12015466248"
+        class="block rounded-xl border border-black/10 bg-[#f7f7f7]
+               px-5 py-4 text-center
+               font-semibold text-[18px] sm:text-[20px]
+               hover:bg-[#f1f1f1] transition"
+      >
+        +1 (201) 546-6248
+      </a>
+
+      <div class="mt-5 flex flex-col sm:flex-row gap-3 sm:justify-end">
+        <button
+          type="button"
+          @click="isCallOpen = false"
+          class="w-full sm:w-auto rounded-xl border border-black/10
+                 px-5 py-3 font-semibold hover:bg-black/5 transition"
+        >
+          Close
+        </button>
+
+        <a
+          href="tel:+12015466248"
+          class="w-full sm:w-auto rounded-xl bg-[#FDC101]
+                 px-5 py-3 font-semibold text-[#1a1a1a]
+                 hover:brightness-95 transition text-center"
+        >
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
   <section class="bg-white ">
     <div class="py-44 px-4 md:px-8 lg:px-28">
       
       <div class="grid items-center gap-10 lg:grid-cols-2"  >
         
         <!-- Image -->
-        <div data-aos="fade-right">
+        <div >
           <div class="overflow-hidden rounded-2xl bg-gray-100 shadow-sm">
             <img
               src=""
@@ -107,7 +185,7 @@
         </div>
 
         <!-- Content -->
-        <div data-aos="fade-left">
+        <div >
           <!-- Responsive Heading -->
           <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
             Why Faciliya ?
@@ -154,13 +232,13 @@
     <!-- Heading -->
     <h2
       class="text-center font-semibold text-gray-900
-             text-[22px] sm:text-[26px] lg:text-[32px]"  data-aos="fade-up"
+             text-[22px] sm:text-[26px] lg:text-[32px]"  
     >
       Certifications &amp; Industry Alignment
     </h2>
 
     <!-- Logos -->
-    <div  data-aos="fade-up"
+    <div  
       class="mt-8 flex flex-col items-center gap-8
              sm:flex-row sm:flex-wrap sm:justify-center
              lg:flex-row lg:justify-between"
@@ -210,7 +288,7 @@
 </section>
 
  <section class="bg-white" >
-    <div class="mx-auto  md:px-8 lg:px-28 py-44" data-aos="fade-up">
+    <div class="mx-auto  md:px-8 lg:px-28 py-44" >
 
       <div class="text-center">
         <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
@@ -384,7 +462,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
         
         <!-- Left headline -->
-        <div class="lg:col-span-6" data-aos="fade-right">
+        <div class="lg:col-span-6" >
           <h2
             class="text-[#1a1a1a] font-extrabold leading-[1.12]
                    text-[28px] sm:text-[36px] lg:text-[44px]"
@@ -396,7 +474,7 @@
         </div>
 
         <!-- Right paragraph -->
-        <div class="lg:col-span-6" data-aos="fade-left">
+        <div class="lg:col-span-6" >
           <p
             class="text-[#1a1a1a]/70 leading-[1.7]
                    text-[14px] sm:text-[15px] lg:text-[16px]
@@ -411,7 +489,7 @@
       </div>
 
       <!-- Bottom stats -->
-      <div class="mt-10 sm:mt-12 lg:mt-14" data-aos="fade-up">
+      <div class="mt-10 sm:mt-12 lg:mt-14" >
         <div
           class="grid grid-cols-1 sm:grid-cols-3
                 "
@@ -453,7 +531,7 @@
   </section>
 
 <section class="bg-white" >
-  <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+  <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
     <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-16">
 
       <!-- LEFT SIDE -->
@@ -635,7 +713,7 @@
       <div class="flex flex-col lg:flex-row lg:items-start gap-16 lg:gap-20">
 
         <!-- LEFT -->
-        <div class="lg:w-[40%]" data-aos="fade-right">
+        <div class="lg:w-[40%]" >
           <h2 class="text-[#1a1a1a] font-semibold leading-[1.08]
                      text-[34px] sm:text-[44px] lg:text-[56px]">
             Structured<br />
@@ -674,7 +752,7 @@
         </div>
 
         <!-- RIGHT -->
-        <div class="lg:w-[60%]" data-aos="fade-left">
+        <div class="lg:w-[60%]" >
           <!-- On mobile: stack. On md+: 2 columns like screenshot -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 lg:gap-y-20">
 
@@ -764,62 +842,71 @@
 
 
    <section class="bg-white">
-    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" data-aos="fade-up">
-      <!-- Heading -->
-      <div class="text-center max-w-[820px] mx-auto">
-        <h2 class="text-[#1a1a1a] font-semibold text-[28px] sm:text-[34px] lg:text-[40px]">
-          What Our Clients Say
-        </h2>
-        <p class="mt-4 text-[#1a1a1a]/70 text-[14px] sm:text-[15px] leading-relaxed">
-          Hear from property owners and managers who trust Faciliya to deliver consistent, reliable, and structured
-          facilities management. Their experiences reflect our commitment to accountability, quality, and operational
-          excellence.
-        </p>
-      </div>
+  <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
 
-      <!-- Slider -->
-      <div class="mt-12 relative">
-        <!-- Prev / Next (outside swiper so they sit like the screenshot) -->
-        <button
-          class="swiperPrev absolute left-0 top-1/2 -translate-y-1/2 z-10
-                 h-[40px] w-[40px] rounded-full border border-[#1a1a1a]/20 bg-white
-                 flex items-center justify-center shadow-sm hover:bg-[#f7f7f7] transition"
-          type="button"
-          aria-label="Previous testimonial"
-        >
-          ‹
-        </button>
+    <!-- Heading -->
+    <div class="text-center max-w-[820px] mx-auto">
+      <h2 class="text-[#1a1a1a] font-semibold text-[28px] sm:text-[34px] lg:text-[40px]">
+        What Our Clients Say
+      </h2>
+      <p class="mt-4 text-[#1a1a1a]/70 text-[14px] sm:text-[15px] leading-relaxed">
+        Hear from property owners and managers who trust Faciliya to deliver consistent, reliable, and structured
+        facilities management. Their experiences reflect our commitment to accountability, quality, and operational excellence.
+      </p>
+    </div>
 
-        <button
-          class="swiperNext absolute right-0 top-1/2 -translate-y-1/2 z-10
-                 h-[40px] w-[40px] rounded-full border border-[#1a1a1a]/20 bg-white
-                 flex items-center justify-center shadow-sm hover:bg-[#f7f7f7] transition"
-          type="button"
-          aria-label="Next testimonial"
-        >
-          ›
-        </button>
+    <!-- Slider -->
+    <div class="mt-12 relative">
 
-        <Swiper
-          :modules="modules"
-          :loop="true"
-          :spaceBetween="18"
-          :pagination="{ clickable: true, el: '.customPagination' }"
-          :navigation="{ prevEl: '.swiperPrev', nextEl: '.swiperNext' }"
-          :breakpoints="breakpoints"
-          class="px-12"
-        >
-          <SwiperSlide v-for="(t, i) in testimonials" :key="i">
-            <div
-              class="h-full rounded-[14px] border border-[#1a1a1a]/15 bg-white
-                     px-6 py-6 shadow-[0_1px_0_rgba(0,0,0,0.02)]"
-            >
+      <!-- Prev Button -->
+      <button
+        class="swiperPrev absolute left-0 top-1/2 -translate-y-1/2 z-10
+               h-[40px] w-[40px] rounded-full border border-[#1a1a1a]/20 bg-white
+               flex items-center justify-center shadow-sm hover:bg-[#f7f7f7] transition"
+        type="button"
+        aria-label="Previous testimonial"
+      >
+        ‹
+      </button>
+
+      <!-- Next Button -->
+      <button
+        class="swiperNext absolute right-0 top-1/2 -translate-y-1/2 z-10
+               h-[40px] w-[40px] rounded-full border border-[#1a1a1a]/20 bg-white
+               flex items-center justify-center shadow-sm hover:bg-[#f7f7f7] transition"
+        type="button"
+        aria-label="Next testimonial"
+      >
+        ›
+      </button>
+
+      <Swiper
+        :modules="modules"
+        :loop="true"
+        :spaceBetween="18"
+        :pagination="{ clickable: true, el: '.customPagination' }"
+        :navigation="{ prevEl: '.swiperPrev', nextEl: '.swiperNext' }"
+        :breakpoints="breakpoints"
+        class="px-12"
+      >
+        <SwiperSlide v-for="(t, i) in testimonials" :key="i">
+
+          <!-- ✅ Smaller fixed-height card (same size for all) -->
+          <div
+            class="h-[250px] flex flex-col
+                   rounded-[12px] border border-[#1a1a1a]/15 bg-white
+                   px-5 py-5 shadow-sm
+                   transition duration-300 hover:shadow-md"
+          >
+            <!-- Top content takes remaining space, overflow hidden -->
+            <div class="flex-1 overflow-hidden">
+
               <!-- Stars -->
               <div class="flex items-center gap-1">
                 <span
                   v-for="s in 5"
                   :key="s"
-                  class="text-[#FDC101] text-[14px] leading-none"
+                  class="text-[#FDC101] text-[13px] leading-none"
                   aria-hidden="true"
                 >
                   ★
@@ -828,38 +915,40 @@
               </div>
 
               <!-- Quote -->
-              <p class="mt-4 text-[#1a1a1a]/70 text-[13px] sm:text-[14px] leading-relaxed">
+              <p class="mt-3 text-[#1a1a1a]/70 text-[13px] leading-relaxed text-left">
                 “{{ t.quote }}”
               </p>
-
-              <!-- Divider -->
-              <div class="mt-5 h-px w-full bg-[#1a1a1a]/10" />
-
-              <!-- Person -->
-              <div class="mt-4 flex items-center gap-3">
-                <div class="h-[34px] w-[34px] rounded-full bg-[#1a1a1a]/10" />
-                <div class="leading-tight">
-                  <p class="text-[#1a1a1a] font-semibold text-[12px] sm:text-[13px]">
-                    {{ t.name }}
-                  </p>
-                  <p class="text-[#1a1a1a]/60 text-[11px] sm:text-[12px]">
-                    {{ t.role }}
-                  </p>
-                </div>
-              </div>
             </div>
-          </SwiperSlide>
-        </Swiper>
 
-        <!-- Pagination dots -->
-        <div class="customPagination mt-8 flex justify-center" />
-      </div>
+            <!-- Divider -->
+            <div class="h-px w-full bg-[#1a1a1a]/10 my-4"></div>
+
+            <!-- Name + Role (left aligned, pinned bottom) -->
+            <div class="text-left">
+              <p class="text-[#1a1a1a] font-semibold text-[12px]">
+                {{ t.name }}
+              </p>
+              <p class="text-[#1a1a1a]/60 text-[11px] mt-1">
+                {{ t.role }}
+              </p>
+            </div>
+
+          </div>
+        </SwiperSlide>
+      </Swiper>
+
+      <!-- Pagination Dots -->
+      <div class="customPagination mt-8 flex justify-center"></div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
 
 <section class="bg-gray-50">
-    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <!-- Heading -->
       <div class="text-center max-w-[720px] mx-auto">
         <h2 class="text-[#1a1a1a] font-semibold text-[26px] sm:text-[32px] lg:text-[38px]">
@@ -913,7 +1002,7 @@
   </section>
 
 <section class="bg-white">
-  <div class="py-44 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+  <div class="py-44 px-4 md:px-8 lg:px-28" >
 
     <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-16">
 
@@ -1056,7 +1145,7 @@
 
 
  <section class="bg-white">
-    <div class="py-44 px-4 md:px-8 lg:px-28 text-center" data-aos="fade-up">
+    <div class="py-44 px-4 md:px-8 lg:px-28 text-center" >
 
       <h2 class="text-[#1a1a1a] font-semibold
                  text-[34px] sm:text-[44px] lg:text-[56px]">
@@ -1118,26 +1207,55 @@ const openIndex = ref(0); // first open like screenshot
 
 const faqs = [
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "What is integrated facilities management (IFM)?",
+    a: "Integrated Facilities Management (IFM) is a structured approach to operating and supervising all facility-related services under a unified framework. Instead of managing vendors separately, IFM centralizes coordination, reporting, preventive maintenance, and governance into one controlled operational system.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "What types of properties does Faciliya serve?",
+    a: "Faciliya supports commercial buildings, mixed-use developments, corporate environments, and high-end residential properties. Our services are tailored to environments where operational discipline, accountability, and asset protection are essential.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "How does Faciliya differ from traditional service providers?",
+    a: "Traditional providers deliver isolated services. Faciliya operates facilities through structured oversight, preventive planning, and measurable performance standards. We function as an operational partner rather than a task-based contractor.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "Do you provide preventive maintenance programs?",
+    a: "Yes. Preventive maintenance is a core component of our framework. We implement scheduled inspections, documentation protocols, and tracking systems designed to reduce reactive repairs and extend asset lifespan.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "Are services customized for each property?",
+    a: "Yes. Every engagement begins with assessment and scope definition. We align service structure, reporting cadence, and oversight levels with the complexity and objectives of each property.",
+  },
+  {
+    q: "Do you manage third-party vendors?",
+    a: "Yes. Vendor coordination and supervision are central to our IFM model. We establish clear performance standards, monitor service delivery, and ensure accountability across all contracted providers.",
+  },
+  {
+    q: "Can Faciliya support executive or corporate events?",
+    a: "Yes. Faciliya provides structured event operations for corporate and executive-level engagements, ensuring alignment with facility protocols, security standards, and operational continuity.",
+  },
+  {
+    q: "How is performance measured and reported?",
+    a: "We implement documented workflows, service tracking, and structured reporting. Property stakeholders receive clear visibility into operational performance, maintenance status, and vendor accountability.",
+  },
+  {
+    q: "Do you offer personal or contract-based services?",
+    a: "Yes. Select personal services are available under structured contractual agreements, subject to scope definition, availability, and compliance requirements.",
+  },
+  {
+    q: "How can we begin working with Faciliya?",
+    a: "Engagement begins with an initial consultation to assess operational requirements and define scope. From there, we design a structured service framework aligned with your property’s long-term objectives.",
   },
 ];
+const isCallOpen = ref(false);
+
+// optional: close on ESC
+const onKey = (e) => {
+  if (e.key === "Escape") isCallOpen.value = false;
+};
+
+onMounted(() => window.addEventListener("keydown", onKey));
+onUnmounted(() => window.removeEventListener("keydown", onKey));
 
 function toggle(i) {
   openIndex.value = openIndex.value === i ? -1 : i;
@@ -1151,35 +1269,96 @@ const breakpoints = {
 const testimonials = [
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-    name: "Name Surname",
-    role: "Position, Company name",
+      "Faciliya introduced operational structure where we previously had fragmentation. Vendor coordination, maintenance tracking, and reporting now operate within one disciplined framework. The improvement in oversight has been measurable.",
+    name: "David R.",
+    role: "Asset Manager, Commercial Portfolio",
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-    name: "Name Surname",
-    role: "Position, Company name",
+      "Their approach is methodical and controlled. Faciliya does not simply provide services—they operate the facility with accountability and documented performance standards.",
+    name: "Melissa K.",
+    role: "Director of Operations, Mixed-Use Property",
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-    name: "Name Surname",
-    role: "Position, Company name",
+      "We required consistency across multiple service lines. Faciliya implemented preventive maintenance protocols that significantly reduced recurring issues and improved response time.",
+    name: "James L.",
+    role: "Property Owner, High-Rise Residential",
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-    name: "Name Surname",
-    role: "Position, Company name",
+      "What distinguishes Faciliya is their structured oversight. Every task, vendor, and service cycle is monitored within a defined operational system.",
+    name: "Sophia M.",
+    role: "Operations Lead, Hospitality Environment",
   },
   {
     quote:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare.",
-    name: "Name Surname",
-    role: "Position, Company name",
+      "Faciliya stabilized our daily operations within the first quarter of engagement. Communication improved, performance metrics became transparent, and operational risk was reduced.",
+    name: "Robert H.",
+    role: "Portfolio Manager, Multifamily Communities",
+  },
+  {
+    quote:
+      "Their reporting cadence and governance structure provide clarity to ownership. Decisions are now based on data rather than reactive maintenance.",
+    name: "Andrew T.",
+    role: "Senior Property Executive",
+  },
+  {
+    quote:
+      "Faciliya operates as a long-term partner. Their preventive planning and structured supervision have strengthened both asset preservation and tenant experience.",
+    name: "Natalie S.",
+    role: "Commercial Building Owner",
+  },
+  {
+    quote:
+      "Service coordination across our property required discipline and oversight. Faciliya delivered a unified operational framework that aligned vendors under clear performance standards.",
+    name: "Daniel C.",
+    role: "Facilities Director, Corporate Campus",
+  },
+  {
+    quote:
+      "The professionalism and documentation standards exceeded expectations. Workflows are now clearly defined and executed with consistency.",
+    name: "Olivia B.",
+    role: "Operations Manager, Mixed-Use Development",
+  },
+  {
+    quote:
+      "Faciliya’s IFM model reduced operational friction and introduced structured accountability across maintenance, security, and service delivery.",
+    name: "Michael F.",
+    role: "Asset Operations Consultant",
+  },
+  {
+    quote:
+      "Their team integrates seamlessly into our property environment. The transition was organized, controlled, and professionally executed.",
+    name: "Grace W.",
+    role: "Property Administrator, Residential Tower",
+  },
+  {
+    quote:
+      "We engaged Faciliya to elevate operational governance. Within months, vendor performance improved and maintenance tracking became systematic.",
+    name: "Thomas J.",
+    role: "Investment Property Owner",
+  },
+  {
+    quote:
+      "Faciliya does not rely on reactive service models. Their preventive maintenance discipline has protected long-term asset value.",
+    name: "Isabella R.",
+    role: "Real Estate Portfolio Executive",
+  },
+  {
+    quote:
+      "Operational transparency has improved significantly since onboarding Faciliya. Performance reporting now provides executive-level visibility.",
+    name: "Christopher L.",
+    role: "Senior Asset Controller",
+  },
+  {
+    quote:
+      "Their structured framework has brought stability to our daily operations. Faciliya functions as a controlled operating partner rather than a conventional contractor.",
+    name: "Victoria M.",
+    role: "Director of Property Management",
   },
 ];
+
 
 const steps = [
   {

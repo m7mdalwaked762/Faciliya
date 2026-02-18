@@ -3,7 +3,7 @@
     
 
       <section class="bg-[#3F2E83] text-white">
-    <div class="py-20 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+    <div class="py-20 px-4 md:px-8 lg:px-28" >
 
       <h1 class="font-semibold
                     text-[38px] sm:text-[48px] lg:text-[64px]">
@@ -29,7 +29,7 @@
 
 
   <section class="bg-white">
-    <div class="py-44 px-4 md:px-8 lg:px-28" data-aos="fade-right">
+    <div class="py-44 px-4 md:px-8 lg:px-28" >
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
         <!-- LEFT -->
@@ -76,7 +76,7 @@
 
 
   <section class="bg-white">
-    <div class="py-44 px-4 md:px-8 lg:px-28" data-aos="fade-left">
+    <div class="py-44 px-4 md:px-8 lg:px-28" >
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
@@ -156,7 +156,7 @@
 
 
   <section class="bg-gray-50">
-  <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" data-aos="fade-up">
+  <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
     
     <!-- Heading -->
     <h2
@@ -224,7 +224,7 @@
 
 
 <section class="bg-white">
-    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" data-aos="fade-right">
+    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <div class="flex flex-col lg:flex-row lg:items-start gap-16 lg:gap-20">
 
         <!-- LEFT -->
@@ -357,7 +357,7 @@
 
 
   <section class="bg-white">
-    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" data-aos="fade-right">
+    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <!-- Heading -->
       <div class="text-center max-w-[720px] mx-auto">
         <h2 class="text-[#1a1a1a] font-semibold text-[26px] sm:text-[32px] lg:text-[38px]">
@@ -415,7 +415,7 @@
 
 
    <section class="bg-gray-50">
-    <div class="py-44 px-4 md:px-8 lg:px-28 text-center" data-aos="fade-left">
+    <div class="py-44 px-4 md:px-8 lg:px-28 text-center" >
 
       <h2 class="text-[#1a1a1a] font-semibold
                  text-[34px] sm:text-[44px] lg:text-[56px]">
@@ -453,26 +453,47 @@ const openIndex = ref(0); // first open like screenshot
 
 const faqs = [
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "What is integrated facilities management (IFM)?",
+    a: "Integrated Facilities Management (IFM) is a structured approach to operating and supervising all facility-related services under a unified framework. Instead of managing vendors separately, IFM centralizes coordination, reporting, preventive maintenance, and governance into one controlled operational system.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "What types of properties does Faciliya serve?",
+    a: "Faciliya supports commercial buildings, mixed-use developments, corporate environments, and high-end residential properties. Our services are tailored to environments where operational discipline, accountability, and asset protection are essential.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "How does Faciliya differ from traditional service providers?",
+    a: "Traditional providers deliver isolated services. Faciliya operates facilities through structured oversight, preventive planning, and measurable performance standards. We function as an operational partner rather than a task-based contractor.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "Do you provide preventive maintenance programs?",
+    a: "Yes. Preventive maintenance is a core component of our framework. We implement scheduled inspections, documentation protocols, and tracking systems designed to reduce reactive repairs and extend asset lifespan.",
   },
   {
-    q: "Question text goes here",
-    a: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+    q: "Are services customized for each property?",
+    a: "Yes. Every engagement begins with assessment and scope definition. We align service structure, reporting cadence, and oversight levels with the complexity and objectives of each property.",
+  },
+  {
+    q: "Do you manage third-party vendors?",
+    a: "Yes. Vendor coordination and supervision are central to our IFM model. We establish clear performance standards, monitor service delivery, and ensure accountability across all contracted providers.",
+  },
+  {
+    q: "Can Faciliya support executive or corporate events?",
+    a: "Yes. Faciliya provides structured event operations for corporate and executive-level engagements, ensuring alignment with facility protocols, security standards, and operational continuity.",
+  },
+  {
+    q: "How is performance measured and reported?",
+    a: "We implement documented workflows, service tracking, and structured reporting. Property stakeholders receive clear visibility into operational performance, maintenance status, and vendor accountability.",
+  },
+  {
+    q: "Do you offer personal or contract-based services?",
+    a: "Yes. Select personal services are available under structured contractual agreements, subject to scope definition, availability, and compliance requirements.",
+  },
+  {
+    q: "How can we begin working with Faciliya?",
+    a: "Engagement begins with an initial consultation to assess operational requirements and define scope. From there, we design a structured service framework aligned with your property’s long-term objectives.",
   },
 ];
+
 
 function toggle(i) {
   openIndex.value = openIndex.value === i ? -1 : i;
