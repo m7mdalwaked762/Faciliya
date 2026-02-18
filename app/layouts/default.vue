@@ -27,16 +27,6 @@ onUnmounted(() => {
 })
 
 
-import AOS from "aos"
-import "aos/dist/aos.css"
-
-onMounted(() => {
-  AOS.init({
-    duration: 1200,
-    once: true, // animate only once
-    easing: "ease-out-cubic",
-  })
-})
 
 
 useHead({
