@@ -1,78 +1,226 @@
 <template >  
 <body class="bg-[#3F2E83]">
-    
+    <section class="bg-white">
 
-      <section class="bg-[#3F2E83] text-white">
-    <div class="py-20 px-4 md:px-8 lg:px-28" >
+    <!-- HERO -->
+    <section class="bg-[#3F2E83] text-white">
+      <div class="py-24 px-4 md:px-8 lg:px-28">
+        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase">
+          About FACILIYA
+        </p>
 
-      <h1 class="font-semibold
-                    text-[38px] sm:text-[48px] lg:text-[64px]">
-            About Us
-      </h1>
+        <h1 class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl">
+          Governance-Driven Operational Leadership
+        </h1>
 
-      <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
+        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl">
+          FACILIYA operates under a structured Integrated Facilities
+          Management model designed to stabilize operations, protect asset
+          value, and deliver disciplined service execution across Texas.
+        </p>
+        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
         <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition cursor-pointer">
           Home
         </NuxtLink>
         <span class="mx-2">›</span>
         <span class="font-medium">
-          About Us
+        About Us
         </span>
       </div>
+      </div>
+      
+    </section>
 
+
+    <!-- MISSION & VISION -->
+   
+
+
+    <!-- LEADERSHIP (REDESIGNED) -->
+    <div class="bg-[#F8F9FB]">
+      <div class="px-4 md:px-8 lg:px-28 py-24">
+
+        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+          Leadership & Operational Foundation
+        </h2>
+
+        <div class="mt-16 grid gap-8 md:grid-cols-3">
+
+          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Users class="w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Direct Field Experience
+            </h3>
+            <p class="mt-4 text-[#1a1a1a]/70 text-[16px] leading-relaxed">
+              Leadership grounded in hands-on operational oversight across
+              complex DFW properties.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Briefcase class="w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Structured Governance
+            </h3>
+            <p class="mt-4 text-[#1a1a1a]/70 text-[16px] leading-relaxed">
+              Operational systems aligned with vendor control, reporting,
+              supervision, and asset performance accountability.
+            </p>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Award class="w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Execution Discipline
+            </h3>
+            <p class="mt-4 text-[#1a1a1a]/70 text-[16px] leading-relaxed">
+              Structured oversight ensuring consistent service delivery
+              across all operational tiers.
+            </p>
+          </div>
+
+        </div>
+      </div>
     </div>
 
-    <!-- Bottom white divider bar -->
-    <div class="h-[10px] bg-white"></div>
-  </section>
+ <div class="px-4 md:px-8 lg:px-28 py-24">
+      <div class="grid gap-10 md:grid-cols-2">
 
-
-
-  <section class="bg-white">
-    <div class="py-44 px-4 md:px-8 lg:px-28" >
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
-
-        <!-- LEFT -->
-        <div>
-          <h2
-            class="text-[#1a1a1a] font-semibold leading-tight
-                   text-[28px] sm:text-[34px] lg:text-[40px]"
-          >
-            Moving Beyond Reactive Maintenance
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <Target class="w-8 h-8 text-[#FDC101]" />
+          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
+            Mission
           </h2>
-        </div>
-
-        <!-- RIGHT -->
-        <div>
-          <p class="text-[#1a1a1a]/70 text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed">
-            Faciliya operates facilities with structure, not reaction. We replace uncoordinated vendors and improvised
-            decision-making. We deliver that consistent performance is built through disciplined systems, not
-            interruption.
-          </p>
-
-          <p class="mt-4 text-[#1a1a1a]/70 text-[14px] sm:text-[15px] lg:text-[16px] leading-relaxed">
-            As a long-term operating partner, we act as the operational hub for your property: aligning scope,
-            scheduling, and quality control across all service lines. Our approach reduces risk and gives ownership a
-            system, not a scramble.
+          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
+            To deliver governance-driven, intelligence-enabled facilities
+            management that stabilizes operations and protects long-term asset value.
           </p>
         </div>
 
-      </div>
-
-      <!-- IMAGE -->
-      <div class="mt-12">
-        <div class="overflow-hidden rounded-[18px]">
-          <!-- Replace src with your image -->
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80"
-            alt="Team reviewing plans"
-            class="h-[240px] sm:h-[320px] lg:h-[420px] w-full object-cover"
-            loading="lazy"
-          />
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <Eye class="w-8 h-8 text-[#FDC101]" />
+          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
+            Vision
+          </h2>
+          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
+            To become a trusted operational partner across Texas through
+            structured execution and disciplined service delivery.
+          </p>
         </div>
+
       </div>
     </div>
+
+
+    <!-- COMPLIANCE (REDESIGNED AS PREMIUM CARDS) -->
+    <div class="px-4 md:px-8 lg:px-28 py-24 bg-[#F8F9FB]">
+
+      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+        Compliance & Risk Framework
+      </h2>
+
+      <div class="mt-16 grid gap-8 md:grid-cols-3">
+
+        <div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <ShieldCheck class="w-7 h-7 text-[#FDC101]" />
+          <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+            Liability Coverage
+          </h3>
+          <p class="mt-4 text-[#1a1a1a]/70 text-[16px]">
+            General liability coverage maintained across all service engagements.
+          </p>
+        </div>
+
+        <div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <FileCheck2 class="w-7 h-7 text-[#FDC101]" />
+          <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+            Regulatory Alignment
+          </h3>
+          <p class="mt-4 text-[#1a1a1a]/70 text-[16px]">
+            Adherence to Texas regulatory, safety, and compliance standards.
+          </p>
+        </div>
+
+        <div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <Crown class="w-7 h-7 text-[#FDC101]" />
+          <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+            Risk Control
+          </h3>
+          <p class="mt-4 text-[#1a1a1a]/70 text-[16px]">
+            Structured operational oversight minimizing exposure and
+            protecting asset stakeholders.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- INDUSTRIES SERVED (UNCHANGED BECAUSE YOU LIKED IT) -->
+    <div class="bg-white">
+      <div class="px-4 md:px-8 lg:px-28 py-24">
+
+        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+          Industries Served
+        </h2>
+
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+          <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Building2 class="mx-auto w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              High-Rise Residential
+            </h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Landmark class="mx-auto w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Mixed-Use Towers
+            </h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Crown class="mx-auto w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Hospitality
+            </h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Building2 class="mx-auto w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Commercial Offices
+            </h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <GraduationCap class="mx-auto w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Education Facilities
+            </h3>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
+            <Factory class="mx-auto w-7 h-7 text-[#FDC101]" />
+            <h3 class="mt-6 font-semibold text-[#1a1a1a]">
+              Industrial Facilities
+            </h3>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
   </section>
+
+      
+
+
+
+  
 
 
   <section class="bg-white">
@@ -223,137 +371,7 @@
 
 
 
-<section class="bg-white">
-    <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
-      <div class="flex flex-col lg:flex-row lg:items-start gap-16 lg:gap-20">
 
-        <!-- LEFT -->
-        <div class="lg:w-[40%]">
-          <h2 class="text-[#1a1a1a] font-semibold leading-[1.08]
-                     text-[34px] sm:text-[44px] lg:text-[56px]">
-            Structured<br />
-            Facilities<br />
-            Management<br />
-            That Delivers<br />
-            Results
-          </h2>
-
-          <p class="mt-6 text-[#1a1a1a]/70 leading-relaxed
-                    text-[16px] sm:text-[18px] lg:text-[19px] max-w-[520px]">
-            Faciliya operates facilities through a disciplined, integrated system designed to eliminate guesswork and
-            reduce risk. Our approach brings clarity to daily operations, ensures consistent service delivery, and
-            provides full visibility into performance.
-          </p>
-
-          <div class="mt-8 flex flex-wrap items-center gap-5">
-            <NuxtLink to="/about"
-              class="rounded-[10px] border border-[#FDC101]
-                     px-6 py-3.5 text-[15px] font-semibold text-[#1a1a1a]
-                     hover:bg-[#FDC101]/10 transition"
-              type="button"
-            >
-              Learn More
-            </NuxtLink>
-
-            <NuxtLink to="/contact"
-              class="inline-flex items-center gap-2 text-[15px] font-medium text-[#1a1a1a]
-                     hover:opacity-70 transition"
-              type="button"
-            >
-              Contact Us
-              <span aria-hidden="true">›</span>
-            </NuxtLink>
-          </div>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="lg:w-[60%]">
-          <!-- On mobile: stack. On md+: 2 columns like screenshot -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 lg:gap-y-20">
-
-            <!-- Feature 1 -->
-            <div class="max-w-[360px]">
-              <!-- ICON SLOT (you replace) -->
-             
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44"  class="mb-5" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="#fdc101" d="M6 23q-1.25 0-2.125-.875T3 20t.875-2.125T6 17q.35 0 .65.075t.575.2L8.65 15.5q-.7-.775-.975-1.75T7.55 11.8l-2.025-.675q-.425.625-1.075 1T3 12.5q-1.25 0-2.125-.875T0 9.5t.875-2.125T3 6.5t2.125.875T6 9.5v.2l2.025.7q.5-.9 1.338-1.525t1.887-.8V5.9q-.975-.275-1.612-1.063T9 3q0-1.25.875-2.125T12 0t2.125.875T15 3q0 1.05-.65 1.838T12.75 5.9v2.175q1.05.175 1.888.8t1.337 1.525L18 9.7v-.2q0-1.25.875-2.125T21 6.5t2.125.875T24 9.5t-.875 2.125T21 12.5q-.8 0-1.463-.375t-1.062-1l-2.025.675q.15.975-.125 1.938T15.35 15.5l1.425 1.75q.275-.125.575-.187T18 17q1.25 0 2.125.875T21 20t-.875 2.125T18 23t-2.125-.875T15 20q0-.5.163-.962t.437-.838l-1.425-1.775Q13.15 17 11.988 17T9.8 16.425L8.4 18.2q.275.375.438.838T9 20q0 1.25-.875 2.125T6 23M3 10.5q.425 0 .713-.288T4 9.5t-.288-.712T3 8.5t-.712.288T2 9.5t.288.713T3 10.5M6 21q.425 0 .713-.288T7 20t-.288-.712T6 19t-.712.288T5 20t.288.713T6 21m6-17q.425 0 .713-.288T13 3t-.288-.712T12 2t-.712.288T11 3t.288.713T12 4m0 11q1.05 0 1.775-.725T14.5 12.5t-.725-1.775T12 10t-1.775.725T9.5 12.5t.725 1.775T12 15m6 6q.425 0 .713-.288T19 20t-.288-.712T18 19t-.712.288T17 20t.288.713T18 21m3-10.5q.425 0 .713-.288T22 9.5t-.288-.712T21 8.5t-.712.288T20 9.5t.288.713t.712.287M18 20" /></svg>
-
-
-
-
-              <h3 class="text-[#1a1a1a] font-semibold text-[18px] lg:text-[20px]">
-                Single Point of Control
-              </h3>
-
-              <p class="mt-3 text-[#1a1a1a]/70 leading-relaxed text-[14px] lg:text-[15px]">
-                A centralized operational lead manages all service lines, communication, and escalation—eliminating
-                confusion and fragmented responsibility.
-              </p>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="max-w-[360px]">
-            
-
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-[44px] w-[44px] mb-5" viewBox="0 0 24 24"><!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --><path fill="#fdc101" d="m22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9c-2-2-5-2.4-7.4-1.3L9 6L6 9L1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4" /></svg>
-
-
-              <h3 class="text-[#1a1a1a] font-semibold text-[18px] lg:text-[20px]">
-                Maintenance Focus
-              </h3>
-
-              <p class="mt-3 text-[#1a1a1a]/70 leading-relaxed text-[14px] lg:text-[15px]">
-                Planned inspections and maintenance routines reduce system failures, downtime, and costly reactive
-                repairs.
-              </p>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="max-w-[360px]">
-           
-              
-             
-
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-[44px] w-[44px] mb-5" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="#fdc101" d="M2 21v-2h20v2zm1-3v-7h3v7zm5 0V6h3v12zm5 0V9h3v9zm5 0V3h3v15z" /></svg>
-
-
-
-
-              <h3 class="text-[#1a1a1a] font-semibold text-[18px] lg:text-[20px]">
-                Reporting &amp; Visibility
-              </h3>
-
-              <p class="mt-3 text-[#1a1a1a]/70 leading-relaxed text-[14px] lg:text-[15px]">
-                Clear reporting provides insight into trends, risks, and priorities—supporting informed decisions and
-                long-term operational improvement.
-              </p>
-            </div>
-
-            <!-- Feature 4 -->
-            <div class="max-w-[360px]">
-              
-
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-[44px] w-[44px] mb-5" viewBox="0 0 24 24"><!-- Icon from Gridicons by Automattic - https://github.com/Automattic/gridicons/blob/trunk/LICENSE.md --><path fill="#fdc101" d="M24 14.6c0 .6-1.2 1-2.6 1.2c-.9-1.7-2.7-3-4.8-3.9c.2-.3.4-.5.6-.8h.8c3.1-.1 6 1.8 6 3.5M6.8 11H6c-3.1 0-6 1.9-6 3.6c0 .6 1.2 1 2.6 1.2c.9-1.7 2.7-3 4.8-3.9zm5.2 1c2.2 0 4-1.8 4-4s-1.8-4-4-4s-4 1.8-4 4s1.8 4 4 4m0 1c-4.1 0-8 2.6-8 5c0 2 8 2 8 2s8 0 8-2c0-2.4-3.9-5-8-5m5.7-3h.3c1.7 0 3-1.3 3-3s-1.3-3-3-3c-.5 0-.9.1-1.3.3c.8 1 1.3 2.3 1.3 3.7c0 .7-.1 1.4-.3 2M6 10h.3C6.1 9.4 6 8.7 6 8c0-1.4.5-2.7 1.3-3.7C6.9 4.1 6.5 4 6 4C4.3 4 3 5.3 3 7s1.3 3 3 3" /></svg>
-
-
-
-
-              <h3 class="text-[#1a1a1a] font-semibold text-[18px] lg:text-[20px]">
-                Vendor Coordination
-              </h3>
-
-              <p class="mt-3 text-[#1a1a1a]/70 leading-relaxed text-[14px] lg:text-[15px]">
-                Licensed and insured partners are managed under one coordinated system with defined scopes, performance
-                tracking, and accountability.
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
 
   <section class="bg-white">
@@ -447,50 +465,55 @@
 </template>
 
 <script setup>
-
+import {
+  Target,
+  Eye,
+  ShieldCheck,
+  Users,
+  Briefcase,
+  FileCheck2,
+  Award,
+  Building2,
+  Landmark,
+  GraduationCap,
+  Factory,
+  Crown
+} from "lucide-vue-next"
 import { ref } from "vue";
 const openIndex = ref(0); // first open like screenshot
 
 const faqs = [
   {
-    q: "What is integrated facilities management (IFM)?",
-    a: "Integrated Facilities Management (IFM) is a structured approach to operating and supervising all facility-related services under a unified framework. Instead of managing vendors separately, IFM centralizes coordination, reporting, preventive maintenance, and governance into one controlled operational system.",
+    q: "What does FACILIYA provide?",
+    a: "FACILIYA delivers integrated operational services structured under a governance-driven framework. Our model combines facilities oversight, performance control, sustainability alignment, private staffing, and event operations within the Dallas–Fort Worth Metroplex.",
   },
   {
-    q: "What types of properties does Faciliya serve?",
-    a: "Faciliya supports commercial buildings, mixed-use developments, corporate environments, and high-end residential properties. Our services are tailored to environments where operational discipline, accountability, and asset protection are essential.",
+    q: "What is the difference between your services and your governance packages?",
+    a: "Services define the operational scope of engagement. Governance packages define the depth of oversight, performance monitoring, reporting intelligence, and control systems applied to that operational scope.",
   },
   {
-    q: "How does Faciliya differ from traditional service providers?",
-    a: "Traditional providers deliver isolated services. Faciliya operates facilities through structured oversight, preventive planning, and measurable performance standards. We function as an operational partner rather than a task-based contractor.",
+    q: "What is Integrated Facilities Management (iFM) at FACILIYA?",
+    a: "FACILIYA’s iFM model centralizes maintenance oversight, hygiene systems, vendor coordination, and sustainability tracking under structured operational governance. It replaces fragmented service models with controlled, accountable execution.",
   },
   {
-    q: "Do you provide preventive maintenance programs?",
-    a: "Yes. Preventive maintenance is a core component of our framework. We implement scheduled inspections, documentation protocols, and tracking systems designed to reduce reactive repairs and extend asset lifespan.",
+    q: "How is Artificial Intelligence used within your operations?",
+    a: "AI-assisted analytics are applied within advanced governance tiers to support anomaly detection, performance trend analysis, and predictive maintenance insights—enhancing operational foresight and data-driven oversight.",
   },
   {
-    q: "Are services customized for each property?",
-    a: "Yes. Every engagement begins with assessment and scope definition. We align service structure, reporting cadence, and oversight levels with the complexity and objectives of each property.",
+    q: "How do green building principles fit into your model?",
+    a: "Sustainability is embedded within our governance framework through LEED-informed practices, structured energy monitoring, water efficiency tracking, and disciplined environmental oversight integrated into daily operations.",
   },
   {
-    q: "Do you manage third-party vendors?",
-    a: "Yes. Vendor coordination and supervision are central to our IFM model. We establish clear performance standards, monitor service delivery, and ensure accountability across all contracted providers.",
+    q: "How do you ensure service consistency?",
+    a: "Service consistency is maintained through structured internal capability calibration and continuous training programs that reinforce operational discipline, execution standards, and measurable performance expectations across all service levels.",
   },
   {
-    q: "Can Faciliya support executive or corporate events?",
-    a: "Yes. Faciliya provides structured event operations for corporate and executive-level engagements, ensuring alignment with facility protocols, security standards, and operational continuity.",
+    q: "Do you provide services for individuals?",
+    a: "Yes. FACILIYA offers structured monthly residential staffing solutions within the DFW area, including cleaning personnel, private drivers, and personal companions under defined service agreements.",
   },
   {
-    q: "How is performance measured and reported?",
-    a: "We implement documented workflows, service tracking, and structured reporting. Property stakeholders receive clear visibility into operational performance, maintenance status, and vendor accountability.",
-  },
-  {
-    q: "Do you offer personal or contract-based services?",
-    a: "Yes. Select personal services are available under structured contractual agreements, subject to scope definition, availability, and compliance requirements.",
-  },
-  {
-    q: "How can we begin working with Faciliya?",
-    a: "Engagement begins with an initial consultation to assess operational requirements and define scope. From there, we design a structured service framework aligned with your property’s long-term objectives.",
+    q: "What role does FACILIYA play in events?",
+    a: "FACILIYA provides disciplined staffing and operational coordination for private and corporate events. Our approach prioritizes structured execution, professional presence, and alignment with facility governance standards.",
   },
 ];
 

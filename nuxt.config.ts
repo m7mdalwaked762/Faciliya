@@ -5,10 +5,10 @@ export default defineNuxtConfig({
 app: {
     head: {
        link: [
-      {
+       {
         rel: "icon",
         type: "image/png",
-        href: "/ico.ico"
+        href: "/Group 38(2).png",
       }
     ],
       htmlAttrs: { lang: "en" },

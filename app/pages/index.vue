@@ -46,42 +46,21 @@
                      font-extrabold
                      leading-tight
                      drop-shadow-[0_4px_25px_rgba(0,0,0,0.7)]">
-            Integrated Facilities Management Built On Structure
+            FACILIYA LLC <br>
+            Structured Operations. Intelligent Oversight. Reliable Execution.
           </h1>
 
           <!-- Paragraph -->
           <p class="mt-5 text-white/95 leading-relaxed text-[16px] sm:text-[18px] drop-shadow-md">
-            Faciliya is an Integrated Facilities Management (IFM) partner for commercial,
-            mixed-use, and high-end residential environments. We stabilize daily operations,
-            protect asset value, and align building performance with efficiency-driven,
-            green-minded practices—without disruption.
+            Integrated Facilities Management, Private Staffing, and Event Support Services across Texas.
           </p>
 
           <!-- Buttons -->
           <div class="mt-8 flex flex-wrap gap-5">
 
-            <NuxtLink to="/contact" class="bg-[#ffbe17]
-                           text-[#1a1a1a]
-                           px-7 py-3.5
-                           rounded-xl
-                           font-semibold
-                           shadow-lg
-                           hover:scale-[1.03]
-                           transition duration-300">
-              Request a Proposal
-            </NuxtLink>
-
-            <button
-  type="button"
-  @click="isCallOpen = true"
-  class="bg-white/95 text-[#1a1a1a]
-         px-7 py-3.5 rounded-xl font-semibold shadow-lg
-         hover:bg-white transition duration-300
-         focus:outline-none focus:ring-2 focus:ring-white/60"
->
-  Talk to an Expert
-</button>
-
+            
+           
+    <ConsultationForm />
           </div>
 
         </div>
@@ -90,139 +69,91 @@
 
   </div>
  
-  <div
-  v-if="isCallOpen"
-  class="fixed inset-0 z-[999] flex items-center justify-center p-4"
-  role="dialog"
-  aria-modal="true"
-  aria-label="Call an expert"
->
-  <!-- Backdrop -->
-  <button
-    type="button"
-    class="absolute inset-0 bg-black/70"
-    aria-label="Close"
-    @click="isCallOpen = false"
-  ></button>
+  
 
-  <!-- Modal Card -->
-  <div
-    class="relative w-full max-w-[520px] rounded-2xl bg-white text-[#1a1a1a]
-           shadow-2xl border border-black/10"
-  >
-    <!-- Header -->
-    <div class="px-6 py-5 sm:px-7 sm:py-6 border-b border-black/10">
-      <div class="flex items-start justify-between gap-4">
-        <div>
-          <p class="text-[18px] sm:text-[20px] font-semibold">
-            Call an Expert
-          </p>
-          <p class="mt-1 text-[13px] sm:text-[14px] text-[#1a1a1a]/70">
-            Tap the number below to start a call.
-          </p>
+<section class="bg-white">
+  <div class="py-44 px-4 md:px-8 lg:px-28">
+
+    <!-- Heading -->
+    <div class="max-w-3xl">
+      <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
+        Why FACILIYA
+      </h2>
+
+      <p class="mt-6 text-[18px] text-gray-600 leading-relaxed max-w-2xl">
+        Facilities operations fail when they become reactive and fragmented.
+        FACILIYA replaces scattered decisions with a disciplined operational
+        structure designed for stability, accountability, and long-term asset protection.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
+
+        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
+          <LayoutDashboard class="w-6 h-6 text-[#FDC101]" />
         </div>
 
-        <button
-          type="button"
-          @click="isCallOpen = false"
-          class="h-10 w-10 rounded-xl border border-black/10
-                 hover:bg-black/5 transition flex items-center justify-center"
-          aria-label="Close"
-        >
-          ✕
-        </button>
+        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
+          Structured Operations
+        </h3>
+
+        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
+          Facilities operations become unreliable when they are reactive and fragmented.
+          Most properties suffer not from lack of effort, but from lack of structure.
+          FACILIYA replaces scattered vendors and improvised decisions with a coordinated
+          operating system that brings clarity, consistency, and accountability.
+        </p>
+
       </div>
+
+      <!-- Card 2 -->
+      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
+
+        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
+          <ShieldCheck class="w-6 h-6 text-[#FDC101]" />
+        </div>
+
+        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
+          Preventive Oversight
+        </h3>
+
+        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
+          Our model is built around preventive thinking, disciplined oversight,
+          and documented execution. Issues are identified early, managed correctly,
+          and closed out with full operational visibility, reducing risk and
+          protecting long-term asset value.
+        </p>
+
+      </div>
+
+      <!-- Card 3 -->
+      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
+
+        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
+          <Handshake class="w-6 h-6 text-[#FDC101]" />
+        </div>
+
+        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
+          Long-Term Partnership
+        </h3>
+
+        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
+          FACILIYA operates as a long-term operational partner rather than a
+          task-based service provider. We take responsibility for outcomes,
+          not just activities, ensuring facilities remain stable, presentable,
+          and predictable.
+        </p>
+
+      </div>
+
     </div>
 
-    <!-- Body -->
-    <div class="px-6 py-6 sm:px-7 sm:py-7">
-      <a
-        href="tel:+12015466248"
-        class="block rounded-xl border border-black/10 bg-[#f7f7f7]
-               px-5 py-4 text-center
-               font-semibold text-[18px] sm:text-[20px]
-               hover:bg-[#f1f1f1] transition"
-      >
-        +1 (201) 546-6248
-      </a>
-
-      <div class="mt-5 flex flex-col sm:flex-row gap-3 sm:justify-end">
-        <button
-          type="button"
-          @click="isCallOpen = false"
-          class="w-full sm:w-auto rounded-xl border border-black/10
-                 px-5 py-3 font-semibold hover:bg-black/5 transition"
-        >
-          Close
-        </button>
-
-        <a
-          href="tel:+12015466248"
-          class="w-full sm:w-auto rounded-xl bg-[#FDC101]
-                 px-5 py-3 font-semibold text-[#1a1a1a]
-                 hover:brightness-95 transition text-center"
-        >
-          Call Now
-        </a>
-      </div>
-    </div>
   </div>
-</div>
-  <section class="bg-white ">
-    <div class="py-44 px-4 md:px-8 lg:px-28">
-      
-      <div class="grid items-center gap-10 lg:grid-cols-2"  >
-        
-        <!-- Image -->
-        <div >
-          <div class="overflow-hidden rounded-2xl bg-gray-100 shadow-sm">
-            <img
-              src=""
-              alt="Facilities team working"
-              class="w-full h-[280px] sm:h-[340px] lg:h-[420px] object-cover"
-            />
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div >
-          <!-- Responsive Heading -->
-          <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
-            Why Faciliya ?
-          </h2>
-
-          <!-- Responsive Paragraph -->
-          <div class="mt-6 space-y-6 text-[16px] md:text-[18px] lg:text-[20px] leading-relaxed text-gray-600">
-            <p>
-              Faciliya exists to solve one core problem: facilities operations
-              become unreliable when they are reactive and fragmented. Most
-              properties suffer not from lack of effort, but from lack of
-              structure. We replace scattered vendors and improvised decisions
-              with a single, coordinated operating system that brings clarity,
-              consistency, and accountability.
-            </p>
-
-            <p>
-              Our model is built around preventive thinking, disciplined
-              oversight, and documented execution. Issues are identified early,
-              managed correctly, and closed out with visibility. This reduces
-              operational risk, protects asset value, and allows ownership and
-              management teams to focus on strategy rather than daily
-              firefighting.
-            </p>
-
-            <p>
-              Faciliya acts as a long-term operating partner, not a task-based
-              service provider. We take responsibility for outcomes, not just
-              activities, and operate quietly in the background so facilities
-              remain stable, presentable, and predictable.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+</section>
 
 
 
@@ -286,429 +217,178 @@
 
   </div>
 </section>
-
- <section class="bg-white" >
-    <div class="mx-auto  md:px-8 lg:px-28 py-44" >
-
-      <div class="text-center">
-        <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
-          Our Services
-        </h2>
-      </div>
-
-      <!-- Wrapper -->
-      <div class="mt-12 flex flex-col items-center">
-
-        <!-- Row 1 -->
-        <div class="flex flex-col items-center gap-8 sm:flex-row sm:flex-wrap sm:justify-center">
-
-          <div class="service-card">
-            <div class="service-top">
-              <div class="service-circle">
-                
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="61.8" height="61.8" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="white" d="m9.25 22l-.4-3.2q-.325-.125-.612-.3t-.563-.375L4.7 19.375l-2.75-4.75l2.575-1.95Q4.5 12.5 4.5 12.338v-.675q0-.163.025-.338L1.95 9.375l2.75-4.75l2.975 1.25q.275-.2.575-.375t.6-.3l.4-3.2h5.5l.4 3.2q.325.125.613.3t.562.375l2.975-1.25l2.75 4.75l-2.575 1.95q.025.175.025.338v.674q0 .163-.05.338l2.575 1.95l-2.75 4.75l-2.95-1.25q-.275.2-.575.375t-.6.3l-.4 3.2zm2.8-6.5q1.45 0 2.475-1.025T15.55 12t-1.025-2.475T12.05 8.5q-1.475 0-2.488 1.025T8.55 12t1.013 2.475T12.05 15.5" /></svg>
-
-
-
-              </div>
-              <h3 class="service-title">Hard Services</h3>
-              <p class="service-text">
-                Structured preventive and corrective maintenance that keeps building systems reliable.
-              </p>
-            </div>
-
-            <NuxtLink to="/about" class="service-btn">
-              Learn More
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="white" d="M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z" /></svg>
-
-            </NuxtLink>
-          </div>
-
-          <div class="service-card">
-            <div class="service-top">
-              <div class="service-circle">
-                
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="61.8" height="61.8" viewBox="0 0 512 512"><!-- Icon from IonIcons by Ben Sperry - https://github.com/ionic-team/ionicons/blob/main/LICENSE --><path fill="white" d="M208 512a24.84 24.84 0 0 1-23.34-16l-39.84-103.6a16.06 16.06 0 0 0-9.19-9.19L32 343.34a25 25 0 0 1 0-46.68l103.6-39.84a16.06 16.06 0 0 0 9.19-9.19L184.66 144a25 25 0 0 1 46.68 0l39.84 103.6a16.06 16.06 0 0 0 9.19 9.19l103 39.63a25.49 25.49 0 0 1 16.63 24.1a24.82 24.82 0 0 1-16 22.82l-103.6 39.84a16.06 16.06 0 0 0-9.19 9.19L231.34 496A24.84 24.84 0 0 1 208 512M88 176a14.67 14.67 0 0 1-13.69-9.4l-16.86-43.84a7.28 7.28 0 0 0-4.21-4.21L9.4 101.69a14.67 14.67 0 0 1 0-27.38l43.84-16.86a7.3 7.3 0 0 0 4.21-4.21L74.16 9.79A15 15 0 0 1 86.23.11a14.67 14.67 0 0 1 15.46 9.29l16.86 43.84a7.3 7.3 0 0 0 4.21 4.21l43.84 16.86a14.67 14.67 0 0 1 0 27.38l-43.84 16.86a7.28 7.28 0 0 0-4.21 4.21l-16.86 43.84A14.67 14.67 0 0 1 88 176m312 80a16 16 0 0 1-14.93-10.26l-22.84-59.37a8 8 0 0 0-4.6-4.6l-59.37-22.84a16 16 0 0 1 0-29.86l59.37-22.84a8 8 0 0 0 4.6-4.6l22.67-58.95a16.45 16.45 0 0 1 13.17-10.57a16 16 0 0 1 16.86 10.15l22.84 59.37a8 8 0 0 0 4.6 4.6l59.37 22.84a16 16 0 0 1 0 29.86l-59.37 22.84a8 8 0 0 0-4.6 4.6l-22.84 59.37A16 16 0 0 1 400 256" /></svg>
-
-
-
-              </div>
-              <h3 class="service-title">Soft Services</h3>
-              <p class="service-text">
-                Cleaning and presentation services delivered through defined scopes and inspections.
-              </p>
-            </div>
-
-            <NuxtLink to="/about" class="service-btn">
-              Learn More 
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="white" d="M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z" /></svg>
-
-
-
-            </NuxtLink>
-          </div>
-
-          <div class="service-card">
-            <div class="service-top">
-              <div class="service-circle">
-                
-
-
-
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="81" height="81" viewBox="0 0 24 24"><!-- Icon from Myna UI Icons by Praveen Juge - https://github.com/praveenjuge/mynaui-icons/blob/main/LICENSE --><path fill="white" d="M12.775 2.49a1.37 1.37 0 0 0-1.55 0l-.61.417a11.3 11.3 0 0 1-5.234 1.92a1.264 1.264 0 0 0-1.131 1.26v4.93c0 2.541 1.335 4.853 2.79 6.63c1.466 1.793 3.136 3.142 3.977 3.773a1.63 1.63 0 0 0 1.966 0c.841-.63 2.511-1.98 3.977-3.772c1.455-1.778 2.79-4.09 2.79-6.63V6.086c0-.64-.478-1.194-1.131-1.26a11.3 11.3 0 0 1-5.234-1.92z" /></svg>
-
-
-
-
-
-
-
-
-
-              </div>
-              <h3 class="service-title">Security & Safety</h3>
-              <p class="service-text">
-                Coordinated safety support focused on preparedness and controlled response.
-              </p>
-            </div>
-
-            <NuxtLink to="/about" class="service-btn">
-              Learn More 
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="white" d="M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z" /></svg>
-
-            </NuxtLink>
-          </div>
-
-        </div>
-
-        <!-- Row 2 -->
-        <div class="mt-8 flex flex-col items-center gap-8 sm:flex-row sm:flex-wrap sm:justify-center">
-
-          <div class="service-card">
-            <div class="service-top">
-              <div class="service-circle">
-                
-
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="71.8" height="71.8" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="white" d="M16.519 16.501c.175-.136.334-.295.651-.612l3.957-3.958c.096-.095.052-.26-.075-.305a4.3 4.3 0 0 1-1.644-1.034a4.3 4.3 0 0 1-1.034-1.644c-.045-.127-.21-.171-.305-.075L14.11 12.83c-.317.317-.476.476-.612.651q-.243.311-.412.666c-.095.2-.166.414-.308.84l-.184.55l-.292.875l-.273.82a.584.584 0 0 0 .738.738l.82-.273l.875-.292l.55-.184c.426-.142.64-.212.84-.308q.355-.17.666-.412m5.849-5.809a2.163 2.163 0 1 0-3.06-3.059l-.126.128a.52.52 0 0 0-.148.465c.02.107.055.265.12.452c.13.375.376.867.839 1.33s.955.709 1.33.839c.188.065.345.1.452.12a.53.53 0 0 0 .465-.148z" /><path fill="white" fillRule="evenodd" d="M4.172 3.172C3 4.343 3 6.229 3 10v4c0 3.771 0 5.657 1.172 6.828S7.229 22 11 22h2c3.771 0 5.657 0 6.828-1.172C20.981 19.676 21 17.832 21 14.18l-2.818 2.818c-.27.27-.491.491-.74.686a5 5 0 0 1-.944.583a8 8 0 0 1-.944.355l-2.312.771a2.083 2.083 0 0 1-2.635-2.635l.274-.82l.475-1.426l.021-.066c.121-.362.22-.658.356-.944q.24-.504.583-.943c.195-.25.416-.47.686-.74l4.006-4.007L18.12 6.7l.127-.127A3.65 3.65 0 0 1 20.838 5.5c-.151-1.03-.444-1.763-1.01-2.328C18.657 2 16.771 2 13 2h-2C7.229 2 5.343 2 4.172 3.172M7.25 9A.75.75 0 0 1 8 8.25h6.5a.75.75 0 0 1 0 1.5H8A.75.75 0 0 1 7.25 9m0 4a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75m0 4a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5H8a.75.75 0 0 1-.75-.75" clipRule="evenodd" /></svg>
-
-
-
-              </div>
-              <h3 class="service-title">FM Consultancy</h3>
-              <p class="service-text">
-                Advisory services strengthening operational control through SOPs and KPIs.
-              </p>
-            </div>
-
-            <NuxtLink to="/about" class="service-btn">
-              Learn More
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="white" d="M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z" /></svg>
-
-            </NuxtLink>
-          </div>
-
-          <div class="service-card">
-            <div class="service-top">
-              <div class="service-circle">
-               
-
-
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="61.8" height="61.8" viewBox="0 0 24 24"><!-- Icon from Ultimate free icons by Streamline - https://creativecommons.org/licenses/by/4.0/ --><path fill="white" fillRule="evenodd" d="M23.76 2.45c0-1.001-.8-1.801-1.8-1.801h-.8c-.601 0-1.001.4-1.001 1v11.003c0 .6.4 1 1 1h.8c1 0 1.801.8 1.801 1.801zm-5.102 10V1.747H9.756c-.6 0-1 .4-1 1V8.86q.073-.004.147-.004h1c.642 0 1.292.22 1.787.715a2.4 2.4 0 0 1 .615 1.058a8.82 8.82 0 0 1 5.307 5.21h4.347q.208 0 .402-.043a1.5 1.5 0 0 1-.102-.544c0-.172-.128-.3-.3-.3h-.8c-.64 0-1.292-.22-1.786-.715c-.494-.494-.715-1.145-.715-1.786m-1.17 10.902c.648 0 1.079-.432 1.079-1.079v-1.078c0-.646-.431-1.078-1.078-1.078H1.319c-.648 0-1.079.432-1.079 1.078v1.078c0 .647.431 1.079 1.078 1.079zM7.904 11.356V18.6h3v-7.244c0-.6-.4-1-1-1h-1c-.6 0-1 .4-1 1m-1.5 7.244v.017H2.155c.094-2.777 1.791-5.207 4.248-6.331zm10.249.017h-4.248v-6.331c2.457 1.124 4.154 3.554 4.248 6.33" clipRule="evenodd" /></svg>
-
-
-              </div>
-              <h3 class="service-title">Projects & Fit-Out</h3>
-              <p class="service-text">
-                Coordination of renovations ensuring scope alignment and schedule control.
-              </p>
-            </div>
-
-            <NuxtLink to="/about" class="service-btn">
-              Learn More
-
-                <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="white" d="M6.4 18L5 16.6L14.6 7H6V5h12v12h-2V8.4z" /></svg>
-
-            </NuxtLink>
-          </div>
-
-        </div>
-
-      </div>
+<section class="bg-white">
+  <div class="px-4 md:px-8 lg:px-28 py-20">
+
+    <!-- SECTION HEADER -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-[32px] md:text-[40px] font-semibold text-[#1a1a1a] tracking-tight">
+        Our Divisions
+      </h2>
+
+      <p class="mt-4 text-[16px] md:text-[18px] text-[#1a1a1a]/70 leading-relaxed">
+        Structured operational delivery across corporate, private, and event environments.
+      </p>
     </div>
-  </section>
 
+    <!-- GRID -->
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
+      <!-- CARD 1 -->
+      <div
+        class="group flex flex-col justify-between
+               bg-white border border-[#1a1a1a]/10
+               rounded-2xl p-10 min-h-[340px]
+               transition-all duration-300
+               hover:-translate-y-2 hover:shadow-2xl"
+      >
 
+        <div>
 
-   <section class="w-full bg-gray-50">
-    <div class="px-4 md:px-8 lg:px-28 py-10 sm:py-14 lg:py-16">
-      
-      <!-- Top content -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-        
-        <!-- Left headline -->
-        <div class="lg:col-span-6" >
-          <h2
-            class="text-[#1a1a1a] font-extrabold leading-[1.12]
-                   text-[28px] sm:text-[36px] lg:text-[44px]"
+          <!-- ICON -->
+          <div
+            class="w-[80px] h-[80px] flex items-center justify-center
+                   rounded-full border border-[#FDC101]/60 mb-8"
           >
-            Reliable Operations. Measurable
-            <br class="hidden sm:block" />
-            Performance. Total Control.
-          </h2>
-        </div>
 
-        <!-- Right paragraph -->
-        <div class="lg:col-span-6" >
-          <p
-            class="text-[#1a1a1a]/70 leading-[1.7]
-                   text-[14px] sm:text-[15px] lg:text-[16px]
-                   max-w-[560px] lg:ml-auto"
-          >
-            Faciliya ensures your properties operate smoothly through structured workflows, disciplined oversight,
-            and coordinated service management. From preventive maintenance and soft services to security and project
-            coordination, we provide measurable results that protect asset value, improve efficiency, and enhance the
-            experience of every occupant.
+<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#FDC101]" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018"/><path fill="currentColor" d="M21 7a1 1 0 1 1 0 2v10a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2V9a1 1 0 0 1 0-2zM7 11a1 1 0 0 0-1 1v7h2v-7a1 1 0 0 0-1-1m5 0a1 1 0 0 0-1 1v7h2v-7a1 1 0 0 0-1-1m5 0a1 1 0 0 0-1 1v7h2v-7a1 1 0 0 0-1-1m1-7a1 1 0 1 1 0 2H6a1 1 0 0 1 0-2z"/></g></svg>
+
+          </div>
+
+          <h3 class="text-[20px] font-semibold text-[#1a1a1a] tracking-wide">
+            Corporate & Asset Governance
+          </h3>
+
+          <div class="mt-6 w-12 h-[2px] bg-[#FDC101] transition-all duration-300 group-hover:w-20"></div>
+
+          <p class="mt-6 text-[15px] text-[#1a1a1a]/70 leading-relaxed">
+            Integrated Facilities Management powered by structured governance architecture and operational intelligence.
           </p>
-        </div>
-      </div>
-
-      <!-- Bottom stats -->
-      <div class="mt-10 sm:mt-12 lg:mt-14" >
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3
-                "
-        >
-          <!-- Stat 1 -->
-          <div class="py-8 sm:py-10">
-            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
-              +40%
-            </div>
-            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
-              Reduced Downtime
-            </div>
-          </div>
-
-          <!-- Stat 2 -->
-          <div class="py-8 sm:py-10 ">
-            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
-              +35%
-            </div>
-            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
-              Increased Efficiency
-            </div>
-          </div>
-
-          <!-- Stat 3 -->
-          <div class="py-8 sm:py-10 ">
-            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
-              +50%
-            </div>
-            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
-              Higher Occupant Satisfaction
-            </div>
-          </div>
 
         </div>
-      </div>
 
-    </div>
-  </section>
-
-<section class="bg-white" >
-  <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
-    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-16">
-
-      <!-- LEFT SIDE -->
-      <div class="lg:w-1/2" >
-        <h2 class="text-[#1a1a1a] font-semibold leading-tight
-                   text-[34px] sm:text-[42px] lg:text-[52px]">
-          How Faciliya Operates Facilities
-        </h2>
-
-        <p class="mt-6 text-[#1a1a1a]/70 leading-relaxed
-                  text-[16px] sm:text-[18px] lg:text-[19px] max-w-[640px]">
-          A maturity-based Integrated Facilities Management framework that defines
-          how facilities are configured, operated, managed, and elevated—allowing
-          organizations to align services, governance, and oversight with their
-          operational complexity and long-term objectives.
-        </p>
-
-        <NuxtLink to="/about"
-          class="mt-8 inline-flex items-center justify-center
-                 rounded-[12px] bg-[#FDC101] px-7 py-4
-                 text-[#1a1a1a] text-[16px] font-semibold
-                 transition hover:brightness-95"
-          type="button"
+        <!-- BUTTON -->
+        <NuxtLink
+          to="/Corporate_Asset_Governance"
+          class="mt-10 inline-flex items-center gap-2 text-[14px] font-medium text-[#1a1a1a] hover:text-[#FDC101] transition"
         >
-          Learn more
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7V16"/>
+          </svg>
         </NuxtLink>
+
       </div>
 
-      <!-- RIGHT SIDE -->
-      <div class="lg:w-1/2 relative">
-        <!-- Vertical line -->
-        <div class="absolute left-[32px] top-4 h-full w-[2px] bg-[#FDC101]/40"></div>
-
-        <div class="space-y-14">
-
-          <!-- ITEM 1 -->
-          <div class="relative flex items-start gap-8">
-            
-            <div class="relative z-10">
-              <!-- ✅ Put your icon here (replace the box below) -->
-            
 
 
+      <!-- CARD 2 -->
+      <div
+        class="group flex flex-col justify-between
+               bg-white border border-[#1a1a1a]/10
+               rounded-2xl p-10 min-h-[340px]
+               transition-all duration-300
+               hover:-translate-y-2 hover:shadow-2xl"
+      >
 
-  <svg xmlns="http://www.w3.org/2000/svg" width="" height="" class="h-[64px] w-[64px] bg-white p-1  rounded-[14px]"  viewBox="0 0 256 256"><!-- Icon from Phosphor by Phosphor Icons - https://github.com/phosphor-icons/core/blob/main/LICENSE --><path fill="#FDC101" d="M232 56H72V40a8 8 0 0 0-8-8H48a32 32 0 0 0-32 32v112a32 32 0 0 0 32 32h184a8 8 0 0 0 8-8V64a8 8 0 0 0-8-8M32 64a16 16 0 0 1 16-16h8v96h-8a31.8 31.8 0 0 0-16 4.29Zm192 128H48a16 16 0 0 1 0-32h16a8 8 0 0 0 8-8V72h152Zm-120-56a8 8 0 0 0 0 16h16v8a8 8 0 0 0 16 0v-8h24v8a8 8 0 0 0 16 0v-8h16a8 8 0 0 0 0-16h-16v-16h16a8 8 0 0 0 0-16h-16v-8a8 8 0 0 0-16 0v8h-24v-8a8 8 0 0 0-16 0v8h-16a8 8 0 0 0 0 16h16v16Zm32-16h24v16h-24Z" /></svg>
+        <div>
 
+          <div
+            class="w-[80px] h-[80px] flex items-center justify-center
+                   rounded-full border border-[#FDC101]/60 mb-8"
+          >
 
+<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#FDC101]" viewBox="0 0 24 24"><path fill="currentColor" d="M17.55 12L14 8.45l1.425-1.4l2.125 2.125l4.25-4.25l1.4 1.425zM9 12q-1.65 0-2.825-1.175T5 8t1.175-2.825T9 4t2.825 1.175T13 8t-1.175 2.825T9 12m-8 8v-2.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2V20z"/></svg>
 
-            </div>
-
-            <!-- TEXT -->
-            <div>
-              <h3 class="text-[#1a1a1a] font-semibold text-[20px] lg:text-[22px]">
-                Design
-              </h3>
-
-              <p class="mt-3 font-semibold text-[#1a1a1a] text-[16px]">
-                Configure before execution
-              </p>
-
-              <p class="mt-3 text-[#1a1a1a]/70 text-[16px] leading-relaxed max-w-[520px]">
-                Assess assets, define scope, and establish governance before services are deployed.
-              </p>
-            </div>
           </div>
 
-          <!-- ITEM 2 -->
-          <div class="relative flex items-start gap-8">
-            <div class="relative z-10">
-              <!-- ✅ Put your icon here -->
+          <h3 class="text-[20px] font-semibold text-[#1a1a1a] tracking-wide">
+            Private Client Staffing
+          </h3>
 
+          <div class="mt-6 w-12 h-[2px] bg-[#FDC101] transition-all duration-300 group-hover:w-20"></div>
 
-
-
-
-
-
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-[64px] w-[64px]   p-1 bg-white  rounded-[14px]" viewBox="0 0 24 24"><!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --><path fill="#FDc101" d="M17 13a.26.26 0 0 0-.26.21l-.19 1.32c-.3.13-.59.29-.85.47l-1.24-.5c-.11 0-.24 0-.31.13l-1 1.73c-.06.11-.04.24.06.32l1.06.82a4.2 4.2 0 0 0 0 1l-1.06.82a.26.26 0 0 0-.06.32l1 1.73c.06.13.19.13.31.13l1.24-.5c.26.18.54.35.85.47l.19 1.32c.02.12.12.21.26.21h2c.11 0 .22-.09.24-.21l.19-1.32c.3-.13.57-.29.84-.47l1.23.5c.13 0 .26 0 .33-.13l1-1.73a.26.26 0 0 0-.06-.32l-1.07-.82c.02-.17.04-.33.04-.5s-.01-.33-.04-.5l1.06-.82a.26.26 0 0 0 .06-.32l-1-1.73c-.06-.13-.19-.13-.32-.13l-1.23.5c-.27-.18-.54-.35-.85-.47l-.19-1.32A.236.236 0 0 0 19 13zm1 3.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5c-.84 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5M10 5h2v2h-2zm6 2h-2V5h2zm-2 2h2v2h-2zm-4 0h2v2h-2zm3.11 14H2V1h18v10.29c-.63-.18-1.3-.29-2-.29V3H4v18h6v-3.5h1.03c-.03.17-.03.33-.03.5c0 1.96.81 3.73 2.11 5M8 15H6v-2h2zm0-4H6V9h2zm0-4H6V5h2zM6 17h2v2H6zm4-4h2v1.41c-.11.19-.22.39-.32.59H10z" /></svg>
-
-
-
-
-
-
-
-            </div>
-
-            <div>
-              <h3 class="text-[#1a1a1a] font-semibold text-[20px] lg:text-[22px]">
-                Operate
-              </h3>
-
-              <p class="mt-3 font-semibold text-[#1a1a1a] text-[16px]">
-                Stabilize daily operations
-              </p>
-
-              <p class="mt-3 text-[#1a1a1a]/70 text-[16px] leading-relaxed max-w-[520px]">
-                Coordinate essential services and maintenance under one controlled operating system.
-              </p>
-            </div>
-          </div>
-
-          <!-- ITEM 3 -->
-          <div class="relative flex items-start gap-8">
-            <div class="relative z-10">
-              <!-- ✅ Put your icon here -->
-
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-[64px] w-[64px]  p-1  bg-white rounded-[14px]" viewBox="0 0 512 512"><!-- Icon from Siemens Industrial Experience Icons by Siemens AG - https://github.com/siemens/ix-icons/blob/main/LICENSE.md --><g fill="#fdc101" fillRule="white" clipRule="white"><path d="M426.667 125.489H85.333v20.078h341.334zM85.333 386.508V185.724h341.334v200.784zM42.667 85.332v341.333h426.666V85.332zm320 149.333v128h42.666v-128zm-64 128v-85.333h42.666v85.333zm-64-21.333v21.333h42.666v-21.333z" /><path d="M170.667 362.665c41.237 0 74.666-33.429 74.666-74.666c0-41.238-33.429-74.667-74.666-74.667c-41.238 0-74.667 33.429-74.667 74.667s33.429 74.666 74.667 74.666m35.476-50.962a42.67 42.67 0 0 0 7.19-23.704h-42.666v-42.667a42.66 42.66 0 0 0-39.419 26.339a42.664 42.664 0 0 0 31.095 58.175a42.67 42.67 0 0 0 43.8-18.143" /></g></svg>
-
-
-
-
-
-
-
-            </div>
-
-            <div>
-              <h3 class="text-[#1a1a1a] font-semibold text-[20px] lg:text-[22px]">
-                Manage
-              </h3>
-
-              <p class="mt-3 font-semibold text-[#1a1a1a] text-[16px]">
-                Control performance
-              </p>
-
-              <p class="mt-3 text-[#1a1a1a]/70 text-[16px] leading-relaxed max-w-[520px]">
-                Introduce active supervision, vendor management, reporting, and quality assurance.
-              </p>
-            </div>
-          </div>
-
-          <!-- ITEM 4 -->
-          <div class="relative flex items-start gap-8">
-            <div class="relative z-10">
-              <!-- ✅ Put your icon here -->
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg"  class="h-[64px] w-[64px]   p-1 bg-white rounded-[14px]"viewBox="0 0 16 16"><!-- Icon from Bootstrap Icons by The Bootstrap Authors - https://github.com/twbs/icons/blob/main/LICENSE.md --><g fill="#fdc101"><path d="M12.5 16a3.5 3.5 0 1 0 0-7a3.5 3.5 0 0 0 0 7m.354-5.854l1.5 1.5a.5.5 0 0 1-.708.708L13 11.707V14.5a.5.5 0 0 1-1 0v-2.793l-.646.647a.5.5 0 0 1-.708-.708l1.5-1.5a.5.5 0 0 1 .708 0" /><path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1z" /><path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" /></g></svg>
-
-
-
-            </div>
-
-            <div>
-              <h3 class="text-[#1a1a1a] font-semibold text-[20px] lg:text-[22px]">
-                Elevate
-              </h3>
-
-              <p class="mt-3 font-semibold text-[#1a1a1a] text-[16px]">
-                Enterprise facility leadership
-              </p>
-
-              <p class="mt-3 text-[#1a1a1a]/70 text-[16px] leading-relaxed max-w-[520px]">
-                Deliver strategic oversight, executive reporting, sustainability alignment, and asset lifecycle governance.
-              </p>
-            </div>
-          </div>
+          <p class="mt-6 text-[15px] text-[#1a1a1a]/70 leading-relaxed">
+            Monthly-based residential staffing solutions delivered with discretion, reliability, and structured oversight.
+          </p>
 
         </div>
+
+        <NuxtLink
+          to="/Private_Services"
+          class="mt-10 inline-flex items-center gap-2 text-[14px] font-medium text-[#1a1a1a] hover:text-[#FDC101] transition"
+        >
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7V16"/>
+          </svg>
+        </NuxtLink>
+
+      </div>
+
+
+
+      <!-- CARD 3 -->
+      <div
+        class="group flex flex-col justify-between
+               bg-white border border-[#1a1a1a]/10
+               rounded-2xl p-10 min-h-[340px]
+               transition-all duration-300
+               hover:-translate-y-2 hover:shadow-2xl"
+      >
+
+        <div>
+
+          <div
+            class="w-[80px] h-[80px] flex items-center justify-center
+                   rounded-full border border-[#FDC101]/60 mb-8"
+          >
+
+<svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#FDC101]" viewBox="0 0 24 24"><path fill="currentColor" d="m10.95 15.45l3.475-3.475q.3-.3.725-.3t.725.3t.3.725t-.3.725L11.65 17.65q-.3.3-.7.3t-.7-.3l-2.125-2.125q-.3-.3-.3-.725t.3-.725t.725-.3t.725.3zM5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"/></svg>
+
+          </div>
+
+          <h3 class="text-[20px] font-semibold text-[#1a1a1a] tracking-wide">
+            Events & Occasion Services
+          </h3>
+
+          <div class="mt-6 w-12 h-[2px] bg-[#FDC101] transition-all duration-300 group-hover:w-20"></div>
+
+          <p class="mt-6 text-[15px] text-[#1a1a1a]/70 leading-relaxed">
+            Disciplined operational support for private and corporate events requiring professional execution.
+          </p>
+
+        </div>
+
+        <NuxtLink
+          to="/Event_Services"
+          class="mt-10 inline-flex items-center gap-2 text-[14px] font-medium text-[#1a1a1a] hover:text-[#FDC101] transition"
+        >
+          Learn More
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7V16"/>
+          </svg>
+        </NuxtLink>
+
       </div>
 
     </div>
+
   </div>
 </section>
+ 
 
 
 
 
-<section class="bg-gray-50">
+  
+
+
+
+
+
+
+<section class="bg-[#F8F9FB]" >
     <div class="mx-auto py-44 px-4 md:px-8 lg:px-28">
       <div class="flex flex-col lg:flex-row lg:items-start gap-16 lg:gap-20">
 
@@ -840,8 +520,6 @@
       </div>
     </div>
   </section>
-
-
    <section class="bg-white">
   <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
 
@@ -945,10 +623,86 @@
   </div>
 </section>
 
+ <section class="w-full bg-[#F8F9FB]" >
+    <div class="px-4 md:px-8 lg:px-28 py-10 sm:py-14 lg:py-16">
+      
+      <!-- Top content -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
+        
+        <!-- Left headline -->
+        <div class="lg:col-span-6" >
+          <h2
+            class="text-[#1a1a1a] font-extrabold leading-[1.12]
+                   text-[28px] sm:text-[36px] lg:text-[44px]"
+          >
+            Reliable Operations. Measurable
+            <br class="hidden sm:block" />
+            Performance. Total Control.
+          </h2>
+        </div>
+
+        <!-- Right paragraph -->
+        <div class="lg:col-span-6" >
+          <p
+            class="text-[#1a1a1a]/70 leading-[1.7]
+                   text-[14px] sm:text-[15px] lg:text-[16px]
+                   max-w-[560px] lg:ml-auto"
+          >
+            Faciliya ensures your properties operate smoothly through structured workflows, disciplined oversight,
+            and coordinated service management. From preventive maintenance and soft services to security and project
+            coordination, we provide measurable results that protect asset value, improve efficiency, and enhance the
+            experience of every occupant.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom stats -->
+      <div class="mt-10 sm:mt-12 lg:mt-14" >
+        <div
+          class="grid grid-cols-1 sm:grid-cols-3
+                "
+        >
+          <!-- Stat 1 -->
+          <div class="py-8 sm:py-10">
+            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
+              +40%
+            </div>
+            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
+              Reduced Downtime
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="py-8 sm:py-10 ">
+            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
+              +35%
+            </div>
+            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
+              Increased Efficiency
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="py-8 sm:py-10 ">
+            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
+              +50%
+            </div>
+            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
+              Higher Occupant Satisfaction
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  
 
 
 
-<section class="bg-gray-50">
+<section class="bg-white" >
     <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <!-- Heading -->
       <div class="text-center max-w-[720px] mx-auto">
@@ -1002,150 +756,75 @@
     </div>
   </section>
 
-<section class="bg-white">
-  <div class="py-44 px-4 md:px-8 lg:px-28" >
+ <div class="px-4 md:px-8 lg:px-28 py-24 bg-[#F8F9FB]" >
 
-    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-16">
-
-      <!-- LEFT -->
-      <div class="lg:w-[48%]">
-
-        <h2 class="text-[#FDC101] font-semibold
-                   text-[32px] sm:text-[38px] lg:text-[48px]">
-          Contact us
+      <!-- Section Title -->
+      <div class="text-center">
+        <h2 class="text-[30px] md:text-[36px] font-semibold text-[#1a1a1a]">
+          Direct Contact Information
         </h2>
 
-        <p class="mt-5 text-[#1a1a1a]/70
-                  text-[16px] sm:text-[17px] leading-relaxed">
-          Have a question or want to discuss your facility’s operational needs?
-          Contact Faciliya to learn how our structured approach can bring clarity,
-          consistency, and reliable performance to your property.
+        <p class="mt-4 text-[17px] text-[#1a1a1a]/70 max-w-xl mx-auto">
+          Reach us directly for inquiries, partnership discussions,
+          or consultation requests.
         </p>
-
-        <form class="mt-10 space-y-6" @submit.prevent="onSubmit">
-
-          <!-- Name -->
-          <div>
-            <label class="text-[13px] font-medium text-[#1a1a1a]">
-              Name
-            </label>
-            <input
-              v-model="form.name"
-              type="text"
-              class="mt-2 w-full h-[46px] rounded-[8px]
-                     border border-[#1a1a1a]/30 px-4 text-[15px]
-                     outline-none focus:border-[#1a1a1a]/60"
-            />
-          </div>
-
-          <!-- Email -->
-          <div>
-            <label class="text-[13px] font-medium text-[#1a1a1a]">
-              Email
-            </label>
-            <input
-              v-model="form.email"
-              type="email"
-              class="mt-2 w-full h-[46px] rounded-[8px]
-                     border border-[#1a1a1a]/30 px-4 text-[15px]
-                     outline-none focus:border-[#1a1a1a]/60"
-            />
-          </div>
-
-          <!-- Message -->
-          <div>
-            <label class="text-[13px] font-medium text-[#1a1a1a]">
-              Message
-            </label>
-            <textarea
-              v-model="form.message"
-              rows="6"
-              placeholder="Type your message..."
-              class="mt-2 w-full rounded-[8px]
-                     border border-[#1a1a1a]/30 px-4 py-3 text-[15px]
-                     outline-none resize-none focus:border-[#1a1a1a]/60"
-            />
-          </div>
-
-          <!-- Terms -->
-          <label class="flex items-center gap-2 text-[13px] text-[#1a1a1a]/70">
-            <input
-              v-model="form.terms"
-              type="checkbox"
-              class="h-[16px] w-[16px] accent-[#FDC101]"
-            />
-            I accept the Terms
-          </label>
-
-          <!-- Submit -->
-          <button
-            type="submit"
-            class="mt-2 rounded-[10px] bg-[#FDC101]
-                   px-8 py-3 text-[15px] font-semibold text-[#1a1a1a]
-                   hover:brightness-95 transition"
-          >
-            Submit
-          </button>
-
-        </form>
       </div>
 
-      <!-- RIGHT -->
-      <div class="lg:w-[44%] lg:pt-10">
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-16">
+      <!-- Contact Cards -->
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
 
-          <!-- Email -->
-          <div class="flex gap-5">
-            
-
-
-
-
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --><path fill="#fdc101" d="m20 8l-8 5l-8-5V6l8 5l8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2" /></svg>
-
-              <p class="font-semibold text-[18px] text-[#1a1a1a]">Email</p>
-              
-              <a href="mailto:info@faciliyallc.com" class="mt-3 inline-block text-[14px] ">
-              info@faciliyallc.com
-              </a>
-            </div>
-          </div>
-
-          <!-- Phone -->
-          <div class="flex gap-5">
-            
-            <div>
-
-
-
-  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="#fdc101" d="M19.95 21q-3.125 0-6.175-1.362t-5.55-3.863t-3.862-5.55T3 4.05q0-.45.3-.75t.75-.3H8.1q.35 0 .625.238t.325.562l.65 3.5q.05.4-.025.675T9.4 8.45L6.975 10.9q.5.925 1.187 1.787t1.513 1.663q.775.775 1.625 1.438T13.1 17l2.35-2.35q.225-.225.588-.337t.712-.063l3.45.7q.35.1.575.363T21 15.9v4.05q0 .45-.3.75t-.75.3" /></svg>
-
-
-
-              <p class="font-semibold text-[18px] text-[#1a1a1a]">Phone</p>
-             
-              <a href="tel:+12015466248" class="mt-3 text-[14px] text-[#1a1a1a]">
-               +1 (201) 546-6248
-            </a>
-            </div>
-          </div>
-
-          <!-- Office -->
+        <!-- Phone Card -->
+        <div class="bg-white p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
           
+          <div class="w-[70px] h-[70px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+            <Phone class="w-8 h-8 text-[#FDC101]" />
+          </div>
 
+          <h3 class="mt-6 text-[20px] font-semibold text-[#1a1a1a]">
+            Phone
+          </h3>
+
+          <a
+            href="tel:+19724825958"
+            class="mt-4 block text-[18px] text-[#1a1a1a]/80 hover:text-[#3F2E83] transition"
+          >
+            +1 (972) 482-5958
+          </a>
+        </div>
+
+
+        <!-- Email Card -->
+        <div class="bg-white p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+          
+          <div class="w-[70px] h-[70px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+            <Mail class="w-8 h-8 text-[#FDC101]" />
+          </div>
+
+          <h3 class="mt-6 text-[20px] font-semibold text-[#1a1a1a]">
+            Email
+          </h3>
+
+          <a
+            href="mailto:info@faciliyallc.com"
+            class="mt-4 block text-[18px] text-[#1a1a1a]/80 hover:text-[#3F2E83] transition"
+          >
+            info@faciliyallc.com
+          </a>
         </div>
 
       </div>
 
+
+
+      <!-- CTA BUTTON -->
+      
+
     </div>
-  </div>
-</section>
 
 
 
- <section class="bg-white">
+ <section class="bg-white" >
     <div class="py-44 px-4 md:px-8 lg:px-28 text-center" >
 
       <h2 class="text-[#1a1a1a] font-semibold
@@ -1184,6 +863,8 @@
 </template>
 
 <script setup>
+import { Phone, Mail, CalendarCheck } from "lucide-vue-next"
+
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Navigation,  A11y } from "swiper/modules";
@@ -1193,60 +874,44 @@ import "swiper/css/navigation";
 
 import { reactive } from "vue";
 
-const form = reactive({
-  name: "",
-  email: "",
-  message: "",
-  terms: false,
-});
 
-function onSubmit() {
-  // hook this to your backend / email service
-  console.log("submit", { ...form });
-}
+
+
 import { ref } from "vue";
 const openIndex = ref(0); // first open like screenshot
 
 const faqs = [
   {
-    q: "What is integrated facilities management (IFM)?",
-    a: "Integrated Facilities Management (IFM) is a structured approach to operating and supervising all facility-related services under a unified framework. Instead of managing vendors separately, IFM centralizes coordination, reporting, preventive maintenance, and governance into one controlled operational system.",
+    q: "What does FACILIYA provide?",
+    a: "FACILIYA delivers integrated operational services structured under a governance-driven framework. Our model combines facilities oversight, performance control, sustainability alignment, private staffing, and event operations within the Dallas–Fort Worth Metroplex.",
   },
   {
-    q: "What types of properties does Faciliya serve?",
-    a: "Faciliya supports commercial buildings, mixed-use developments, corporate environments, and high-end residential properties. Our services are tailored to environments where operational discipline, accountability, and asset protection are essential.",
+    q: "What is the difference between your services and your governance packages?",
+    a: "Services define the operational scope of engagement. Governance packages define the depth of oversight, performance monitoring, reporting intelligence, and control systems applied to that operational scope.",
   },
   {
-    q: "How does Faciliya differ from traditional service providers?",
-    a: "Traditional providers deliver isolated services. Faciliya operates facilities through structured oversight, preventive planning, and measurable performance standards. We function as an operational partner rather than a task-based contractor.",
+    q: "What is Integrated Facilities Management (iFM) at FACILIYA?",
+    a: "FACILIYA’s iFM model centralizes maintenance oversight, hygiene systems, vendor coordination, and sustainability tracking under structured operational governance. It replaces fragmented service models with controlled, accountable execution.",
   },
   {
-    q: "Do you provide preventive maintenance programs?",
-    a: "Yes. Preventive maintenance is a core component of our framework. We implement scheduled inspections, documentation protocols, and tracking systems designed to reduce reactive repairs and extend asset lifespan.",
+    q: "How is Artificial Intelligence used within your operations?",
+    a: "AI-assisted analytics are applied within advanced governance tiers to support anomaly detection, performance trend analysis, and predictive maintenance insights—enhancing operational foresight and data-driven oversight.",
   },
   {
-    q: "Are services customized for each property?",
-    a: "Yes. Every engagement begins with assessment and scope definition. We align service structure, reporting cadence, and oversight levels with the complexity and objectives of each property.",
+    q: "How do green building principles fit into your model?",
+    a: "Sustainability is embedded within our governance framework through LEED-informed practices, structured energy monitoring, water efficiency tracking, and disciplined environmental oversight integrated into daily operations.",
   },
   {
-    q: "Do you manage third-party vendors?",
-    a: "Yes. Vendor coordination and supervision are central to our IFM model. We establish clear performance standards, monitor service delivery, and ensure accountability across all contracted providers.",
+    q: "How do you ensure service consistency?",
+    a: "Service consistency is maintained through structured internal capability calibration and continuous training programs that reinforce operational discipline, execution standards, and measurable performance expectations across all service levels.",
   },
   {
-    q: "Can Faciliya support executive or corporate events?",
-    a: "Yes. Faciliya provides structured event operations for corporate and executive-level engagements, ensuring alignment with facility protocols, security standards, and operational continuity.",
+    q: "Do you provide services for individuals?",
+    a: "Yes. FACILIYA offers structured monthly residential staffing solutions within the DFW area, including cleaning personnel, private drivers, and personal companions under defined service agreements.",
   },
   {
-    q: "How is performance measured and reported?",
-    a: "We implement documented workflows, service tracking, and structured reporting. Property stakeholders receive clear visibility into operational performance, maintenance status, and vendor accountability.",
-  },
-  {
-    q: "Do you offer personal or contract-based services?",
-    a: "Yes. Select personal services are available under structured contractual agreements, subject to scope definition, availability, and compliance requirements.",
-  },
-  {
-    q: "How can we begin working with Faciliya?",
-    a: "Engagement begins with an initial consultation to assess operational requirements and define scope. From there, we design a structured service framework aligned with your property’s long-term objectives.",
+    q: "What role does FACILIYA play in events?",
+    a: "FACILIYA provides disciplined staffing and operational coordination for private and corporate events. Our approach prioritizes structured execution, professional presence, and alignment with facility governance standards.",
   },
 ];
 const isCallOpen = ref(false);
@@ -1360,6 +1025,7 @@ const testimonials = [
     role: "Director of Property Management",
   },
 ];
+import { LayoutDashboard, ShieldCheck, Handshake } from "lucide-vue-next"
 
 
 const steps = [
@@ -1386,7 +1052,7 @@ const steps = [
 ];
 const modules = [Autoplay, Pagination, Navigation, A11y];
 
-
+import { ArrowUpRight } from "lucide-vue-next"
 const slides = [
   {
     title: "Integrated Facilities Management Built On Structure",

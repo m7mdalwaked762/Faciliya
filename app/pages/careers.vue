@@ -1,219 +1,255 @@
+<script setup>
+import {
+  Users,
+  Clock,
+  ShieldCheck,
+  Award,
+  ClipboardCheck,
+  Handshake,
+  FileCheck2
+} from "lucide-vue-next"
+useSeoMeta({
+  title: "Careers & Partnerships | FACILIYA",
+  description:
+    "Explore employment opportunities and vendor partnership programs with FACILIYA. Join a structured operational network focused on professionalism, reliability, and disciplined service delivery.",
+  ogTitle: "Careers & Partnerships | FACILIYA",
+  ogDescription:
+    "FACILIYA collaborates with qualified professionals and service vendors operating under structured performance and compliance standards.",
+  twitterTitle: "Careers & Partnerships | FACILIYA",
+  twitterDescription:
+    "Join FACILIYA as an employee or vendor partner in our governance-driven operations network.",
+  robots: "index, follow"
+})
+</script>
+
 <template>
+<div class="text-[#1a1a1a]">
 
-  <div class="bg-[#3F2E83] h-full w-full">
-    
+<!-- HERO (UNCHANGED) -->
+<section class="relative overflow-hidden bg-[#3F2E83] text-white">
+<div class="absolute inset-0 opacity-30" aria-hidden="true">
+<img
+src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80"
+alt="Corporate skyline"
+class="w-full h-full object-cover"
+/>
+</div>
 
- <section class="bg-[#3F2E83] text-white">
-    <div class="py-20 px-4 md:px-8 lg:px-28" >
+<div class="absolute inset-0 bg-gradient-to-br from-[#3F2E83] via-[#3F2E83]/90 to-[#1a1a1a]/80"></div>
 
-      <h1 class="font-semibold
-                    text-[38px] sm:text-[48px] lg:text-[64px]">
-            Careers
-      </h1>
+<div class=" relative py-24 px-4 md:px-8 lg:px-28">
 
-      <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
+        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase">
+          Careers & Partnerships
+        </p>
+
+        <h1 class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl">
+          Build With FACILIYA
+        </h1>
+
+        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl">
+          FACILIYA collaborates with disciplined professionals and qualified service providers
+who align with our structured operational standards. Whether you are seeking employment
+or vendor partnership, all engagements operate under performance accountability,
+compliance standards, and service discipline.
+        </p>
+        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
         <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition cursor-pointer">
           Home
         </NuxtLink>
+        
         <span class="mx-2">›</span>
         <span class="font-medium">
-        Careers
+          Careers & Partnerships
         </span>
       </div>
-
-    </div>
-
-    <!-- Bottom white divider bar -->
-    <div class="h-[10px] bg-white"></div>
-
-
-     
-  </section>
-<section class="bg-white">
-    <div class="py-20 px-4 md:px-8 lg:px-28" >
-      <!-- Header -->
-      <div class="max-w-[820px]">
-        <h2 class="text-[#1a1a1a] font-semibold text-[28px] sm:text-[34px] lg:text-[40px]">
-          Job Openings
-        </h2>
-        <p class="mt-3 text-[#1a1a1a]/70 text-[14px] sm:text-[15px] leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.
-        </p>
       </div>
-
-      <!-- Departments -->
-      <div class="mt-10 space-y-6">
-        <div
-          v-for="(dept, dIndex) in departments"
-          :key="dIndex"
-          class="border-y border-[#1a1a1a]/15"
-        >
-          <!-- Department header -->
-          <button
-            class="w-full flex items-center justify-between gap-6 py-5"
-            type="button"
-            @click="toggleDept(dIndex)"
-            :aria-expanded="openDept === dIndex"
-          >
-            <span class="text-[#1a1a1a] font-semibold text-[15px] sm:text-[16px]">
-              {{ dept.name }}
-            </span>
-
-            <!-- Chevron -->
-            <span
-              class="text-[#1a1a1a]/70 text-[18px] leading-none transition-transform duration-200"
-              :class="openDept === dIndex ? 'rotate-180' : ''"
-              aria-hidden="true"
-            >
-              ˅
-            </span>
-          </button>
-
-          <!-- Jobs list -->
-          <div v-show="openDept === dIndex" class="pb-6">
-            <div
-              v-for="(job, jIndex) in dept.jobs"
-              :key="jIndex"
-              class="py-6 border-t border-[#1a1a1a]/12"
-            >
-              <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-                <!-- Left text -->
-                <div class="md:pr-10">
-                  <p class="text-[#1a1a1a] font-semibold text-[14px] sm:text-[15px]">
-                    {{ job.title }}
-                  </p>
-                  <p class="mt-3 text-[#1a1a1a]/70 text-[13px] sm:text-[14px] leading-relaxed max-w-[820px]">
-                    {{ job.desc }}
-                  </p>
-                </div>
-
-                <!-- Apply button -->
-                <div class="md:pt-1">
-                  <a
-                    :href="job.href"
-                    class="inline-flex items-center justify-center
-                           h-[34px] px-4 rounded-[8px]
-                           border border-[#1a1a1a]/20 bg-white
-                           text-[#1a1a1a] text-[12px] font-medium
-                           hover:bg-[#f7f7f7] transition"
-                  >
-                    Apply now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom divider (like screenshot extra spacing) -->
-        <div class="border-b border-[#1a1a1a]/15"></div>
-      </div>
-    </div>
-  </section>
-  </div>
+</section>
 
 
+
+
+
+<!-- EMPLOYMENT -->
+<section class="px-4 md:px-8 lg:px-28 py-24 bg-white">
+
+<div class="max-w-3xl">
+<h2 class="text-[28px] md:text-[32px] font-semibold">
+Employment Opportunities
+</h2>
+
+<p class="mt-5 text-[16px] leading-relaxed text-[#1a1a1a]/80">
+FACILIYA continuously develops a team of professionals committed to operational precision,
+accountability, and disciplined service delivery.
+</p>
+</div>
+
+
+<!-- EMPLOYEE CARDS -->
+<div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+
+<div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<Users class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Professional Conduct
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+Employees represent FACILIYA through professionalism,
+discipline, and service awareness.
+</p>
+
+</div>
+
+
+<div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<Clock class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Reliability
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+Consistent punctuality and reliability across operational responsibilities.
+</p>
+
+</div>
+
+
+<div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<ShieldCheck class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Operational Discipline
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+Roles operate under structured procedures and defined service protocols.
+</p>
+
+</div>
+
+
+<div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<Award class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Performance Standards
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+All team members align with measurable service performance expectations.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- APPLICATION CTA -->
+<div class="mt-14">
+<EmploymentApplicationModal />
+</div>
+
+</section>
+
+
+
+<!-- VENDORS -->
+<section class="px-4 md:px-8 lg:px-28 py-24 bg-[#F7F7FB]">
+
+<div class="max-w-3xl">
+<h2 class="text-[28px] md:text-[32px] font-semibold">
+Vendor Partnerships
+</h2>
+
+<p class="mt-5 text-[16px] leading-relaxed text-[#1a1a1a]/80">
+FACILIYA partners with qualified vendors and service providers across
+facilities management, residential operations, and event services.
+All vendor relationships operate under structured governance,
+compliance review, and operational accountability.
+</p>
+</div>
+
+
+<!-- VENDOR CARDS -->
+<div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+<div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<FileCheck2 class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Compliance Review
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+Vendors undergo structured compliance and documentation review
+before approval.
+</p>
+
+</div>
+
+
+<div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<Handshake class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Operational Alignment
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+Vendor services must align with FACILIYA operational standards and
+service discipline.
+</p>
+
+</div>
+
+
+<div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+
+<div class="w-[60px] h-[60px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+<ClipboardCheck class="w-6 h-6 text-[#FDC101]" />
+</div>
+
+<h3 class="mt-6 font-semibold">
+Performance Monitoring
+</h3>
+
+<p class="mt-3 text-[14px] text-[#1a1a1a]/70 leading-relaxed">
+Approved vendors operate under structured scope expectations and
+performance oversight.
+</p>
+
+</div>
+
+</div>
+
+
+<!-- VENDOR CTA -->
+<div class="mt-14">
+<VendorRegistrationForm />
+</div>
+
+</section>
+
+</div>
 </template>
-<script setup>
-const openDept = ref(0); // first one open like screenshot
-
-const departments = [
-  {
-    name: "Job Department",
-    jobs: [
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-    ],
-  },
-  {
-    name: "Job Department",
-    jobs: [
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-    ],
-  },
-  {
-    name: "Job Department",
-    jobs: [
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-      {
-        title: "Job Title",
-        desc:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet.",
-        href: "#",
-      },
-    ],
-  },
-];
-
-function toggleDept(i) {
-  openDept.value = openDept.value === i ? -1 : i;
-}
-
-
-
-const SITE = "https://faciliyallc.com"
-const URL = `${SITE}/careers`
-
-useSeoMeta({
-  title: "Careers",
-  description:
-    "Work with Faciliya in a structured, performance-driven facilities management environment focused on accountability, operational excellence, and long-term growth.",
-  ogTitle: "Careers at Faciliya",
-  ogDescription:
-    "Join a performance-driven facilities management organization built on accountability and operational excellence.",
-  twitterCard: "summary",
-  twitterTitle: "Careers at Faciliya",
-  twitterDescription:
-    "Explore opportunities in structured facilities management operations."
-})
-
-useHead({
-  link: [{ rel: "canonical", href: URL }]
-})
-
-
-</script>
