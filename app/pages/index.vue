@@ -21,13 +21,7 @@
         />
       </SwiperSlide>
 
-      <SwiperSlide>
-        <img
-          src="/img/123.jpg"
-          alt=""
-          class="h-[100dvh] w-full object-cover object-center"
-        />
-      </SwiperSlide>
+      
       <SwiperSlide>
         <img
           src="/img/321.png"
@@ -52,21 +46,7 @@
         />
       </SwiperSlide>
 
-      <SwiperSlide>
-        <img
-          src="/img/12345.jpg"
-          alt=""
-          class="h-[100dvh] w-full object-cover object-center"
-        />
-      </SwiperSlide>
-
-      <SwiperSlide>
-        <img
-          src="/img/123456.jpg"
-          alt=""
-          class="h-[100dvh] w-full object-cover object-center"
-        />
-      </SwiperSlide>
+      
     </Swiper>
 
     <!-- STRONGER DARK OVERLAY -->
