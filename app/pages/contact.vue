@@ -3,7 +3,7 @@
 <body class="bg-[#3F2E83]">
  <section class="bg-white">
 
-    <!-- HERO (LEFT ALIGNED LIKE OTHER PAGES) -->
+    <!-- HERO -->
     <section class="bg-[#3F2E83] text-white">
       <div class="py-24 px-4 md:px-8 lg:px-28">
 
@@ -19,6 +19,7 @@
           Connect with FACILIYA to discuss your operational needs and
           request a structured consultation aligned with your asset requirements.
         </p>
+
          <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
         <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition cursor-pointer">
           Home
@@ -28,6 +29,7 @@
         Contact Us
         </span>
       </div>
+
       </div>
     </section>
 
@@ -50,7 +52,7 @@
 
 
       <!-- Contact Cards -->
-      <div class="mt-16 grid gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
 
         <!-- Phone Card -->
         <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
@@ -91,43 +93,47 @@
           </a>
         </div>
 
+
+        <!-- Location Card -->
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+          
+          <div class="w-[70px] h-[70px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+            <MapPin class="w-8 h-8 text-[#FDC101]" />
+          </div>
+
+          <h3 class="mt-6 text-[20px] font-semibold text-[#1a1a1a]">
+            Location
+          </h3>
+
+          <a
+            href="https://maps.google.com/?q=Dallas+Texas"
+            target="_blank"
+            class="mt-4 block text-[18px] text-[#1a1a1a]/80 hover:text-[#3F2E83] transition"
+          >
+            Dallas, Texas
+          </a>
+        </div>
+
       </div>
 
 
 
       <!-- CTA BUTTON -->
       <div class="mt-20 text-center">
-       <ConsultationForm />
-         
+        <ConsultationForm />
       </div>
 
     </div>
 
   </section>
-
-
-
-  
-
 </body>
+
 </template>
 
+
+
 <script setup>
-import { Phone, Mail, CalendarCheck } from "lucide-vue-next"
-
-import { reactive } from "vue";
-
-const form = reactive({
-  name: "",
-  email: "",
-  message: "",
-  terms: false,
-});
-
-function onSubmit() {
-  // hook this to your backend / email service
-  console.log("submit", { ...form });
-}
+import { Phone, Mail, CalendarCheck, MapPin } from "lucide-vue-next"
 
 const SITE = "https://faciliyallc.com"
 const URL = `${SITE}/contact`

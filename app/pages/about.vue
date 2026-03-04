@@ -34,7 +34,33 @@
 
     <!-- MISSION & VISION -->
    
+<div class="px-4 md:px-8 lg:px-28 py-24">
+      <div class="grid gap-10 md:grid-cols-2">
 
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <Target class="w-8 h-8 text-[#FDC101]" />
+          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
+            Mission
+          </h2>
+          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
+            To deliver governance-driven, intelligence-enabled facilities
+            management that stabilizes operations and protects long-term asset value.
+          </p>
+        </div>
+
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <Eye class="w-8 h-8 text-[#FDC101]" />
+          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
+            Vision
+          </h2>
+          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
+            To become a trusted operational partner across Texas through
+            structured execution and disciplined service delivery.
+          </p>
+        </div>
+
+      </div>
+    </div>
 
     <!-- LEADERSHIP (REDESIGNED) -->
     <div class="bg-[#F8F9FB]">
@@ -83,37 +109,11 @@
       </div>
     </div>
 
- <div class="px-4 md:px-8 lg:px-28 py-24">
-      <div class="grid gap-10 md:grid-cols-2">
-
-        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <Target class="w-8 h-8 text-[#FDC101]" />
-          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
-            Mission
-          </h2>
-          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
-            To deliver governance-driven, intelligence-enabled facilities
-            management that stabilizes operations and protects long-term asset value.
-          </p>
-        </div>
-
-        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <Eye class="w-8 h-8 text-[#FDC101]" />
-          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
-            Vision
-          </h2>
-          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
-            To become a trusted operational partner across Texas through
-            structured execution and disciplined service delivery.
-          </p>
-        </div>
-
-      </div>
-    </div>
+ 
 
 
     <!-- COMPLIANCE (REDESIGNED AS PREMIUM CARDS) -->
-    <div class="px-4 md:px-8 lg:px-28 py-24 bg-[#F8F9FB]">
+    <div class="px-4 md:px-8 lg:px-28 py-24 ">
 
       <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
         Compliance & Risk Framework
@@ -158,7 +158,7 @@
 
 
     <!-- INDUSTRIES SERVED (UNCHANGED BECAUSE YOU LIKED IT) -->
-    <div class="bg-white">
+    <div class="bg-[#F8F9FB]">
       <div class="px-4 md:px-8 lg:px-28 py-24">
 
         <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
@@ -223,87 +223,11 @@
   
 
 
+ 
+
+
+
   <section class="bg-white">
-    <div class="py-44 px-4 md:px-8 lg:px-28" >
-
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-
-        <!-- LEFT CONTENT -->
-        <div>
-
-          <!-- Paragraph -->
-          <p class="text-[#1a1a1a]/70 text-[16px] sm:text-[18px] leading-relaxed max-w-[640px]">
-            Faciliya delivers structured facilities management designed to bring clarity,
-            consistency, and control to daily operations. Our integrated approach replaces
-            fragmented service delivery with disciplined workflows, preventive execution,
-            and measurable performance—helping properties operate reliably while protecting
-            long-term asset value.
-          </p>
-
-          <!-- Stats -->
-          <div class="mt-12 grid grid-cols-2 gap-x-16 gap-y-12">
-
-            <div>
-              <p class="text-[#FDC101] font-semibold text-[36px] sm:text-[42px]">
-                250+
-              </p>
-              <p class="mt-2 text-[#1a1a1a]/70 text-[15px]">
-                Properties Supported
-              </p>
-            </div>
-
-            <div>
-              <p class="text-[#FDC101] font-semibold text-[36px] sm:text-[42px]">
-                100%
-              </p>
-              <p class="mt-2 text-[#1a1a1a]/70 text-[15px]">
-                Integrated Operating Model
-              </p>
-            </div>
-
-            <div>
-              <p class="text-[#FDC101] font-semibold text-[36px] sm:text-[42px]">
-                95%+
-              </p>
-              <p class="mt-2 text-[#1a1a1a]/70 text-[15px]">
-                Client Retention Rate
-              </p>
-            </div>
-
-            <div>
-              <p class="text-[#FDC101] font-semibold text-[36px] sm:text-[42px]">
-                10+ Years
-              </p>
-              <p class="mt-2 text-[#1a1a1a]/70 text-[15px]">
-                Operational Experience
-              </p>
-            </div>
-
-          </div>
-        </div>
-
-        <!-- RIGHT IMAGE -->
-        <div>
-          <div class="overflow-hidden rounded-[24px]">
-            <!-- Replace src with your actual image -->
-            <img
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
-              alt="Modern office workspace"
-              class="w-full h-[300px] sm:h-[400px] lg:h-[520px] object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-
-
-
-  <section class="bg-gray-50">
   <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
     
     <!-- Heading -->
@@ -374,7 +298,7 @@
 
 
 
-  <section class="bg-white">
+  <section class="bg-[#F8F9FB]">
     <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <!-- Heading -->
       <div class="text-center max-w-[720px] mx-auto">
@@ -432,7 +356,7 @@
 
 
 
-   <section class="bg-gray-50">
+   <section class="bg-white">
     <div class="py-44 px-4 md:px-8 lg:px-28 text-center" >
 
       <h2 class="text-[#1a1a1a] font-semibold

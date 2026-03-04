@@ -103,8 +103,7 @@ useSeoMeta({
                 Event Staffing
               </h3>
               <p class="mt-3 text-[#1a1a1a]/70">
-                Professional hosts, attendants, and guest support personnel
-                delivering structured service presence.
+                Hosts · Attendants · Guest Support
               </p>
             </div>
           </div>
@@ -119,8 +118,7 @@ useSeoMeta({
                 Venue Operational Supervision
               </h3>
               <p class="mt-3 text-[#1a1a1a]/70">
-                Setup oversight, timeline control, and structured on-site
-                coordination throughout event execution.
+                Setup Oversight · Timeline Control · On-Site Coordination
               </p>
             </div>
           </div>
@@ -135,8 +133,7 @@ useSeoMeta({
                 Vendor Coordination
               </h3>
               <p class="mt-3 text-[#1a1a1a]/70">
-                Catering teams, technical crews, and event suppliers aligned
-                under one operational control structure.
+               Catering · Technical Crew · Event Suppliers
               </p>
             </div>
           </div>
@@ -151,8 +148,7 @@ useSeoMeta({
                 VIP & Guest Management
               </h3>
               <p class="mt-3 text-[#1a1a1a]/70">
-                Guest flow control, hospitality oversight, and access
-                coordination for high-profile attendees.
+                Guest Flow Control · Hospitality Oversight · Access Coordination
               </p>
             </div>
           </div>

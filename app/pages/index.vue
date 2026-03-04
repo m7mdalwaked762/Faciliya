@@ -23,7 +23,46 @@
 
       <SwiperSlide>
         <img
-          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1920&q=80"
+          src="/img/123.jpg"
+          alt=""
+          class="h-[100dvh] w-full object-cover object-center"
+        />
+      </SwiperSlide>
+      <SwiperSlide>
+        <img
+          src="/img/321.png"
+          alt=""
+          class="h-[100dvh] w-full object-cover object-center"
+        />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <img
+          src="/img/213.webp"
+          alt=""
+          class="h-[100dvh] w-full object-cover object-center"
+        />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <img
+          src="/img/1234.webp"
+          alt=""
+          class="h-[100dvh] w-full object-cover object-center"
+        />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <img
+          src="/img/12345.jpg"
+          alt=""
+          class="h-[100dvh] w-full object-cover object-center"
+        />
+      </SwiperSlide>
+
+      <SwiperSlide>
+        <img
+          src="/img/123456.jpg"
           alt=""
           class="h-[100dvh] w-full object-cover object-center"
         />
@@ -69,155 +108,7 @@
 
   </div>
  
-  
-
-<section class="bg-white">
-  <div class="py-44 px-4 md:px-8 lg:px-28">
-
-    <!-- Heading -->
-    <div class="max-w-3xl">
-      <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
-        Why FACILIYA
-      </h2>
-
-      <p class="mt-6 text-[18px] text-gray-600 leading-relaxed max-w-2xl">
-        Facilities operations fail when they become reactive and fragmented.
-        FACILIYA replaces scattered decisions with a disciplined operational
-        structure designed for stability, accountability, and long-term asset protection.
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-      <!-- Card 1 -->
-      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
-          <LayoutDashboard class="w-6 h-6 text-[#FDC101]" />
-        </div>
-
-        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
-          Structured Operations
-        </h3>
-
-        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
-          Facilities operations become unreliable when they are reactive and fragmented.
-          Most properties suffer not from lack of effort, but from lack of structure.
-          FACILIYA replaces scattered vendors and improvised decisions with a coordinated
-          operating system that brings clarity, consistency, and accountability.
-        </p>
-
-      </div>
-
-      <!-- Card 2 -->
-      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
-          <ShieldCheck class="w-6 h-6 text-[#FDC101]" />
-        </div>
-
-        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
-          Preventive Oversight
-        </h3>
-
-        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
-          Our model is built around preventive thinking, disciplined oversight,
-          and documented execution. Issues are identified early, managed correctly,
-          and closed out with full operational visibility, reducing risk and
-          protecting long-term asset value.
-        </p>
-
-      </div>
-
-      <!-- Card 3 -->
-      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
-          <Handshake class="w-6 h-6 text-[#FDC101]" />
-        </div>
-
-        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
-          Long-Term Partnership
-        </h3>
-
-        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
-          FACILIYA operates as a long-term operational partner rather than a
-          task-based service provider. We take responsibility for outcomes,
-          not just activities, ensuring facilities remain stable, presentable,
-          and predictable.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-
-
- <section class="bg-gray-50 " >
-  <div class="mx-auto py-12 px-4 md:px-8 lg:px-28">
-    
-    <!-- Heading -->
-    <h2
-      class="text-center font-semibold text-gray-900
-             text-[22px] sm:text-[26px] lg:text-[32px]"  
-    >
-      Certifications &amp; Industry Alignment
-    </h2>
-
-    <!-- Logos -->
-    <div  
-      class="mt-8 flex flex-col items-center gap-8
-             sm:flex-row sm:flex-wrap sm:justify-center
-             lg:flex-row lg:justify-between"
-    >
-      <!-- BOMA -->
-      <img
-        src="/logos/boma.png"
-        alt="BOMA"
-        class="h-14 lg:h-16 w-auto object-contain"
-        loading="lazy"
-      />
-
-      <!-- USGBC (Bigger) -->
-      <img
-        src="/logos/usgbc.png"
-        alt="USGBC"
-        class="h-16 lg:h-20 w-auto object-contain"
-        loading="lazy"
-      />
-
-      <!-- LEED Green (Bigger) -->
-      <img
-        src="/logos/leed-ga.png"
-        alt="LEED Green Associate"
-        class="h-16 lg:h-20 w-auto object-contain"
-        loading="lazy"
-      />
-
-      <!-- OSHA -->
-      <img
-        src="/logos/osha.png"
-        alt="OSHA"
-        class="h-14 lg:h-16 w-auto object-contain"
-        loading="lazy"
-      />
-
-      <!-- IFMA -->
-      <img
-        src="/logos/ifma-dfw.png"
-        alt="IFMA Dallas/Fort Worth Chapter"
-        class="h-14 lg:h-16 w-auto object-contain"
-        loading="lazy"
-      />
-    </div>
-
-  </div>
-</section>
-<section class="bg-white">
+  <section class="bg-white">
   <div class="px-4 md:px-8 lg:px-28 py-20">
 
     <!-- SECTION HEADER -->
@@ -376,6 +267,154 @@
 
   </div>
 </section>
+
+<section class="bg-[#F8F9FB]">
+  <div class="py-44 px-4 md:px-8 lg:px-28">
+
+    <!-- Heading -->
+    <div class="max-w-3xl">
+      <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
+        Why FACILIYA
+      </h2>
+
+      <p class="mt-6 text-[18px] text-gray-600 leading-relaxed max-w-2xl">
+        Facilities operations fail when they become reactive and fragmented.
+        FACILIYA replaces scattered decisions with a disciplined operational
+        structure designed for stability, accountability, and long-term asset protection.
+      </p>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Card 1 -->
+      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
+
+        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
+          <LayoutDashboard class="w-6 h-6 text-[#FDC101]" />
+        </div>
+
+        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
+          Structured Operations
+        </h3>
+
+        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
+          Facilities operations become unreliable when they are reactive and fragmented.
+          Most properties suffer not from lack of effort, but from lack of structure.
+          FACILIYA replaces scattered vendors and improvised decisions with a coordinated
+          operating system that brings clarity, consistency, and accountability.
+        </p>
+
+      </div>
+
+      <!-- Card 2 -->
+      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
+
+        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
+          <ShieldCheck class="w-6 h-6 text-[#FDC101]" />
+        </div>
+
+        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
+          Preventive Oversight
+        </h3>
+
+        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
+          Our model is built around preventive thinking, disciplined oversight,
+          and documented execution. Issues are identified early, managed correctly,
+          and closed out with full operational visibility, reducing risk and
+          protecting long-term asset value.
+        </p>
+
+      </div>
+
+      <!-- Card 3 -->
+      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
+
+        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
+          <Handshake class="w-6 h-6 text-[#FDC101]" />
+        </div>
+
+        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
+          Long-Term Partnership
+        </h3>
+
+        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
+          FACILIYA operates as a long-term operational partner rather than a
+          task-based service provider. We take responsibility for outcomes,
+          not just activities, ensuring facilities remain stable, presentable,
+          and predictable.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+ <section class="bg-white" >
+  <div class="mx-auto py-12 px-4 md:px-8 lg:px-28">
+    
+    <!-- Heading -->
+    <h2
+      class="text-center font-semibold text-gray-900
+             text-[22px] sm:text-[26px] lg:text-[32px]"  
+    >
+      Certifications &amp; Industry Alignment
+    </h2>
+
+    <!-- Logos -->
+    <div  
+      class="mt-8 flex flex-col items-center gap-8
+             sm:flex-row sm:flex-wrap sm:justify-center
+             lg:flex-row lg:justify-between"
+    >
+      <!-- BOMA -->
+      <img
+        src="/logos/boma.png"
+        alt="BOMA"
+        class="h-14 lg:h-16 w-auto object-contain"
+        loading="lazy"
+      />
+
+      <!-- USGBC (Bigger) -->
+      <img
+        src="/logos/usgbc.png"
+        alt="USGBC"
+        class="h-16 lg:h-20 w-auto object-contain"
+        loading="lazy"
+      />
+
+      <!-- LEED Green (Bigger) -->
+      <img
+        src="/logos/leed-ga.png"
+        alt="LEED Green Associate"
+        class="h-16 lg:h-20 w-auto object-contain"
+        loading="lazy"
+      />
+
+      <!-- OSHA -->
+      <img
+        src="/logos/osha.png"
+        alt="OSHA"
+        class="h-14 lg:h-16 w-auto object-contain"
+        loading="lazy"
+      />
+
+      <!-- IFMA -->
+      <img
+        src="/logos/ifma-dfw.png"
+        alt="IFMA Dallas/Fort Worth Chapter"
+        class="h-14 lg:h-16 w-auto object-contain"
+        loading="lazy"
+      />
+    </div>
+
+  </div>
+</section>
+
  
 
 
@@ -756,7 +795,14 @@
     </div>
   </section>
 
- <div class="px-4 md:px-8 lg:px-28 py-24 bg-[#F8F9FB]" >
+
+
+<section class="bg-[#F8F9FB]" >
+
+      <!-- CTA BUTTON -->
+      
+
+     <div class="px-4 md:px-8 lg:px-28 py-24">
 
       <!-- Section Title -->
       <div class="text-center">
@@ -772,10 +818,10 @@
 
 
       <!-- Contact Cards -->
-      <div class="mt-16 grid gap-8 sm:grid-cols-2 max-w-3xl mx-auto">
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
 
         <!-- Phone Card -->
-        <div class="bg-white p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
           
           <div class="w-[70px] h-[70px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
             <Phone class="w-8 h-8 text-[#FDC101]" />
@@ -795,7 +841,7 @@
 
 
         <!-- Email Card -->
-        <div class="bg-white p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
           
           <div class="w-[70px] h-[70px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
             <Mail class="w-8 h-8 text-[#FDC101]" />
@@ -813,14 +859,39 @@
           </a>
         </div>
 
+
+        <!-- Location Card -->
+        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
+          
+          <div class="w-[70px] h-[70px] mx-auto flex items-center justify-center rounded-full bg-[#FDC101]/15">
+            <MapPin class="w-8 h-8 text-[#FDC101]" />
+          </div>
+
+          <h3 class="mt-6 text-[20px] font-semibold text-[#1a1a1a]">
+            Location
+          </h3>
+
+          <a
+            href="https://maps.google.com/?q=Dallas+Texas"
+            target="_blank"
+            class="mt-4 block text-[18px] text-[#1a1a1a]/80 hover:text-[#3F2E83] transition"
+          >
+            Dallas, Texas
+          </a>
+        </div>
+
       </div>
 
 
 
       <!-- CTA BUTTON -->
-      
+      <div class="mt-20 text-center">
+        <ConsultationForm />
+      </div>
 
     </div>
+
+  </section>
 
 
 
@@ -863,7 +934,7 @@
 </template>
 
 <script setup>
-import { Phone, Mail, CalendarCheck } from "lucide-vue-next"
+import { Phone, Mail, CalendarCheck, MapPin } from "lucide-vue-next"
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper/modules";
