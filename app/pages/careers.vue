@@ -160,9 +160,10 @@ All team members align with measurable service performance expectations.
 
 
 <!-- APPLICATION CTA -->
-<div class="mt-14">
-<EmploymentApplicationModal />
+<div class="mt-14 flex justify-center sm:justify-start">
+  <EmploymentApplicationModal />
 </div>
+
 
 </section>
 
@@ -245,8 +246,8 @@ performance oversight.
 
 
 <!-- VENDOR CTA -->
-<div class="mt-14">
-<VendorRegistrationForm />
+<div class="mt-14 flex justify-center sm:justify-start">
+  <VendorRegistrationForm />
 </div>
 
 </section>
