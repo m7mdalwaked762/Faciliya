@@ -13,7 +13,7 @@ app: {
        {
         rel: "icon",
         type: "image/png",
-        href: "/Group 38(2).png",
+        href: "/favicon.png",
       }
     ],
       htmlAttrs: { lang: "en" },
