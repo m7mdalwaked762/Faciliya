@@ -463,7 +463,7 @@ const SITE = "https://faciliyallc.com"
 const URL = `${SITE}/about`
 
 useSeoMeta({
-  title: "About",
+  title: "About | FACILIYA",
   description:
     "Learn how Faciliya delivers structured Integrated Facilities Management built on disciplined workflows, accountable oversight, and measurable performance visibility.",
   ogTitle: "About Faciliya | Structured IFM Operations",
