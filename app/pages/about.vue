@@ -3,22 +3,22 @@
     <section class="bg-white">
 
     <!-- HERO -->
-    <section class="bg-[#3F2E83] text-white">
+    <section class="bg-[#3F2E83] text-white" >
       <div class="py-24 px-4 md:px-8 lg:px-28">
-        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase">
+        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase" data-aos="fade-up" data-aos-delay="100">
           About FACILIYA
         </p>
 
-        <h1 class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl">
+        <h1 class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl" data-aos="fade-up" data-aos-delay="100">
           Governance-Driven Operational Leadership
         </h1>
 
-        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl">
+        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl" data-aos="fade-up" data-aos-delay="100">
           FACILIYA operates under a structured Integrated Facilities
           Management model designed to stabilize operations, protect asset
           value, and deliver disciplined service execution across Texas.
         </p>
-        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
+        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]" data-aos="fade-up" data-aos-delay="100">
         <NuxtLink to="/" class="opacity-80 hover:opacity-100 transition cursor-pointer">
           Home
         </NuxtLink>
@@ -35,44 +35,49 @@
     <!-- MISSION & VISION -->
    
 <div class="px-4 md:px-8 lg:px-28 py-24">
-      <div class="grid gap-10 md:grid-cols-2">
-
-        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <Target class="w-8 h-8 text-[#FDC101]" />
-          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
-            Mission
-          </h2>
-          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
-            To deliver governance-driven, intelligence-enabled facilities
-            management that stabilizes operations and protects long-term asset value.
-          </p>
-        </div>
-
-        <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <Eye class="w-8 h-8 text-[#FDC101]" />
-          <h2 class="mt-6 text-[24px] font-semibold text-[#1a1a1a]">
-            Vision
-          </h2>
-          <p class="mt-4 text-[17px] text-[#1a1a1a]/75 leading-relaxed">
-            To become a trusted operational partner across Texas through
-            structured execution and disciplined service delivery.
-          </p>
-        </div>
-
+  <div class="grid gap-12 md:grid-cols-2">
+    <!-- Mission -->
+    <div data-aos="fade-right" data-aos-delay="100">
+      <div class="flex items-center gap-4">
+        <Target class="w-8 h-8 text-[#FDC101]" />
+        <h2 class="text-[24px] font-semibold text-[#1a1a1a]">Mission</h2>
       </div>
+
+      <div class="mt-6 h-[2px] w-14 bg-[#FDC101]"></div>
+
+      <p class="mt-6 text-[17px] text-[#1a1a1a]/75 leading-relaxed max-w-[62ch]">
+        To deliver governance-driven, intelligence-enabled facilities
+        management that stabilizes operations and protects long-term asset value.
+      </p>
     </div>
 
+    <!-- Vision -->
+    <div data-aos="fade-left" data-aos-delay="100">
+      <div class="flex items-center gap-4">
+        <Eye class="w-8 h-8 text-[#FDC101]" />
+        <h2 class="text-[24px] font-semibold text-[#1a1a1a]">Vision</h2>
+      </div>
+
+      <div class="mt-6 h-[2px] w-14 bg-[#FDC101]"></div>
+
+      <p class="mt-6 text-[17px] text-[#1a1a1a]/75 leading-relaxed max-w-[62ch]">
+        To become a trusted operational partner across Texas through
+        structured execution and disciplined service delivery.
+      </p>
+    </div>
+  </div>
+</div>
     <!-- LEADERSHIP (REDESIGNED) -->
     <div class="bg-[#F8F9FB]">
       <div class="px-4 md:px-8 lg:px-28 py-24">
 
-        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]" data-aos="fade-up" data-aos-delay="100">
           Leadership & Operational Foundation
         </h2>
 
         <div class="mt-16 grid gap-8 md:grid-cols-3">
 
-          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition" data-aos="fade-right" data-aos-delay="100">
             <Users class="w-7 h-7 text-[#FDC101]" />
             <h3 class="mt-6 font-semibold text-[#1a1a1a]">
               Direct Field Experience
@@ -83,7 +88,7 @@
             </p>
           </div>
 
-          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition" data-aos="fade-right" data-aos-delay="100">
             <Briefcase class="w-7 h-7 text-[#FDC101]" />
             <h3 class="mt-6 font-semibold text-[#1a1a1a]">
               Structured Governance
@@ -94,7 +99,7 @@
             </p>
           </div>
 
-          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
+          <div class="bg-white p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition" data-aos="fade-right" data-aos-delay="100">
             <Award class="w-7 h-7 text-[#FDC101]" />
             <h3 class="mt-6 font-semibold text-[#1a1a1a]">
               Execution Discipline
@@ -113,47 +118,56 @@
 
 
     <!-- COMPLIANCE (REDESIGNED AS PREMIUM CARDS) -->
-    <div class="px-4 md:px-8 lg:px-28 py-24 ">
+    <div class="px-4 md:px-8 lg:px-28 py-24">
+  <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]" data-aos="fade-up" data-aos-delay="100">
+    Compliance & Risk Framework
+  </h2>
 
-      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
-        Compliance & Risk Framework
-      </h2>
-
-      <div class="mt-16 grid gap-8 md:grid-cols-3">
-
-        <div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <ShieldCheck class="w-7 h-7 text-[#FDC101]" />
-          <h3 class="mt-6 font-semibold text-[#1a1a1a]">
-            Liability Coverage
-          </h3>
-          <p class="mt-4 text-[#1a1a1a]/70 text-[16px]">
-            General liability coverage maintained across all service engagements.
-          </p>
-        </div>
-
-        <div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <FileCheck2 class="w-7 h-7 text-[#FDC101]" />
-          <h3 class="mt-6 font-semibold text-[#1a1a1a]">
-            Regulatory Alignment
-          </h3>
-          <p class="mt-4 text-[#1a1a1a]/70 text-[16px]">
-            Adherence to Texas regulatory, safety, and compliance standards.
-          </p>
-        </div>
-
-        <div class="bg-[#F8F9FB] p-8 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition">
-          <Crown class="w-7 h-7 text-[#FDC101]" />
-          <h3 class="mt-6 font-semibold text-[#1a1a1a]">
-            Risk Control
-          </h3>
-          <p class="mt-4 text-[#1a1a1a]/70 text-[16px]">
-            Structured operational oversight minimizing exposure and
-            protecting asset stakeholders.
-          </p>
-        </div>
-
+  <div class="mt-16 space-y-6" >
+    <!-- Item -->
+    <div class="flex gap-5 border-l-4 border-[#FDC101] pl-6 py-4" data-aos="fade-right" data-aos-delay="100">
+      <div class="mt-1">
+        <ShieldCheck class="w-7 h-7 text-[#FDC101]" />
+      </div>
+      <div class="flex-1">
+        <h3 class="font-semibold text-[#1a1a1a] text-[18px]">
+          Liability Coverage
+        </h3>
+        <p class="mt-2 text-[#1a1a1a]/70 text-[16px] leading-relaxed">
+          General liability coverage maintained across all service engagements.
+        </p>
       </div>
     </div>
+
+    <div class="flex gap-5 border-l-4 border-[#FDC101] pl-6 py-4" data-aos="fade-right" data-aos-delay="100">
+      <div class="mt-1">
+        <FileCheck2 class="w-7 h-7 text-[#FDC101]" />
+      </div>
+      <div class="flex-1">
+        <h3 class="font-semibold text-[#1a1a1a] text-[18px]">
+          Regulatory Alignment
+        </h3>
+        <p class="mt-2 text-[#1a1a1a]/70 text-[16px] leading-relaxed">
+          Adherence to Texas regulatory, safety, and compliance standards.
+        </p>
+      </div>
+    </div>
+
+    <div class="flex gap-5 border-l-4 border-[#FDC101] pl-6 py-4" data-aos="fade-right" data-aos-delay="100">
+      <div class="mt-1">
+        <Crown class="w-7 h-7 text-[#FDC101]" />
+      </div>
+      <div class="flex-1">
+        <h3 class="font-semibold text-[#1a1a1a] text-[18px]">
+          Risk Control
+        </h3>
+        <p class="mt-2 text-[#1a1a1a]/70 text-[16px] leading-relaxed">
+          Structured operational oversight minimizing exposure and protecting asset stakeholders.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -161,11 +175,11 @@
     <div class="bg-[#F8F9FB]">
       <div class="px-4 md:px-8 lg:px-28 py-24">
 
-        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]" data-aos="fade-up" data-aos-delay="100">
           Industries Served
         </h2>
 
-        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3" data-aos="fade-up" data-aos-delay="100">
 
           <div class="bg-white rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition">
             <Building2 class="mx-auto w-7 h-7 text-[#FDC101]" />
@@ -233,7 +247,7 @@
     <!-- Heading -->
     <h2
       class="text-center font-semibold text-gray-900
-             text-[22px] sm:text-[26px] lg:text-[32px]"
+             text-[22px] sm:text-[26px] lg:text-[32px]" data-aos="fade-up" data-aos-delay="100"
     >
       Certifications &amp; Industry Alignment
     </h2>
@@ -242,7 +256,7 @@
     <div
       class="mt-8 flex flex-col items-center gap-8
              sm:flex-row sm:flex-wrap sm:justify-center
-             lg:flex-row lg:justify-between"
+             lg:flex-row lg:justify-between" data-aos="fade-right" data-aos-delay="100"
     >
       <!-- BOMA -->
       <img
@@ -302,17 +316,17 @@
     <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <!-- Heading -->
       <div class="text-center max-w-[720px] mx-auto">
-        <h2 class="text-[#1a1a1a] font-semibold text-[26px] sm:text-[32px] lg:text-[38px]">
+        <h2 class="text-[#1a1a1a] font-semibold text-[26px] sm:text-[32px] lg:text-[38px]" data-aos="fade-up" data-aos-delay="100">
           Frequently asked questions
         </h2>
-        <p class="mt-3 text-[#1a1a1a]/70 text-[13px] sm:text-[14px] leading-relaxed">
+        <p class="mt-3 text-[#1a1a1a]/70 text-[13px] sm:text-[14px] leading-relaxed" data-aos="fade-up" data-aos-delay="100">
           Frequently asked questions ordered by popularity. Remember that if the visitor has not committed to the call
           to action, they may still have questions (doubts) that can be answered.
         </p>
       </div>
 
       <!-- FAQ list -->
-      <div class="mt-10 max-w-[680px] mx-auto space-y-4">
+      <div class="mt-10 max-w-[680px] mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
         <div
           v-for="(item, i) in faqs"
           :key="i"
@@ -360,13 +374,13 @@
     <div class="py-44 px-4 md:px-8 lg:px-28 text-center" >
 
       <h2 class="text-[#1a1a1a] font-semibold
-                 text-[34px] sm:text-[44px] lg:text-[56px]">
+                 text-[34px] sm:text-[44px] lg:text-[56px]" data-aos="fade-up" data-aos-delay="100">
         Work with us
       </h2>
 
       <p class="mt-6 text-[#1a1a1a]/70
-                text-[16px] sm:text-[18px] lg:text-[19px]
-                leading-relaxed max-w-[900px] mx-auto">
+                text-[16px] sm:text-[18px] lg:text-[19px]" data-aos="fade-up" data-aos-delay="100">
+               
         Build your career with Faciliya. We offer opportunities to grow within a structured,
         performance-driven facilities management environment.
       </p>
@@ -378,7 +392,7 @@
                text-[16px] font-semibold text-[#1a1a1a]
                hover:brightness-95 active:brightness-90
                transition"
-        type="button"
+        type="button" data-aos="fade-up" data-aos-delay="100"
       >
         Join our team
       </NuxtLink>

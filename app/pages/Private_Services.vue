@@ -29,22 +29,36 @@ const cardLayout =
     <!-- HERO -->
     <section class="bg-[#3F2E83] text-white">
       <div class="py-24 px-4 md:px-8 lg:px-28">
-        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase">
+        <p
+          class="text-[#FDC101] text-[14px] tracking-[2px] uppercase"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Private Client Staffing
         </p>
 
         <h1
           class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl"
+          data-aos="fade-up"
+          data-aos-delay="150"
         >
           Structured Monthly Personal Staffing Solutions
         </h1>
 
-        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl">
+        <p
+          class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           FACILIYA provides reliable, discreet, and professionally managed
           monthly staffing services for private residential clients.
         </p>
 
-        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
+        <div
+          class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]"
+          data-aos="fade-up"
+          data-aos-delay="250"
+        >
           <NuxtLink
             to="/"
             class="opacity-80 hover:opacity-100 transition cursor-pointer"
@@ -63,12 +77,18 @@ const cardLayout =
 
     <!-- EXECUTIVE OVERVIEW -->
     <div class="px-4 md:px-8 lg:px-28 py-24">
-      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+      <h2
+        class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         Service Overview
       </h2>
 
       <div
         class="mt-8 space-y-6 text-[17px] text-[#1a1a1a]/80 leading-relaxed max-w-4xl"
+        data-aos="fade-up"
+        data-aos-delay="150"
       >
         <p>
           FACILIYA delivers structured personal staffing under disciplined
@@ -84,15 +104,23 @@ const cardLayout =
     </div>
 
     <!-- SERVICES -->
-    <div class="bg-[#F8F9FB]">
+    <div class="bg-[#F8F9FB] overflow-x-hidden">
       <div class="px-4 md:px-8 lg:px-28 py-24">
-        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+        <h2
+          class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           Monthly-Based Personal Staffing Solutions
         </h2>
 
         <div class="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <!-- Card 1 -->
-          <div :class="`${cardBase} ${cardLayout}`">
+          <div
+            :class="`${cardBase} ${cardLayout}`"
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
             <div :class="iconCircle">
               <User class="w-7 h-7 text-[#FDC101]" />
             </div>
@@ -107,7 +135,11 @@ const cardLayout =
           </div>
 
           <!-- Card 2 -->
-          <div :class="`${cardBase} ${cardLayout}`">
+          <div
+            :class="`${cardBase} ${cardLayout}`"
+            data-aos="fade-up"
+            data-aos-delay="120"
+          >
             <div :class="iconCircle">
               <Car class="w-7 h-7 text-[#FDC101]" />
             </div>
@@ -122,7 +154,11 @@ const cardLayout =
           </div>
 
           <!-- Card 3 -->
-          <div :class="`${cardBase} ${cardLayout}`">
+          <div
+            :class="`${cardBase} ${cardLayout}`"
+            data-aos="fade-up"
+            data-aos-delay="240"
+          >
             <div :class="iconCircle">
               <HeartHandshake class="w-7 h-7 text-[#FDC101]" />
             </div>

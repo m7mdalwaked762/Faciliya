@@ -41,22 +41,22 @@ const cardLayout =
     <!-- HERO -->
     <section class="bg-[#3F2E83] text-white">
       <div class="py-24 px-4 md:px-8 lg:px-28">
-        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase">
+        <p class="text-[#FDC101] text-[14px] tracking-[2px] uppercase" data-aos="fade-up" data-aos-delay="100">
           Corporate & Asset Governance
         </p>
 
         <h1
-          class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl"
+          class="mt-6 text-[36px] md:text-[48px] font-semibold leading-tight max-w-4xl" data-aos="fade-up" data-aos-delay="150"
         >
           Intelligence-Enabled Integrated Facilities Management
         </h1>
 
-        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl">
+        <p class="mt-8 text-white/80 text-[18px] leading-relaxed max-w-3xl" data-aos="fade-up" data-aos-delay="200">
           FACILIYA LLC delivers governance-driven iFM for high-rise, mixed-use,
           hospitality, and commercial assets across Texas.
         </p>
 
-        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]">
+        <div class="mt-4 text-[#FDC101] text-[13px] sm:text-[14px]" data-aos="fade-up" data-aos-delay="250">
           <NuxtLink
             to="/"
             class="opacity-80 hover:opacity-100 transition cursor-pointer"
@@ -75,12 +75,12 @@ const cardLayout =
 
     <!-- EXECUTIVE OVERVIEW -->
     <div class="px-4 md:px-8 lg:px-28 py-24">
-      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]" data-aos="fade-up" data-aos-delay="100">
         Executive Overview
       </h2>
 
       <div
-        class="mt-8 space-y-6 text-[17px] text-[#1a1a1a]/80 leading-relaxed max-w-4xl"
+        class="mt-8 space-y-6 text-[17px] text-[#1a1a1a]/80 leading-relaxed max-w-4xl" data-aos="fade-up" data-aos-delay="150"
       >
         <p>
           We unify operations under structured governance architecture —
@@ -96,13 +96,13 @@ const cardLayout =
     </div>
 
     <!-- SERVICES -->
-    <div class="bg-[#F8F9FB]">
+    <div class="bg-[#F8F9FB]" data-aos="fade-up" data-aos-delay="100">
       <div class="px-4 md:px-8 lg:px-28 py-24">
-        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+        <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]" >
           Services We Deliver
         </h2>
 
-        <div class="mt-16 grid gap-8 md:grid-cols-2">
+        <div class="mt-16 grid gap-8 md:grid-cols-2" >
           <!-- 1 -->
           <div :class="`${cardBase} ${cardLayout}`">
             <div :class="iconCircle">
@@ -200,12 +200,12 @@ const cardLayout =
     </div>
 
     <!-- GOVERNANCE PACKAGES -->
-    <div class="px-4 md:px-8 lg:px-28 py-24 bg-white">
-      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+    <div class="px-4 md:px-8 lg:px-28 py-24 bg-white" data-aos="fade-up" data-aos-delay="100">
+      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]" > 
         Governance Packages
       </h2>
 
-      <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+      <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-5" >
         <div
           class="bg-[#F8F9FB] rounded-2xl p-8 text-center border border-[#1a1a1a]/10 hover:shadow-xl transition"
         >
@@ -269,13 +269,13 @@ const cardLayout =
     </div>
 
     <!-- TRAINING -->
-    <div class="px-4 md:px-8 lg:px-28 py-24">
-      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]">
+    <div class="px-4 md:px-8 lg:px-28 py-24" > 
+      <h2 class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]"  >
         Continuous Internal Training
       </h2>
 
       <div
-        class="mt-8 space-y-6 text-[17px] text-[#1a1a1a]/80 leading-relaxed max-w-4xl"
+        class="mt-8 space-y-6 text-[17px] text-[#1a1a1a]/80 leading-relaxed max-w-4xl" 
       >
         <p>
           FACILIYA maintains structured internal capability calibration programs

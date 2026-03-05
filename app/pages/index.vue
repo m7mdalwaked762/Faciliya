@@ -64,18 +64,18 @@
           <h1 class="text-[clamp(2rem,4vw,3.5rem)]
                      font-extrabold
                      leading-tight
-                     drop-shadow-[0_4px_25px_rgba(0,0,0,0.7)]">
+                     drop-shadow-[0_4px_25px_rgba(0,0,0,0.7)]"  data-aos="fade-up" data-aos-delay="0" >
             FACILIYA LLC <br>
             Structured Operations. Intelligent Oversight. Reliable Execution.
           </h1>
 
           <!-- Paragraph -->
-          <p class="mt-5 text-white/95 leading-relaxed text-[16px] sm:text-[18px] drop-shadow-md">
+          <p class="mt-5 text-white/95 leading-relaxed text-[16px] sm:text-[18px] drop-shadow-md"  data-aos="fade-up" data-aos-delay="00" >
             Integrated Facilities Management, Private Staffing, and Event Support Services across Texas.
           </p>
 
           <!-- Buttons -->
-          <div class="mt-8 flex flex-wrap gap-5">
+          <div class="mt-8 flex flex-wrap gap-5"  data-aos="fade-up" data-aos-delay="0">
 
             
            
@@ -93,11 +93,11 @@
 
     <!-- SECTION HEADER -->
     <div class="text-center max-w-3xl mx-auto">
-      <h2 class="text-[32px] md:text-[40px] font-semibold text-[#1a1a1a] tracking-tight">
+      <h2 class="text-[32px] md:text-[40px] font-semibold text-[#1a1a1a] tracking-tight" data-aos="fade-up" data-aos-delay="100">
         Our Divisions
       </h2>
 
-      <p class="mt-4 text-[16px] md:text-[18px] text-[#1a1a1a]/70 leading-relaxed">
+      <p class="mt-4 text-[16px] md:text-[18px] text-[#1a1a1a]/70 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
         Structured operational delivery across corporate, private, and event environments.
       </p>
     </div>
@@ -111,7 +111,7 @@
                bg-white border border-[#1a1a1a]/10
                rounded-2xl p-10 min-h-[340px]
                transition-all duration-300
-               hover:-translate-y-2 hover:shadow-2xl"
+               hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-right" data-aos-delay="100"
       >
 
         <div>
@@ -159,7 +159,7 @@
                bg-white border border-[#1a1a1a]/10
                rounded-2xl p-10 min-h-[340px]
                transition-all duration-300
-               hover:-translate-y-2 hover:shadow-2xl"
+               hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-right" data-aos-delay="100"
       >
 
         <div>
@@ -205,7 +205,7 @@
                bg-white border border-[#1a1a1a]/10
                rounded-2xl p-10 min-h-[340px]
                transition-all duration-300
-               hover:-translate-y-2 hover:shadow-2xl"
+               hover:-translate-y-2 hover:shadow-2xl" data-aos="fade-right" data-aos-delay="100"
       >
 
         <div>
@@ -248,99 +248,17 @@
   </div>
 </section>
 
-<section class="bg-[#F8F9FB]">
-  <div class="py-44 px-4 md:px-8 lg:px-28">
-
-    <!-- Heading -->
-    <div class="max-w-3xl">
-      <h2 class="text-[32px] md:text-[40px] lg:text-[48px] font-bold text-gray-900 leading-tight">
-        Why FACILIYA
-      </h2>
-
-      <p class="mt-6 text-[18px] text-gray-600 leading-relaxed max-w-2xl">
-        Facilities operations fail when they become reactive and fragmented.
-        FACILIYA replaces scattered decisions with a disciplined operational
-        structure designed for stability, accountability, and long-term asset protection.
-      </p>
-    </div>
-
-    <!-- Cards -->
-    <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-
-      <!-- Card 1 -->
-      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
-          <LayoutDashboard class="w-6 h-6 text-[#FDC101]" />
-        </div>
-
-        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
-          Structured Operations
-        </h3>
-
-        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
-          Facilities operations become unreliable when they are reactive and fragmented.
-          Most properties suffer not from lack of effort, but from lack of structure.
-          FACILIYA replaces scattered vendors and improvised decisions with a coordinated
-          operating system that brings clarity, consistency, and accountability.
-        </p>
-
-      </div>
-
-      <!-- Card 2 -->
-      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
-          <ShieldCheck class="w-6 h-6 text-[#FDC101]" />
-        </div>
-
-        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
-          Preventive Oversight
-        </h3>
-
-        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
-          Our model is built around preventive thinking, disciplined oversight,
-          and documented execution. Issues are identified early, managed correctly,
-          and closed out with full operational visibility, reducing risk and
-          protecting long-term asset value.
-        </p>
-
-      </div>
-
-      <!-- Card 3 -->
-      <div class=" p-10 rounded-2xl border border-gray-200 hover:shadow-lg transition">
-
-        <div class="w-[60px] h-[60px] flex items-center justify-center rounded-full bg-[#FDC101]/15">
-          <Handshake class="w-6 h-6 text-[#FDC101]" />
-        </div>
-
-        <h3 class="mt-6 text-[20px] font-semibold text-gray-900">
-          Long-Term Partnership
-        </h3>
-
-        <p class="mt-4 text-[16px] text-gray-600 leading-relaxed">
-          FACILIYA operates as a long-term operational partner rather than a
-          task-based service provider. We take responsibility for outcomes,
-          not just activities, ensuring facilities remain stable, presentable,
-          and predictable.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
 
 
 
- <section class="bg-white" >
+
+ <section class="bg-[#F8F9FB]" >
   <div class="mx-auto py-12 px-4 md:px-8 lg:px-28">
     
     <!-- Heading -->
     <h2
       class="text-center font-semibold text-gray-900
-             text-[22px] sm:text-[26px] lg:text-[32px]"  
+             text-[22px] sm:text-[26px] lg:text-[32px]" data-aos="fade-up" data-aos-delay="100"  
     >
       Certifications &amp; Industry Alignment
     </h2>
@@ -349,7 +267,7 @@
     <div  
       class="mt-8 flex flex-col items-center gap-8
              sm:flex-row sm:flex-wrap sm:justify-center
-             lg:flex-row lg:justify-between"
+             lg:flex-row lg:justify-between" data-aos="fade-up" data-aos-delay="100"
     >
       <!-- BOMA -->
       <img
@@ -407,14 +325,14 @@
 
 
 
-<section class="bg-[#F8F9FB]" >
+<section class="bg-white" >
     <div class="mx-auto py-44 px-4 md:px-8 lg:px-28">
       <div class="flex flex-col lg:flex-row lg:items-start gap-16 lg:gap-20">
 
         <!-- LEFT -->
         <div class="lg:w-[40%]" >
           <h2 class="text-[#1a1a1a] font-semibold leading-[1.08]
-                     text-[34px] sm:text-[44px] lg:text-[56px]">
+                     text-[34px] sm:text-[44px] lg:text-[56px]" data-aos="fade-right" data-aos-delay="100">
             Structured<br />
             Facilities<br />
             Management<br />
@@ -423,13 +341,13 @@
           </h2>
 
           <p class="mt-6 text-[#1a1a1a]/70 leading-relaxed
-                    text-[16px] sm:text-[18px] lg:text-[19px] max-w-[520px]">
+                    text-[16px] sm:text-[18px] lg:text-[19px] max-w-[520px]" data-aos="fade-right" data-aos-delay="100">
             Faciliya operates facilities through a disciplined, integrated system designed to eliminate guesswork and
             reduce risk. Our approach brings clarity to daily operations, ensures consistent service delivery, and
             provides full visibility into performance.
           </p>
 
-          <div class="mt-8 flex flex-wrap items-center gap-5">
+          <div class="mt-8 flex flex-wrap items-center gap-5" data-aos="fade-right" data-aos-delay="100">
             <NuxtLink to="/about"
               class="rounded-[10px] border border-[#FDC101]
                      px-6 py-3.5 text-[15px] font-semibold text-[#1a1a1a]
@@ -457,7 +375,7 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16 lg:gap-y-20">
 
             <!-- Feature 1 -->
-            <div class="max-w-[360px]">
+            <div class="max-w-[360px]" data-aos="fade-left" data-aos-delay="100">
               <!-- ICON SLOT (you replace) -->
              
 
@@ -477,7 +395,8 @@
             </div>
 
             <!-- Feature 2 -->
-            <div class="max-w-[360px]">
+            <div class="max-w-[360px]" data-aos="fade-left" data-aos-delay="100">
+              <!-- ICON SLOT (you replace) -->
             
 
   <svg xmlns="http://www.w3.org/2000/svg" class="h-[44px] w-[44px] mb-5" viewBox="0 0 24 24"><!-- Icon from Material Design Icons by Pictogrammers - https://github.com/Templarian/MaterialDesign/blob/master/LICENSE --><path fill="#fdc101" d="m22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9c-2-2-5-2.4-7.4-1.3L9 6L6 9L1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4" /></svg>
@@ -494,7 +413,8 @@
             </div>
 
             <!-- Feature 3 -->
-            <div class="max-w-[360px]">
+            <div class="max-w-[360px]" data-aos="fade-left" data-aos-delay="100">
+              <!-- ICON SLOT (you replace) -->
            
               
              
@@ -515,7 +435,8 @@
             </div>
 
             <!-- Feature 4 -->
-            <div class="max-w-[360px]">
+            <div class="max-w-[360px]" data-aos="fade-left" data-aos-delay="100">
+              <!-- ICON SLOT (you replace) -->
               
 
   <svg xmlns="http://www.w3.org/2000/svg" class="h-[44px] w-[44px] mb-5" viewBox="0 0 24 24"><!-- Icon from Gridicons by Automattic - https://github.com/Automattic/gridicons/blob/trunk/LICENSE.md --><path fill="#fdc101" d="M24 14.6c0 .6-1.2 1-2.6 1.2c-.9-1.7-2.7-3-4.8-3.9c.2-.3.4-.5.6-.8h.8c3.1-.1 6 1.8 6 3.5M6.8 11H6c-3.1 0-6 1.9-6 3.6c0 .6 1.2 1 2.6 1.2c.9-1.7 2.7-3 4.8-3.9zm5.2 1c2.2 0 4-1.8 4-4s-1.8-4-4-4s-4 1.8-4 4s1.8 4 4 4m0 1c-4.1 0-8 2.6-8 5c0 2 8 2 8 2s8 0 8-2c0-2.4-3.9-5-8-5m5.7-3h.3c1.7 0 3-1.3 3-3s-1.3-3-3-3c-.5 0-.9.1-1.3.3c.8 1 1.3 2.3 1.3 3.7c0 .7-.1 1.4-.3 2M6 10h.3C6.1 9.4 6 8.7 6 8c0-1.4.5-2.7 1.3-3.7C6.9 4.1 6.5 4 6 4C4.3 4 3 5.3 3 7s1.3 3 3 3" /></svg>
@@ -539,22 +460,22 @@
       </div>
     </div>
   </section>
-   <section class="bg-white">
+   <section class="bg-[#F8F9FB]" >
   <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
 
     <!-- Heading -->
     <div class="text-center max-w-[820px] mx-auto">
-      <h2 class="text-[#1a1a1a] font-semibold text-[28px] sm:text-[34px] lg:text-[40px]">
+      <h2 class="text-[#1a1a1a] font-semibold text-[28px] sm:text-[34px] lg:text-[40px]" data-aos="fade-up" data-aos-delay="100">
         What Our Clients Say
       </h2>
-      <p class="mt-4 text-[#1a1a1a]/70 text-[14px] sm:text-[15px] leading-relaxed">
+      <p class="mt-4 text-[#1a1a1a]/70 text-[14px] sm:text-[15px] leading-relaxed"  data-aos="fade-up" data-aos-delay="100">
         Hear from property owners and managers who trust Faciliya to deliver consistent, reliable, and structured
         facilities management. Their experiences reflect our commitment to accountability, quality, and operational excellence.
       </p>
     </div>
 
     <!-- Slider -->
-    <div class="mt-12 relative">
+    <div class="mt-12 relative" data-aos="fade-up" data-aos-delay="100">
 
       <!-- Prev Button -->
       <button
@@ -642,14 +563,11 @@
   </div>
 </section>
 
- <section class="w-full bg-[#F8F9FB]" >
+<section ref="sectionRef" class="w-full bg-white">
     <div class="px-4 md:px-8 lg:px-28 py-10 sm:py-14 lg:py-16">
-      
       <!-- Top content -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-start">
-        
-        <!-- Left headline -->
-        <div class="lg:col-span-6" >
+        <div class="lg:col-span-6" data-aos="fade-up" data-aos-delay="100">
           <h2
             class="text-[#1a1a1a] font-extrabold leading-[1.12]
                    text-[28px] sm:text-[36px] lg:text-[44px]"
@@ -660,12 +578,11 @@
           </h2>
         </div>
 
-        <!-- Right paragraph -->
-        <div class="lg:col-span-6" >
+        <div class="lg:col-span-6">
           <p
             class="text-[#1a1a1a]/70 leading-[1.7]
                    text-[14px] sm:text-[15px] lg:text-[16px]
-                   max-w-[560px] lg:ml-auto"
+                   max-w-[560px] lg:ml-auto" data-aos="fade-up" data-aos-delay="100"
           >
             Faciliya ensures your properties operate smoothly through structured workflows, disciplined oversight,
             and coordinated service management. From preventive maintenance and soft services to security and project
@@ -676,44 +593,57 @@
       </div>
 
       <!-- Bottom stats -->
-      <div class="mt-10 sm:mt-12 lg:mt-14" >
-        <div
-          class="grid grid-cols-1 sm:grid-cols-3
-                "
-        >
-          <!-- Stat 1 -->
-          <div class="py-8 sm:py-10">
-            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
-              +40%
+      <div class="mt-10 sm:mt-12 lg:mt-14">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0">
+          <div
+            v-for="s in stats"
+            :key="s.label"
+            class="py-6 sm:py-8 flex flex-col items-start sm:items-center text-left sm:text-center"
+          >
+            <!-- Bigger Circle -->
+            <div
+              class="relative"
+              :style="{ width: size + 'px', height: size + 'px' }"
+              data-stat
+              :data-target="s.value"
+            >
+              <svg :width="size" :height="size" class="block">
+                <circle
+                  :cx="size / 2"
+                  :cy="size / 2"
+                  :r="r"
+                  fill="none"
+                  :stroke-width="stroke"
+                  stroke="rgba(26,26,26,0.10)"
+                />
+                <circle
+                  data-ring
+                  :cx="size / 2"
+                  :cy="size / 2"
+                  :r="r"
+                  fill="none"
+                  :stroke-width="stroke"
+                  stroke="#FDC101"
+                  stroke-linecap="round"
+                  :stroke-dasharray="circumference"
+                  :stroke-dashoffset="circumference"
+                  :transform="`rotate(-90 ${size / 2} ${size / 2})`"
+                />
+              </svg>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="text-[#1a1a1a] font-extrabold leading-none text-[26px] sm:text-[28px]">
+                  +<span data-num>0</span>%
+                </div>
+              </div>
             </div>
-            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
-              Reduced Downtime
+
+            <div class="mt-6 text-[#1a1a1a] font-semibold text-[13px] sm:text-[18px]">
+              {{ s.label }}
             </div>
           </div>
-
-          <!-- Stat 2 -->
-          <div class="py-8 sm:py-10 ">
-            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
-              +35%
-            </div>
-            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
-              Increased Efficiency
-            </div>
-          </div>
-
-          <!-- Stat 3 -->
-          <div class="py-8 sm:py-10 ">
-            <div class="text-[#FDC101] font-extrabold leading-none text-[44px] sm:text-[52px] lg:text-[64px]">
-              +50%
-            </div>
-            <div class="mt-3 text-[#1a1a1a] font-semibold text-[13px] sm:text-[14px]">
-              Higher Occupant Satisfaction
-            </div>
-          </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
@@ -721,10 +651,10 @@
 
 
 
-<section class="bg-white" >
+<section class="bg-[#F8F9FB]" >
     <div class="mx-auto py-44 px-4 md:px-8 lg:px-28" >
       <!-- Heading -->
-      <div class="text-center max-w-[720px] mx-auto">
+      <div class="text-center max-w-[720px] mx-auto" data-aos="fade-up" data-aos-delay="100">
         <h2 class="text-[#1a1a1a] font-semibold text-[26px] sm:text-[32px] lg:text-[38px]">
           Frequently asked questions
         </h2>
@@ -735,7 +665,7 @@
       </div>
 
       <!-- FAQ list -->
-      <div class="mt-10 max-w-[680px] mx-auto space-y-4">
+      <div class="mt-10 max-w-[680px] mx-auto space-y-4" data-aos="fade-up" data-aos-delay="100">
         <div
           v-for="(item, i) in faqs"
           :key="i"
@@ -777,7 +707,7 @@
 
 
 
-<section class="bg-[#F8F9FB]" >
+<section class="bg-white" >
 
       <!-- CTA BUTTON -->
       
@@ -785,7 +715,7 @@
      <div class="px-4 md:px-8 lg:px-28 py-24">
 
       <!-- Section Title -->
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up" data-aos-delay="100">
         <h2 class="text-[30px] md:text-[36px] font-semibold text-[#1a1a1a]">
           Direct Contact Information
         </h2>
@@ -798,7 +728,7 @@
 
 
       <!-- Contact Cards -->
-      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto">
+      <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-4xl mx-auto"   data-aos="fade-right" data-aos-delay="100">
 
         <!-- Phone Card -->
         <div class="bg-[#F8F9FB] p-10 rounded-2xl border border-[#1a1a1a]/10 text-center hover:shadow-xl transition">
@@ -865,7 +795,7 @@
 
 
       <!-- CTA BUTTON -->
-      <div class="mt-20 text-center">
+      <div class="mt-20 text-center" data-aos="fade-up" data-aos-delay="100">
         <ConsultationForm />
       </div>
 
@@ -875,17 +805,17 @@
 
 
 
- <section class="bg-white" >
+ <section class="bg-[#F8F9FB]" >
     <div class="py-44 px-4 md:px-8 lg:px-28 text-center" >
 
       <h2 class="text-[#1a1a1a] font-semibold
-                 text-[34px] sm:text-[44px] lg:text-[56px]">
+                 text-[34px] sm:text-[44px] lg:text-[56px]" data-aos="fade-up" data-aos-delay="100">
         Work with us
       </h2>
 
       <p class="mt-6 text-[#1a1a1a]/70
-                text-[16px] sm:text-[18px] lg:text-[19px]
-                leading-relaxed max-w-[900px] mx-auto">
+                text-[16px] sm:text-[18px] lg:text-[19px] 
+                leading-relaxed max-w-[900px] mx-auto" data-aos="fade-up" data-aos-delay="100">
         Build your career with Faciliya. We offer opportunities to grow within a structured,
         performance-driven facilities management environment.
       </p>
@@ -899,6 +829,7 @@
                hover:brightness-95 active:brightness-90
                transition"
         type="button"
+        data-aos="fade-up" data-aos-delay="100"
       >
         Join our team
       </NuxtLink>
@@ -923,12 +854,108 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { reactive } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue"
 
+const sectionRef = ref(null)
 
+const stats = [
+  { label: "Reduced Downtime", value: 40 },
+  { label: "Increased Efficiency", value: 35 },
+  { label: "Higher Occupant Satisfaction", value: 50 },
+]
 
+// EVEN BIGGER circles
+const size = 150
+const stroke = 12
+const r = (size - stroke) / 2
+const circumference = 2 * Math.PI * r
 
-import { ref } from "vue";
+let io = null
+let rafIds = []
+
+const clamp01 = (n) => Math.max(0, Math.min(1, n))
+const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3)
+
+function animateStat(el, target, duration) {
+  const ring = el.querySelector("[data-ring]")
+  const num = el.querySelector("[data-num]")
+
+  const start = performance.now()
+
+  const tick = (now) => {
+    const t = clamp01((now - start) / duration)
+    const e = easeOutCubic(t)
+
+    const value = Math.round(target * e)
+    if (num) num.textContent = value
+
+    // circle fills to 100% while counting
+    if (ring) ring.style.strokeDashoffset = String(circumference * (1 - e))
+
+    if (t < 1) rafIds.push(requestAnimationFrame(tick))
+  }
+
+  rafIds.push(requestAnimationFrame(tick))
+}
+
+function setFinal(el, target) {
+  const ring = el.querySelector("[data-ring]")
+  const num = el.querySelector("[data-num]")
+  if (num) num.textContent = target
+  if (ring) ring.style.strokeDashoffset = "0"
+}
+
+onMounted(() => {
+  if (!sectionRef.value) return
+
+  const prefersReduced =
+    window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches
+
+  const statEls = Array.from(sectionRef.value.querySelectorAll("[data-stat]"))
+
+  // init ring values
+  statEls.forEach((el) => {
+    const ring = el.querySelector("[data-ring]")
+    if (ring) {
+      ring.style.strokeDasharray = String(circumference)
+      ring.style.strokeDashoffset = String(circumference)
+    }
+  })
+
+  if (prefersReduced) {
+    statEls.forEach((el) => setFinal(el, Number(el.getAttribute("data-target") || 0)))
+    return
+  }
+
+  let started = false
+
+  io = new IntersectionObserver(
+    (entries) => {
+      if (started) return
+      const entry = entries[0]
+      if (!entry || !entry.isIntersecting) return
+
+      started = true
+      statEls.forEach((el) => {
+        const target = Number(el.getAttribute("data-target") || 0)
+        animateStat(el, target, 1400)
+      })
+
+      io && io.disconnect()
+      io = null
+    },
+    { threshold: 0.35 }
+  )
+
+  io.observe(sectionRef.value)
+})
+
+onBeforeUnmount(() => {
+  if (io) io.disconnect()
+  rafIds.forEach((id) => cancelAnimationFrame(id))
+  rafIds = []
+})
+
 const openIndex = ref(0); // first open like screenshot
 
 const faqs = [

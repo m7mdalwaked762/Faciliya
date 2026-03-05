@@ -1,6 +1,8 @@
+<!-- app.vue -->
 <template>
-<NuxtLayout >
-   
-    <NuxtPage  />
-  </NuxtLayout>
+  <div class="overflow-x-hidden">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>

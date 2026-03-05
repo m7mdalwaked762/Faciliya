@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- TRIGGER -->
-    <button @click="openModal" class="px-6 py-2.5 rounded-full bg-[#1a1a1a] text-white text-[13px]">
+    <button @click="openModal" class="px-6 py-2.5 rounded-full bg-[#FDC101] text-white text-[13px]">
       Apply Now
     </button>
 
