@@ -18,7 +18,13 @@
             class="h-[100dvh] w-full object-cover object-center"
           />
         </SwiperSlide>
-
+<SwiperSlide>
+          <img
+            src="/img/12343.jpg"
+            alt=""
+            class="h-[100dvh] w-full object-cover object-center"
+          />
+        </SwiperSlide>
         <SwiperSlide>
           <img src="/img/321.png" alt="" class="h-[100dvh] w-full object-cover object-center" />
         </SwiperSlide>

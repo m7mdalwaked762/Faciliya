@@ -261,9 +261,82 @@ const positions = [
   "Data & Performance Analytics",
 ]
 
-const jobDescriptions = { /* keep your existing jobDescriptions exactly */ }
+const jobDescriptions = {
+  "Operations Management": {
+    summary:
+      "The Operations Manager leads on-site integrated facilities operations and ensures structured execution across technical, hospitality, hygiene, and support services. This role is responsible for performance alignment, service discipline, and client satisfaction.",
+    responsibilities: [
+      "Oversee daily site operations across all service divisions",
+      "Coordinate engineering, front-of-house, housekeeping, and vendors",
+      "Monitor KPIs and operational performance metrics",
+      "Ensure compliance with safety, regulatory, and internal governance standards",
+      "Serve as primary point of contact for client leadership",
+    ],
+    qualifications: ["3+ years experience in facilities, property, or operational management", "Strong leadership and organizational skills", "Ability to manage multi-service environments"],
+  },
 
+  "Facilities Engineering": {
+    summary:
+      "The Facilities Engineer provides technical oversight of building systems and ensures operational continuity through structured maintenance planning and system monitoring.",
+    responsibilities: [
+      "Supervise MEP systems (mechanical, electrical, plumbing)",
+      "Develop and manage preventive maintenance programs",
+      "Coordinate specialized contractors",
+      "Monitor system efficiency and risk exposure",
+      "Support lifecycle planning and asset protection",
+    ],
+    qualifications: ["Technical background in engineering or facilities management", "Experience with commercial building systems", "Strong problem-solving skills"],
+  },
+
+  "Maintenance Services": {
+    summary:
+      "Responsible for executing routine, preventive, and corrective maintenance tasks to maintain operational continuity and asset reliability.",
+    responsibilities: ["Perform general repairs and maintenance tasks", "Respond to service requests in a timely manner", "Execute preventive maintenance schedules", "Maintain safety and operational standards"],
+    qualifications: ["Hands-on maintenance experience", "Technical knowledge of building systems preferred", "Ability to work independently"],
+  },
+
+  "Front-of-House Staff": {
+    summary:
+      "Delivers professional front-of-house services aligned with property standards and hospitality-grade execution.",
+    responsibilities: ["Greet residents and guests", "Manage access control and package handling", "Respond to resident service requests", "Maintain lobby presentation and professionalism"],
+    qualifications: ["Customer service or hospitality experience", "Professional communication and appearance", "Strong interpersonal skills"],
+  },
+
+  "Valet Attendant": {
+    summary: "Provides safe and efficient vehicle handling services while maintaining high hospitality standards.",
+    responsibilities: ["Park and retrieve vehicles safely", "Maintain traffic flow and entry coordination", "Deliver courteous and professional guest interaction"],
+    qualifications: ["Valid driver’s license", "Clean driving record", "Customer service mindset"],
+  },
+
+  "Cleaning Personnel": {
+    summary: "Maintains cleanliness, sanitation, and presentation standards across property common areas.",
+    responsibilities: ["Clean and sanitize assigned areas", "Follow hygiene and safety protocols", "Operate cleaning equipment properly", "Maintain supply inventory"],
+    qualifications: ["Experience in commercial cleaning preferred", "Attention to detail", "Reliability and consistency"],
+  },
+
+  "Sustainability & Compliance": {
+    summary: "Supports environmental performance, regulatory compliance, and structured operational governance initiatives.",
+    responsibilities: ["Monitor energy and water usage trends", "Maintain compliance documentation", "Support green building initiatives", "Assist in sustainability reporting"],
+    qualifications: ["Background in sustainability, compliance, or facilities operations preferred", "Strong analytical and organizational skills"],
+  },
+
+  "Event Support Staff": {
+    summary: "Supports on-site event execution and B2C services with structured coordination and hospitality focus.",
+    responsibilities: ["Assist with event setup and breakdown", "Coordinate with vendors and property management", "Ensure smooth guest flow and presentation standards"],
+    qualifications: ["Event support or hospitality experience preferred", "Flexible schedule availability", "Strong teamwork skills"],
+  },
+
+  "Data & Performance Analytics": {
+    summary: "Monitors operational performance metrics and supports AI-assisted analytics to enhance service delivery and predictive maintenance strategies.",
+    responsibilities: ["Track and analyze operational KPIs", "Generate performance reports", "Identify trends and optimization opportunities", "Support predictive maintenance initiatives"],
+    qualifications: ["Experience in data analysis or operational reporting", "Strong analytical mindset", "Familiarity with performance tracking systems preferred"],
+  },
+}
 const { $supabase } = useNuxtApp()
+
+const STORAGE_BUCKET = "resumes"
+const STORAGE_FOLDER = "employment"
+const TABLE_NAME = "employment_applications"
 
 const currentPosition = computed(() => jobDescriptions[form.value.position])
 
@@ -384,7 +457,89 @@ function nextStep() {
   step.value++
 }
 
-// keep your uploadResume + submitForm exactly as you have
+function sanitizeFileName(name = "") {
+  return String(name)
+    .normalize("NFKD")
+    .replace(/[^\w.\-]+/g, "_")
+    .replace(/_+/g, "_")
+}
+
+async function uploadResume() {
+  const file = files.value?.[0]
+
+  if (!file) {
+    throw new Error("CV is required.")
+  }
+
+  const cleanName = sanitizeFileName(file.name || "resume")
+  const filePath = `${STORAGE_FOLDER}/${Date.now()}_${cleanName}`
+
+  const { error } = await $supabase.storage
+    .from(STORAGE_BUCKET)
+    .upload(filePath, file, {
+      upsert: false,
+      contentType: file.type || undefined,
+    })
+
+  if (error) {
+    throw error
+  }
+
+  return {
+    filePath,
+  }
+}
+
+async function submitForm() {
+  if (submitting.value) return
+
+  if (!step5Valid.value) {
+    errorMessage.value = "Please complete all required fields and upload your CV before submitting."
+    return
+  }
+
+  errorMessage.value = ""
+  successMessage.value = ""
+  submitting.value = true
+
+  let uploadedResume = null
+
+  try {
+    uploadedResume = await uploadResume()
+
+    const payload = {
+      full_name: form.value.fullName.trim(),
+      phone: form.value.phone.trim(),
+      email: form.value.email.trim(),
+      city: form.value.city.trim(),
+      position: form.value.position,
+      work_auth: form.value.workAuth,
+      transport: form.value.transport || null,
+      availability: form.value.availability,
+      experience: form.value.experience.trim(),
+      resume_url: uploadedResume.filePath,
+    }
+
+    const { error } = await $supabase
+      .from(TABLE_NAME)
+      .insert([payload])
+
+    if (error) {
+      if (uploadedResume?.filePath) {
+        await $supabase.storage.from(STORAGE_BUCKET).remove([uploadedResume.filePath])
+      }
+      throw error
+    }
+
+    submitted.value = true
+    successMessage.value = "Your application has been submitted successfully."
+  } catch (error) {
+    console.error("Employment application submission failed:", error)
+    errorMessage.value = "Something went wrong while submitting your application. Please try again."
+  } finally {
+    submitting.value = false
+  }
+}
 
 watch(open, (v) => {
   document.body.style.overflow = v ? "hidden" : ""
