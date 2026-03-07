@@ -8,188 +8,196 @@
       Register as a Vendor
     </button>
 
-    <!-- MODAL -->
-    <transition name="modal">
-      <div v-if="open" class="fixed inset-0 z-50 flex items-center justify-center px-4">
-        <!-- BACKDROP -->
-        <div class="absolute inset-0 bg-black/50 backdrop-blur-md" @click="closeModal"></div>
-
-        <!-- PANEL -->
+    <!-- MODAL (Teleport fixes full-page blur/overlay) -->
+    <Teleport to="body">
+      <transition name="modal">
         <div
-          class="relative z-10 w-full max-w-4xl bg-white rounded-2xl
-                 shadow-2xl max-h-[90vh] overflow-hidden flex flex-col
-                 text-[#1a1a1a]"
+          v-if="open"
+          class="fixed inset-0 z-[99999] flex items-center justify-center px-4"
         >
-          <!-- HEADER -->
-          <div class="p-6 border-b border-[#1a1a1a]/10">
-            <div class="flex justify-between items-center">
-              <h2 class="text-[18px] sm:text-[22px] font-semibold">
-                Strategic Vendor & Partner Registration
-              </h2>
-              <button @click="closeModal">✕</button>
+          <!-- BACKDROP -->
+          <div
+            class="absolute inset-0 bg-black/50 backdrop-blur-md"
+            @click="closeModal"
+          ></div>
+
+          <!-- PANEL -->
+          <div
+            class="relative z-[100000] w-full max-w-4xl bg-white rounded-2xl
+                   shadow-2xl max-h-[90vh] overflow-hidden flex flex-col
+                   text-[#1a1a1a]"
+          >
+            <!-- HEADER -->
+            <div class="p-6 border-b border-[#1a1a1a]/10">
+              <div class="flex justify-between items-center">
+                <h2 class="text-[18px] sm:text-[22px] font-semibold">
+                  Strategic Vendor & Partner Registration
+                </h2>
+                <button @click="closeModal">✕</button>
+              </div>
+
+              <!-- PROGRESS -->
+              <div class="mt-4 flex gap-2">
+                <div
+                  v-for="n in 7"
+                  :key="n"
+                  class="h-1 flex-1 rounded-full transition"
+                  :class="step >= n ? 'bg-[#1a1a1a]' : 'bg-[#1a1a1a]/15'"
+                />
+              </div>
             </div>
 
-            <!-- PROGRESS -->
-            <div class="mt-4 flex gap-2">
+            <!-- BODY -->
+            <div class="flex-1 overflow-y-auto p-8 space-y-6">
+              <!-- GENERIC ERROR -->
               <div
-                v-for="n in 7"
-                :key="n"
-                class="h-1 flex-1 rounded-full transition"
-                :class="step >= n ? 'bg-[#1a1a1a]' : 'bg-[#1a1a1a]/15'"
-              />
-            </div>
-          </div>
+                v-if="errorMessage"
+                class="p-4 rounded-lg border border-red-200 bg-red-50 text-red-700 text-[14px]"
+              >
+                {{ errorMessage }}
+              </div>
 
-          <!-- BODY -->
-          <div class="flex-1 overflow-y-auto p-8 space-y-6">
-            <!-- GENERIC ERROR -->
-            <div
-              v-if="errorMessage"
-              class="p-4 rounded-lg border border-red-200 bg-red-50 text-red-700 text-[14px]"
-            >
-              {{ errorMessage }}
-            </div>
+              <!-- INTRO (STEP 1) -->
+              <div v-if="step === 1" class="space-y-4">
+                <h3 class="font-semibold">Introduction</h3>
+                <p class="text-[14px] leading-relaxed">
+                  FACILIYA operates under a governance-driven Integrated Facilities Management model.
+                  Inclusion in this network does not guarantee immediate contract award.
+                  Engagements are project-based and activated upon contract deployment.
+                </p>
+              </div>
 
-            <!-- INTRO (STEP 1) -->
-            <div v-if="step === 1" class="space-y-4">
-              <h3 class="font-semibold">Introduction</h3>
-              <p class="text-[14px] leading-relaxed">
-                FACILIYA operates under a governance-driven Integrated Facilities Management model.
-                Inclusion in this network does not guarantee immediate contract award.
-                Engagements are project-based and activated upon contract deployment.
-              </p>
-            </div>
+              <!-- SECTION 1 -->
+              <div v-if="step === 2" class="space-y-4">
+                <h3 class="font-semibold">Company Information</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <input v-model.trim="form.companyName" placeholder="Company Legal Name *" class="input" />
+                  <input v-model.trim="form.registrationNumber" placeholder="Business Registration Number *" class="input" />
+                  <input v-model.trim="form.website" placeholder="Website *" class="input" />
+                  <select v-model="form.years" class="input">
+                    <option value="" disabled>Years in Business *</option>
+                    <option>0–1</option>
+                    <option>1–3</option>
+                    <option>3–5</option>
+                    <option>5–10</option>
+                    <option>10+</option>
+                  </select>
+                </div>
+              </div>
 
-            <!-- SECTION 1 -->
-            <div v-if="step === 2" class="space-y-4">
-              <h3 class="font-semibold">Company Information</h3>
-              <div class="grid sm:grid-cols-2 gap-4">
-                <input v-model.trim="form.companyName" placeholder="Company Legal Name *" class="input" />
-                <input v-model.trim="form.registrationNumber" placeholder="Business Registration Number *" class="input" />
-                <input v-model.trim="form.website" placeholder="Website *" class="input" />
-                <select v-model="form.years" class="input">
-                  <option value="" disabled>Years in Business *</option>
-                  <option>0–1</option>
-                  <option>1–3</option>
-                  <option>3–5</option>
-                  <option>5–10</option>
-                  <option>10+</option>
+              <!-- SECTION 2 -->
+              <div v-if="step === 3" class="space-y-4">
+                <h3 class="font-semibold">Partnership Category</h3>
+                <label class="block">
+                  <input type="radio" value="Technical Vendor" v-model="form.category" />
+                  Technical Vendor
+                </label>
+                <label class="block">
+                  <input type="radio" value="Strategic Partner" v-model="form.category" />
+                  Strategic Partner
+                </label>
+              </div>
+
+              <!-- SECTION 3 -->
+              <div v-if="step === 4" class="space-y-4">
+                <h3 class="font-semibold">Service Categories *</h3>
+                <div class="grid sm:grid-cols-2 gap-2 text-[14px]">
+                  <label v-for="s in services" :key="s">
+                    <input type="checkbox" :value="s" v-model="form.services" />
+                    {{ s }}
+                  </label>
+                </div>
+              </div>
+
+              <!-- SECTION 4 -->
+              <div v-if="step === 5" class="space-y-4">
+                <h3 class="font-semibold">Licensing & Insurance</h3>
+                <input v-model.trim="form.license" placeholder="Trade License Number *" class="input" />
+                <div>
+                  <p class="mb-2 text-[14px]">General Liability Insurance *</p>
+                  <label class="mr-4">
+                    <input type="radio" value="Yes" v-model="form.insurance" /> Yes
+                  </label>
+                  <label>
+                    <input type="radio" value="No" v-model="form.insurance" /> No
+                  </label>
+                </div>
+              </div>
+
+              <!-- SECTION 5 -->
+              <div v-if="step === 6" class="space-y-4">
+                <h3 class="font-semibold">Operational Capacity</h3>
+                <select v-model="form.responseTime" class="input">
+                  <option value="" disabled>Average Response Time *</option>
+                  <option>Same Day</option>
+                  <option>24 Hours</option>
+                  <option>48 Hours</option>
+                  <option>72 Hours</option>
                 </select>
+                <input
+                  v-model.trim="form.staffCount"
+                  type="number"
+                  min="1"
+                  placeholder="Number of Technicians *"
+                  class="input"
+                />
+              </div>
+
+              <!-- SECTION 6 -->
+              <div v-if="step === 7" class="space-y-4">
+                <h3 class="font-semibold">Agreement</h3>
+                <label class="block">
+                  <input type="checkbox" v-model="form.agree" />
+                  I confirm the information provided is accurate. *
+                </label>
+              </div>
+
+              <!-- CONFIRMATION -->
+              <div v-if="submitted" class="text-center space-y-4">
+                <h3 class="text-[18px] font-semibold">Thank you for your submission.</h3>
+                <p class="text-[14px]">
+                  Our team will review your registration and contact qualified vendors.
+                </p>
               </div>
             </div>
 
-            <!-- SECTION 2 -->
-            <div v-if="step === 3" class="space-y-4">
-              <h3 class="font-semibold">Partnership Category</h3>
-              <label class="block">
-                <input type="radio" value="Technical Vendor" v-model="form.category" />
-                Technical Vendor
-              </label>
-              <label class="block">
-                <input type="radio" value="Strategic Partner" v-model="form.category" />
-                Strategic Partner
-              </label>
+            <!-- FOOTER -->
+            <div v-if="!submitted" class="p-6 border-t border-[#1a1a1a]/10 flex justify-between">
+              <button
+                v-if="step > 1"
+                @click="goBack"
+                :disabled="submitting"
+                :class="submitting ? 'opacity-50 cursor-not-allowed' : ''"
+              >
+                Back
+              </button>
+
+              <div class="flex-1"></div>
+
+              <button
+                v-if="step < 7"
+                @click="nextStep"
+                :disabled="!canGoNext || submitting"
+                class="px-5 py-2 rounded-full bg-[#1a1a1a] text-white transition"
+                :class="(!canGoNext || submitting) ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-95'"
+              >
+                Next
+              </button>
+
+              <button
+                v-else
+                @click="submitForm"
+                :disabled="!canSubmit"
+                class="px-5 py-2 rounded-full bg-[#1a1a1a] text-white transition"
+                :class="(!canSubmit) ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-95'"
+              >
+                {{ submitting ? "Submitting..." : "Submit Application" }}
+              </button>
             </div>
-
-            <!-- SECTION 3 -->
-            <div v-if="step === 4" class="space-y-4">
-              <h3 class="font-semibold">Service Categories *</h3>
-              <div class="grid sm:grid-cols-2 gap-2 text-[14px]">
-                <label v-for="s in services" :key="s">
-                  <input type="checkbox" :value="s" v-model="form.services" />
-                  {{ s }}
-                </label>
-              </div>
-            </div>
-
-            <!-- SECTION 4 -->
-            <div v-if="step === 5" class="space-y-4">
-              <h3 class="font-semibold">Licensing & Insurance</h3>
-              <input v-model.trim="form.license" placeholder="Trade License Number *" class="input" />
-              <div>
-                <p class="mb-2 text-[14px]">General Liability Insurance *</p>
-                <label class="mr-4">
-                  <input type="radio" value="Yes" v-model="form.insurance" /> Yes
-                </label>
-                <label>
-                  <input type="radio" value="No" v-model="form.insurance" /> No
-                </label>
-              </div>
-            </div>
-
-            <!-- SECTION 5 -->
-            <div v-if="step === 6" class="space-y-4">
-              <h3 class="font-semibold">Operational Capacity</h3>
-              <select v-model="form.responseTime" class="input">
-                <option value="" disabled>Average Response Time *</option>
-                <option>Same Day</option>
-                <option>24 Hours</option>
-                <option>48 Hours</option>
-                <option>72 Hours</option>
-              </select>
-              <input
-                v-model.trim="form.staffCount"
-                type="number"
-                min="1"
-                placeholder="Number of Technicians *"
-                class="input"
-              />
-            </div>
-
-            <!-- SECTION 6 -->
-            <div v-if="step === 7" class="space-y-4">
-              <h3 class="font-semibold">Agreement</h3>
-              <label class="block">
-                <input type="checkbox" v-model="form.agree" />
-                I confirm the information provided is accurate. *
-              </label>
-            </div>
-
-            <!-- CONFIRMATION -->
-            <div v-if="submitted" class="text-center space-y-4">
-              <h3 class="text-[18px] font-semibold">Thank you for your submission.</h3>
-              <p class="text-[14px]">
-                Our team will review your registration and contact qualified vendors.
-              </p>
-            </div>
-          </div>
-
-          <!-- FOOTER -->
-          <div v-if="!submitted" class="p-6 border-t border-[#1a1a1a]/10 flex justify-between">
-            <button
-              v-if="step > 1"
-              @click="goBack"
-              :disabled="submitting"
-              :class="submitting ? 'opacity-50 cursor-not-allowed' : ''"
-            >
-              Back
-            </button>
-
-            <div class="flex-1"></div>
-
-            <button
-              v-if="step < 7"
-              @click="nextStep"
-              :disabled="!canGoNext || submitting"
-              class="px-5 py-2 rounded-full bg-[#1a1a1a] text-white transition"
-              :class="(!canGoNext || submitting) ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-95'"
-            >
-              Next
-            </button>
-
-            <button
-              v-else
-              @click="submitForm"
-              :disabled="!canSubmit"
-              class="px-5 py-2 rounded-full bg-[#1a1a1a] text-white transition"
-              :class="(!canSubmit) ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-95'"
-            >
-              {{ submitting ? "Submitting..." : "Submit Application" }}
-            </button>
           </div>
         </div>
-      </div>
-    </transition>
+      </transition>
+    </Teleport>
   </div>
 </template>
 
@@ -246,21 +254,18 @@ function goBack() {
 }
 
 /** ✅ EVERYTHING REQUIRED */
-const step2Valid = computed(() =>
-  !!form.value.companyName &&
-  !!form.value.registrationNumber &&
-  !!form.value.website &&
-  !!form.value.years
+const step2Valid = computed(
+  () =>
+    !!form.value.companyName &&
+    !!form.value.registrationNumber &&
+    !!form.value.website &&
+    !!form.value.years
 )
 
 const step3Valid = computed(() => !!form.value.category)
-
 const step4Valid = computed(() => Array.isArray(form.value.services) && form.value.services.length > 0)
-
 const step5Valid = computed(() => !!form.value.license && !!form.value.insurance)
-
 const step6Valid = computed(() => !!form.value.responseTime && !!form.value.staffCount)
-
 const step7Valid = computed(() => !!form.value.agree)
 
 // Controls Next button
@@ -354,6 +359,7 @@ watch(open, (v) => {
 .modal-leave-active {
   transition: all 0.25s ease;
 }
+
 .modal-enter-from,
 .modal-leave-to {
   opacity: 0;

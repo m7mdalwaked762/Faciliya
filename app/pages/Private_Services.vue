@@ -17,16 +17,18 @@ useSeoMeta({
 const iconCircle =
   "w-[60px] h-[60px] min-w-[60px] shrink-0 aspect-square flex items-center justify-center rounded-full bg-[#FDC101]/15"
 
+/* ✅ no borders */
 const cardBase =
-  "w-full bg-white p-7 rounded-2xl border border-[#1a1a1a]/10 hover:shadow-xl transition"
+  "w-full bg-white p-7 rounded-2xl shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25"
 
 const cardLayout =
   "flex flex-col items-center text-center gap-5 sm:flex-row sm:items-start sm:text-left sm:gap-5"
 </script>
 
 <template>
-  <section class="bg-white">
-    <!-- HERO -->
+  <!-- Whole page uses the same hero purple -->
+  <section class="bg-[#3F2E83] text-white">
+    <!-- ✅ HERO (UNCHANGED) -->
     <section class="bg-[#3F2E83] text-white">
       <div class="py-24 px-4 md:px-8 lg:px-28">
         <p
@@ -75,101 +77,126 @@ const cardLayout =
       </div>
     </section>
 
-    <!-- EXECUTIVE OVERVIEW -->
-    <div class="px-4 md:px-8 lg:px-28 py-24">
-      <h2
-        class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
-        Service Overview
-      </h2>
+    <!-- ✅ Unified background (solid) + corner glows -->
+    <div class="relative overflow-hidden">
+      <!-- tiny depth so it’s still close to hero -->
+      <div class="absolute inset-0 bg-black/10"></div>
 
-      <div
-        class="mt-8 space-y-6 text-[17px] text-[#1a1a1a]/80 leading-relaxed max-w-4xl"
-        data-aos="fade-up"
-        data-aos-delay="150"
-      >
-        <p>
-          FACILIYA delivers structured personal staffing under disciplined
-          monthly agreements. Each engagement is organized with defined
-          schedules, role clarity, and performance oversight to ensure
-          consistency and reliability.
-        </p>
-
-        <p class="font-medium text-[#1a1a1a]">
-          Discretion. Reliability. Professional Conduct.
-        </p>
+      <!-- corner glows -->
+      <div class="pointer-events-none absolute inset-0">
+        <!-- top-left soft white glow -->
+        <div class="absolute -left-40 -top-40 w-[520px] h-[520px] rounded-full bg-white/12 blur-3xl"></div>
+        <!-- bottom-right soft yellow glow -->
+        <div class="absolute -right-48 -bottom-56 w-[680px] h-[680px] rounded-full bg-[#FDC101]/12 blur-3xl"></div>
+        <!-- accent line -->
+        <div class="absolute left-0 top-24 h-[2px] w-[320px] bg-[#FDC101]/75"></div>
       </div>
-    </div>
 
-    <!-- SERVICES -->
-    <div class="bg-[#F8F9FB] overflow-x-hidden">
-      <div class="px-4 md:px-8 lg:px-28 py-24">
-        <h2
-          class="text-[28px] md:text-[34px] font-semibold text-[#1a1a1a]"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Monthly-Based Personal Staffing Solutions
-        </h2>
-
-        <div class="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Card 1 -->
-          <div
-            :class="`${cardBase} ${cardLayout}`"
+      <!-- keep overflow-x hidden to avoid horizontal scroll from animations -->
+      <div class="relative overflow-x-hidden">
+        <!-- EXECUTIVE OVERVIEW (same content, purple style) -->
+        <div class="px-4 md:px-8 lg:px-28 py-24">
+          <h2
+            class="text-[28px] md:text-[34px] font-semibold text-white"
             data-aos="fade-up"
-            data-aos-delay="0"
+            data-aos-delay="100"
           >
-            <div :class="iconCircle">
-              <User class="w-7 h-7 text-[#FDC101]" />
+            Service Overview
+          </h2>
+
+          <div
+            class="mt-8 space-y-6 text-[17px] text-white/80 leading-relaxed max-w-4xl"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <p>
+              FACILIYA delivers structured personal staffing under disciplined
+              monthly agreements. Each engagement is organized with defined
+              schedules, role clarity, and performance oversight to ensure
+              consistency and reliability.
+            </p>
+
+            <p class="font-medium text-white">
+              Discretion. Reliability. Professional Conduct.
+            </p>
+
+            <div class="pt-2">
+              <div class="h-[2px] w-16 bg-[#FDC101]/80"></div>
             </div>
-            <div class="sm:flex-1">
-              <h3 class="text-[20px] font-semibold text-[#1a1a1a]">
-                Residential Cleaning Staff
-              </h3>
-              <p class="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/70">
-                Full-Time · Part-Time · Scheduled Weekly Presence
-              </p>
+          </div>
+        </div>
+
+        <!-- SERVICES (same content, no gray bg, no borders) -->
+        <div class="px-4 md:px-8 lg:px-28 py-24">
+          <h2
+            class="text-[28px] md:text-[34px] font-semibold text-white"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Monthly-Based Personal Staffing Solutions
+          </h2>
+
+          <div class="mt-12 grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Card 1 -->
+            <div
+              :class="`${cardBase} ${cardLayout}`"
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              <div :class="iconCircle">
+                <User class="w-7 h-7 text-[#FDC101]" />
+              </div>
+              <div class="sm:flex-1">
+                <h3 class="text-[20px] font-semibold text-[#1a1a1a]">
+                  Residential Cleaning Staff
+                </h3>
+                <p class="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/70">
+                  Full-Time · Part-Time · Scheduled Weekly Presence
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              :class="`${cardBase} ${cardLayout}`"
+              data-aos="fade-up"
+              data-aos-delay="120"
+            >
+              <div :class="iconCircle">
+                <Car class="w-7 h-7 text-[#FDC101]" />
+              </div>
+              <div class="sm:flex-1">
+                <h3 class="text-[20px] font-semibold text-[#1a1a1a]">
+                  Private Driver
+                </h3>
+                <p class="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/70">
+                  Family transport · Daily schedules · Appointment transport
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              :class="`${cardBase} ${cardLayout}`"
+              data-aos="fade-up"
+              data-aos-delay="240"
+            >
+              <div :class="iconCircle">
+                <HeartHandshake class="w-7 h-7 text-[#FDC101]" />
+              </div>
+              <div class="sm:flex-1">
+                <h3 class="text-[20px] font-semibold text-[#1a1a1a]">
+                  Private Companion
+                </h3>
+                <p class="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/70">
+                  Elderly assistance · Daily accompaniment · Personal support
+                </p>
+              </div>
             </div>
           </div>
 
-          <!-- Card 2 -->
-          <div
-            :class="`${cardBase} ${cardLayout}`"
-            data-aos="fade-up"
-            data-aos-delay="120"
-          >
-            <div :class="iconCircle">
-              <Car class="w-7 h-7 text-[#FDC101]" />
-            </div>
-            <div class="sm:flex-1">
-              <h3 class="text-[20px] font-semibold text-[#1a1a1a]">
-                Private Driver
-              </h3>
-              <p class="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/70">
-                Family transport · Daily schedules · Appointment transport
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            :class="`${cardBase} ${cardLayout}`"
-            data-aos="fade-up"
-            data-aos-delay="240"
-          >
-            <div :class="iconCircle">
-              <HeartHandshake class="w-7 h-7 text-[#FDC101]" />
-            </div>
-            <div class="sm:flex-1">
-              <h3 class="text-[20px] font-semibold text-[#1a1a1a]">
-                Private Companion
-              </h3>
-              <p class="mt-3 text-[15px] leading-relaxed text-[#1a1a1a]/70">
-                Elderly assistance · Daily accompaniment · Personal support
-              </p>
-            </div>
+          <div class="mt-14 flex justify-center" >
+            <div class="h-[2px] w-16 bg-[#FDC101]/80"></div>
           </div>
         </div>
       </div>

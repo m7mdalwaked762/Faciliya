@@ -9,14 +9,8 @@ export default defineNuxtConfig({
     }
   },
 app: {
-    head: {
-       link: [
-       {
-        rel: "icon",
-        type: "image/png",
-        href: "/favicon.png",
-      }
-    ],
+    
+      head: {
       htmlAttrs: { lang: "en" },
       meta: [
         { name: "robots", content: "index,follow" },

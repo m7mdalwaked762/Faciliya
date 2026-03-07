@@ -302,21 +302,17 @@ useHead({
             </a>
 
             <!-- Instagram -->
-            <a href="#" class="opacity-80 hover:opacity-100 transition">
+            <a href="https://www.instagram.com/faciliyallc" class="opacity-80 hover:opacity-100 transition">
               <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M7.75 2h8.5A5.76 5.76 0 0122 7.75v8.5A5.76 5.76 0 0116.25 22h-8.5A5.76 5.76 0 012 16.25v-8.5A5.76 5.76 0 017.75 2zm0 2A3.76 3.76 0 004 7.75v8.5A3.76 3.76 0 007.75 20h8.5A3.76 3.76 0 0020 16.25v-8.5A3.76 3.76 0 0016.25 4h-8.5zm9.5 1.5a1 1 0 110 2 1 1 0 010-2zM12 7a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6z"/>
               </svg>
             </a>
 
-            <!-- Twitter / X -->
-            <a href="#" class="opacity-80 hover:opacity-100 transition">
-              <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
-                <path d="M18.9 1H22L14.7 9.4 23 23h-6.6l-5.2-6.9L5 23H2l7.7-9.8L1.8 1h6.7l4.7 6.2L18.9 1z"/>
-              </svg>
-            </a>
+            
+          
 
             <!-- Facebook -->
-            <a href="#" class="opacity-80 hover:opacity-100 transition">
+            <a href="https://www.facebook.com/people/Faciliyallc/61586871520828/" class="opacity-80 hover:opacity-100 transition">
               <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
                 <path d="M22 12a10 10 0 10-11.5 9.9v-7H7.9v-3h2.6V9.4c0-2.6 1.5-4 3.9-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6v1.9H17l-.4 3h-2.6v7A10 10 0 0022 12z"/>
               </svg>
