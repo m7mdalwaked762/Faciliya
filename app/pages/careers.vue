@@ -98,7 +98,7 @@ useSeoMeta({
                 data-aos-delay="0"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=2400&q=80"
+                  src="/img/2.jpg"
                   alt="Employment interview handshake"
                   class="w-full h-[220px] sm:h-[260px] lg:h-[360px] object-cover"
                   loading="lazy"
