@@ -11,8 +11,124 @@ import {
   Activity,
   Sparkles,
   Crown,
+   X,ArrowRight
 } from "lucide-vue-next"
+import { ref, watch, onBeforeUnmount } from "vue"
 
+
+const selectedPackage = ref(null)
+
+const governancePackages = [
+  {
+    key: "design",
+    title: "DESIGN",
+    subtitle: "Configuration & Governance Architecture",
+    short: "Governance configuration.",
+    icon: LayoutDashboard,
+    description:
+      "The DESIGN package focuses on building the governance foundation before execution begins. It defines the structure, scope, escalation logic, and sustainability alignment needed to operate with control from day one.",
+    bullets: [
+      "Asset & operational assessment",
+      "Risk mapping & scope alignment",
+      "Escalation structure setup",
+      "Sustainability integration planning",
+      "Operational intelligence layer configuration",
+    ],
+  },
+  {
+    key: "operate",
+    title: "OPERATE",
+    subtitle: "Structured Service Coordination",
+    short: "Operational coordination.",
+    icon: Settings,
+    description:
+      "The OPERATE package activates day-to-day service coordination through a structured command model. It is built for controlled execution, centralized accountability, and organized delivery across services.",
+    bullets: [
+      "Coordinated hard & soft services",
+      "CMMS-based work order management",
+      "Preventive maintenance scheduling",
+      "Centralized accountability",
+    ],
+  },
+  {
+    key: "manage",
+    title: "MANAGE",
+    subtitle: "Performance Governance & Oversight",
+    short: "Performance monitoring.",
+    icon: Activity,
+    description:
+      "The MANAGE package adds active governance and measurable oversight. It is designed for operations that require visible performance tracking, recurring issue control, and structured reporting discipline.",
+    bullets: [
+      "KPI & SLA monitoring",
+      "Vendor scorecards",
+      "Recurring-issue tracking",
+      "Structured reporting cadence",
+      "Dashboard-based performance visibility",
+    ],
+  },
+  {
+    key: "elevate",
+    title: "ELEVATE",
+    subtitle: "Integrated Operational Intelligence",
+    short: "AI-assisted insights.",
+    icon: Sparkles,
+    description:
+      "The ELEVATE package brings intelligence-enabled oversight into the operating model. It supports predictive visibility, anomaly detection, risk awareness, and sustainability performance tracking.",
+    bullets: [
+      "AI-assisted trend analysis",
+      "Predictive maintenance modeling",
+      "Executive dashboards with anomaly detection",
+      "Risk exposure monitoring",
+      "Sustainability performance tracking",
+    ],
+  },
+  {
+    key: "elite",
+    title: "ELITE",
+    subtitle: "Strategic Asset Governance & Predictive Optimization",
+    short: "Strategic optimization.",
+    icon: Crown,
+    description:
+      "The ELITE package is the highest governance tier. It is designed for advanced asset leadership, predictive optimization, executive insight, and long-range operational resilience planning.",
+    bullets: [
+      "Lifecycle forecasting & capital planning insight",
+      "Intelligent escalation routing",
+      "AI-generated executive reporting summaries",
+      "Operational resilience modeling",
+      "Advanced sustainability & energy analytics",
+    ],
+  },
+]
+
+const openPackage = (pkg) => {
+  selectedPackage.value = pkg
+}
+
+const closePackage = () => {
+  selectedPackage.value = null
+}
+
+const handleEscape = (e) => {
+  if (e.key === "Escape") closePackage()
+}
+
+watch(selectedPackage, (value) => {
+  if (!import.meta.client) return
+
+  if (value) {
+    document.body.style.overflow = "hidden"
+    document.addEventListener("keydown", handleEscape)
+  } else {
+    document.body.style.overflow = ""
+    document.removeEventListener("keydown", handleEscape)
+  }
+})
+
+onBeforeUnmount(() => {
+  if (!import.meta.client) return
+  document.body.style.overflow = ""
+  document.removeEventListener("keydown", handleEscape)
+})
 useSeoMeta({
   title: "Corporate & Asset Governance | FACILIYA",
   description:
@@ -192,56 +308,133 @@ const divider = "mt-12 h-[2px] w-16 bg-[#FDC101]/80 mx-auto"
 
         <!-- PACKAGES -->
         <!-- PACKAGES (✅ WHITE CARDS, NO BORDERS) -->
-<section class="px-4 md:px-8 lg:px-28 py-20">
-  <p :class="pill" data-aos="fade-up" data-aos-delay="0">Packages</p>
-  <h2 :class="h2" data-aos="fade-up" data-aos-delay="120">Governance Packages</h2>
-  <p :class="p" data-aos="fade-up" data-aos-delay="220">Engage at the level your operation requires.</p>
+  <section class="px-4 md:px-8 lg:px-28 py-20">
+    <p :class="pill" data-aos="fade-up" data-aos-delay="0">Packages</p>
+    <h2 :class="h2" data-aos="fade-up" data-aos-delay="120">Governance Packages</h2>
+    <p :class="p" data-aos="fade-up" data-aos-delay="220">
+      Engage at the level your operation requires.
+    </p>
 
-  <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5" data-aos="fade-up" data-aos-delay="320">
-    <!-- Card base: WHITE (no border) -->
-    <div class="rounded-2xl bg-white p-8 text-center shadow-xl shadow-black/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25 transition">
-      <div class="mx-auto w-14 h-14 rounded-full bg-[#FDC101]/15 flex items-center justify-center">
-        <LayoutDashboard class="w-6 h-6 text-[#FDC101]" />
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
+      <div
+        v-for="pkg in governancePackages"
+        :key="pkg.key"
+        class="rounded-2xl bg-white p-8 text-center shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25"
+        data-aos="fade-up"
+        data-aos-delay="320"
+      >
+        <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#FDC101]/15">
+          <component :is="pkg.icon" class="h-6 w-6 text-[#FDC101]" />
+        </div>
+
+        <h3 class="mt-5 font-semibold text-[#1a1a1a]">{{ pkg.title }}</h3>
+        <p class="mt-2 text-[13px] text-[#1a1a1a]/60">{{ pkg.short }}</p>
+
+        <button
+          type="button"
+          class="group mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[#FDC101] px-5 py-2.5 text-[13px] font-semibold text-[#1a1a1a] transition hover:scale-[1.02] hover:bg-[#e7b100]"
+          @click="openPackage(pkg)"
+        >
+          <span>Learn More</span>
+          <ArrowRight class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+        </button>
       </div>
-      <h3 class="mt-5 font-semibold text-[#1a1a1a]">DESIGN</h3>
-      <p class="mt-2 text-[#1a1a1a]/60 text-[13px]">Governance configuration.</p>
     </div>
 
-    <div class="rounded-2xl bg-white p-8 text-center shadow-xl shadow-black/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25 transition">
-      <div class="mx-auto w-14 h-14 rounded-full bg-[#FDC101]/15 flex items-center justify-center">
-        <Settings class="w-6 h-6 text-[#FDC101]" />
-      </div>
-      <h3 class="mt-5 font-semibold text-[#1a1a1a]">OPERATE</h3>
-      <p class="mt-2 text-[#1a1a1a]/60 text-[13px]">Operational coordination.</p>
-    </div>
+    <div :class="divider" data-aos="fade-up" data-aos-delay="420"></div>
 
-    <div class="rounded-2xl bg-white p-8 text-center shadow-xl shadow-black/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25 transition">
-      <div class="mx-auto w-14 h-14 rounded-full bg-[#FDC101]/15 flex items-center justify-center">
-        <Activity class="w-6 h-6 text-[#FDC101]" />
-      </div>
-      <h3 class="mt-5 font-semibold text-[#1a1a1a]">MANAGE</h3>
-      <p class="mt-2 text-[#1a1a1a]/60 text-[13px]">Performance monitoring.</p>
-    </div>
+    <teleport to="body">
+      <transition
+        enter-active-class="transition duration-300 ease-out"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+        leave-active-class="transition duration-200 ease-in"
+        leave-from-class="opacity-100"
+        leave-to-class="opacity-0"
+      >
+        <div
+          v-if="selectedPackage"
+          class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4 py-6 backdrop-blur-sm"
+          @click.self="closePackage"
+        >
+          <transition
+            enter-active-class="transition duration-300 ease-out"
+            enter-from-class="opacity-0 scale-95 translate-y-2"
+            enter-to-class="opacity-100 scale-100 translate-y-0"
+            leave-active-class="transition duration-200 ease-in"
+            leave-from-class="opacity-100 scale-100 translate-y-0"
+            leave-to-class="opacity-0 scale-95 translate-y-2"
+          >
+            <div
+              v-if="selectedPackage"
+              class="relative max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-[28px] bg-white p-6 shadow-2xl md:p-8"
+            >
+              <button
+                type="button"
+                class="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#1a1a1a]/5 text-[#1a1a1a] transition hover:bg-[#1a1a1a]/10"
+                @click="closePackage"
+                aria-label="Close popup"
+              >
+                <X class="h-5 w-5" />
+              </button>
 
-    <div class="rounded-2xl bg-white p-8 text-center shadow-xl shadow-black/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25 transition">
-      <div class="mx-auto w-14 h-14 rounded-full bg-[#FDC101]/15 flex items-center justify-center">
-        <Sparkles class="w-6 h-6 text-[#FDC101]" />
-      </div>
-      <h3 class="mt-5 font-semibold text-[#1a1a1a]">ELEVATE</h3>
-      <p class="mt-2 text-[#1a1a1a]/60 text-[13px]">AI-assisted insights.</p>
-    </div>
+              <div class="pr-12">
+                <div class="flex items-center gap-4">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-full bg-[#FDC101]/15">
+                    <component :is="selectedPackage.icon" class="h-6 w-6 text-[#FDC101]" />
+                  </div>
 
-    <div class="rounded-2xl bg-white p-8 text-center shadow-xl shadow-black/20 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/25 transition">
-      <div class="mx-auto w-14 h-14 rounded-full bg-[#FDC101]/15 flex items-center justify-center">
-        <Crown class="w-6 h-6 text-[#FDC101]" />
-      </div>
-      <h3 class="mt-5 font-semibold text-[#1a1a1a]">ELITE</h3>
-      <p class="mt-2 text-[#1a1a1a]/60 text-[13px]">Strategic optimization.</p>
-    </div>
-  </div>
+                  <div>
+                    <p class="text-[12px] font-semibold uppercase tracking-[2px] text-[#FDC101]">
+                      Governance Package
+                    </p>
+                    <h3 class="mt-1 text-[28px] font-semibold leading-none text-[#1a1a1a]">
+                      {{ selectedPackage.title }}
+                    </h3>
+                  </div>
+                </div>
 
-  <div :class="divider" data-aos="fade-up" data-aos-delay="420"></div>
-</section>
+                <p class="mt-6 text-[17px] font-semibold text-[#3F2E83]">
+                  {{ selectedPackage.subtitle }}
+                </p>
+
+                <p class="mt-4 text-[15px] leading-7 text-[#1a1a1a]/75">
+                  {{ selectedPackage.description }}
+                </p>
+
+                <div class="mt-6 rounded-2xl bg-[#F8F6FF] p-5">
+                  <p class="text-[13px] font-semibold uppercase tracking-[1.5px] text-[#1a1a1a]">
+                    What this package includes
+                  </p>
+
+                  <ul class="mt-4 space-y-3">
+                    <li
+                      v-for="item in selectedPackage.bullets"
+                      :key="item"
+                      class="flex items-start gap-3 text-[14px] leading-6 text-[#1a1a1a]/80"
+                    >
+                      <span class="mt-[9px] h-2 w-2 shrink-0 rounded-full bg-[#FDC101]"></span>
+                      <span>{{ item }}</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="mt-6 flex justify-end">
+                  <button
+                    type="button"
+                    class="inline-flex items-center justify-center rounded-full border border-[#1a1a1a]/10 px-5 py-2.5 text-[13px] font-semibold text-[#1a1a1a] transition hover:bg-[#1a1a1a]/5"
+                    @click="closePackage"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </transition>
+        </div>
+      </transition>
+    </teleport>
+  </section>
 
         <!-- TRAINING -->
         <section class="px-4 md:px-8 lg:px-28 py-20">

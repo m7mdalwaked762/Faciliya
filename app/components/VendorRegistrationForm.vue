@@ -71,17 +71,71 @@
               <div v-if="step === 2" class="space-y-4">
                 <h3 class="font-semibold">Company Information</h3>
                 <div class="grid sm:grid-cols-2 gap-4">
-                  <input v-model.trim="form.companyName" placeholder="Company Legal Name *" class="input" />
-                  <input v-model.trim="form.registrationNumber" placeholder="Business Registration Number *" class="input" />
-                  <input v-model.trim="form.website" placeholder="Website *" class="input" />
-                  <select v-model="form.years" class="input">
-                    <option value="" disabled>Years in Business *</option>
-                    <option>0–1</option>
-                    <option>1–3</option>
-                    <option>3–5</option>
-                    <option>5–10</option>
-                    <option>10+</option>
-                  </select>
+                  <div>
+                    <input
+                      v-model.trim="form.companyName"
+                      placeholder="Company Legal Name *"
+                      class="input"
+                      @blur="touchField('companyName')"
+                    />
+                    <p
+                      v-if="validationErrors.companyName && (touched.companyName || form.companyName)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.companyName }}
+                    </p>
+                  </div>
+
+                  <div>
+                    <input
+                      v-model.trim="form.registrationNumber"
+                      placeholder="Business Registration Number *"
+                      class="input"
+                      @blur="touchField('registrationNumber')"
+                    />
+                    <p
+                      v-if="validationErrors.registrationNumber && (touched.registrationNumber || form.registrationNumber)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.registrationNumber }}
+                    </p>
+                  </div>
+
+                  <div>
+                    <input
+                      v-model.trim="form.website"
+                      placeholder="Website *"
+                      class="input"
+                      @blur="touchField('website')"
+                    />
+                    <p
+                      v-if="validationErrors.website && (touched.website || form.website)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.website }}
+                    </p>
+                  </div>
+
+                  <div>
+                    <select
+                      v-model="form.years"
+                      class="input"
+                      @change="touchField('years')"
+                    >
+                      <option value="" disabled>Years in Business *</option>
+                      <option>0–1</option>
+                      <option>1–3</option>
+                      <option>3–5</option>
+                      <option>5–10</option>
+                      <option>10+</option>
+                    </select>
+                    <p
+                      v-if="validationErrors.years && touched.years"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.years }}
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -89,13 +143,30 @@
               <div v-if="step === 3" class="space-y-4">
                 <h3 class="font-semibold">Partnership Category</h3>
                 <label class="block">
-                  <input type="radio" value="Technical Vendor" v-model="form.category" />
+                  <input
+                    type="radio"
+                    value="Technical Vendor"
+                    v-model="form.category"
+                    @change="touchField('category')"
+                  />
                   Technical Vendor
                 </label>
                 <label class="block">
-                  <input type="radio" value="Strategic Partner" v-model="form.category" />
+                  <input
+                    type="radio"
+                    value="Strategic Partner"
+                    v-model="form.category"
+                    @change="touchField('category')"
+                  />
                   Strategic Partner
                 </label>
+
+                <p
+                  v-if="validationErrors.category && touched.category"
+                  class="text-[12px] text-red-600"
+                >
+                  {{ validationErrors.category }}
+                </p>
               </div>
 
               <!-- SECTION 3 -->
@@ -103,53 +174,133 @@
                 <h3 class="font-semibold">Service Categories *</h3>
                 <div class="grid sm:grid-cols-2 gap-2 text-[14px]">
                   <label v-for="s in services" :key="s">
-                    <input type="checkbox" :value="s" v-model="form.services" />
+                    <input
+                      type="checkbox"
+                      :value="s"
+                      v-model="form.services"
+                      @change="touchField('services')"
+                    />
                     {{ s }}
                   </label>
                 </div>
+
+                <p
+                  v-if="validationErrors.services && touched.services"
+                  class="text-[12px] text-red-600"
+                >
+                  {{ validationErrors.services }}
+                </p>
               </div>
 
               <!-- SECTION 4 -->
               <div v-if="step === 5" class="space-y-4">
                 <h3 class="font-semibold">Licensing & Insurance</h3>
-                <input v-model.trim="form.license" placeholder="Trade License Number *" class="input" />
+
+                <div>
+                  <input
+                    v-model.trim="form.license"
+                    placeholder="Trade License Number *"
+                    class="input"
+                    @blur="touchField('license')"
+                  />
+                  <p
+                    v-if="validationErrors.license && (touched.license || form.license)"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.license }}
+                  </p>
+                </div>
+
                 <div>
                   <p class="mb-2 text-[14px]">General Liability Insurance *</p>
                   <label class="mr-4">
-                    <input type="radio" value="Yes" v-model="form.insurance" /> Yes
+                    <input
+                      type="radio"
+                      value="Yes"
+                      v-model="form.insurance"
+                      @change="touchField('insurance')"
+                    />
+                    Yes
                   </label>
                   <label>
-                    <input type="radio" value="No" v-model="form.insurance" /> No
+                    <input
+                      type="radio"
+                      value="No"
+                      v-model="form.insurance"
+                      @change="touchField('insurance')"
+                    />
+                    No
                   </label>
+
+                  <p
+                    v-if="validationErrors.insurance && touched.insurance"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.insurance }}
+                  </p>
                 </div>
               </div>
 
               <!-- SECTION 5 -->
               <div v-if="step === 6" class="space-y-4">
                 <h3 class="font-semibold">Operational Capacity</h3>
-                <select v-model="form.responseTime" class="input">
-                  <option value="" disabled>Average Response Time *</option>
-                  <option>Same Day</option>
-                  <option>24 Hours</option>
-                  <option>48 Hours</option>
-                  <option>72 Hours</option>
-                </select>
-                <input
-                  v-model.trim="form.staffCount"
-                  type="number"
-                  min="1"
-                  placeholder="Number of Technicians *"
-                  class="input"
-                />
+
+                <div>
+                  <select
+                    v-model="form.responseTime"
+                    class="input"
+                    @change="touchField('responseTime')"
+                  >
+                    <option value="" disabled>Average Response Time *</option>
+                    <option>Same Day</option>
+                    <option>24 Hours</option>
+                    <option>48 Hours</option>
+                    <option>72 Hours</option>
+                  </select>
+                  <p
+                    v-if="validationErrors.responseTime && touched.responseTime"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.responseTime }}
+                  </p>
+                </div>
+
+                <div>
+                  <input
+                    v-model.trim="form.staffCount"
+                    type="number"
+                    min="1"
+                    placeholder="Number of Technicians *"
+                    class="input"
+                    @blur="touchField('staffCount')"
+                  />
+                  <p
+                    v-if="validationErrors.staffCount && (touched.staffCount || form.staffCount)"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.staffCount }}
+                  </p>
+                </div>
               </div>
 
               <!-- SECTION 6 -->
               <div v-if="step === 7" class="space-y-4">
                 <h3 class="font-semibold">Agreement</h3>
                 <label class="block">
-                  <input type="checkbox" v-model="form.agree" />
+                  <input
+                    type="checkbox"
+                    v-model="form.agree"
+                    @change="touchField('agree')"
+                  />
                   I confirm the information provided is accurate. *
                 </label>
+
+                <p
+                  v-if="validationErrors.agree && touched.agree"
+                  class="text-[12px] text-red-600"
+                >
+                  {{ validationErrors.agree }}
+                </p>
               </div>
 
               <!-- CONFIRMATION -->
@@ -235,6 +386,159 @@ const form = ref({
   agree: false,
 })
 
+const touched = ref({
+  companyName: false,
+  registrationNumber: false,
+  website: false,
+  years: false,
+  category: false,
+  services: false,
+  license: false,
+  insurance: false,
+  responseTime: false,
+  staffCount: false,
+  agree: false,
+})
+
+function touchField(field) {
+  touched.value[field] = true
+}
+
+function touchFields(fields = []) {
+  fields.forEach((field) => {
+    touched.value[field] = true
+  })
+}
+
+function validateCompanyName(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Company legal name is required."
+  if (v.length < 2) return "Company legal name is too short."
+  if (!/^[\p{L}\p{N}\s&.,'()\-\/]+$/u.test(v)) {
+    return "Enter a valid company legal name."
+  }
+
+  return ""
+}
+
+function validateRegistrationNumber(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Business registration number is required."
+  if (v.length < 3) return "Business registration number is too short."
+  if (!/^[A-Za-z0-9\-\/]+$/.test(v)) {
+    return "Enter a valid business registration number."
+  }
+
+  return ""
+}
+
+function validateWebsite(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Website is required."
+
+  let normalized = v
+  if (!/^https?:\/\//i.test(normalized)) {
+    normalized = `https://${normalized}`
+  }
+
+  try {
+    const url = new URL(normalized)
+    if (!url.hostname || !url.hostname.includes(".")) {
+      return "Enter a valid website."
+    }
+  } catch {
+    return "Enter a valid website."
+  }
+
+  return ""
+}
+
+function validateYears(value) {
+  const allowed = ["0–1", "1–3", "3–5", "5–10", "10+"]
+  if (!value) return "Years in business is required."
+  if (!allowed.includes(value)) return "Select a valid years in business option."
+  return ""
+}
+
+function validateCategory(value) {
+  const allowed = ["Technical Vendor", "Strategic Partner"]
+  if (!value) return "Please select a partnership category."
+  if (!allowed.includes(value)) return "Please select a valid partnership category."
+  return ""
+}
+
+function validateServices(value) {
+  if (!Array.isArray(value) || value.length === 0) {
+    return "Please select at least one service category."
+  }
+
+  const invalid = value.some((item) => !services.includes(item))
+  if (invalid) return "Please select valid service categories."
+
+  return ""
+}
+
+function validateLicense(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Trade license number is required."
+  if (v.length < 3) return "Trade license number is too short."
+  if (!/^[A-Za-z0-9\-\/]+$/.test(v)) {
+    return "Enter a valid trade license number."
+  }
+
+  return ""
+}
+
+function validateInsurance(value) {
+  if (!value) return "Please select whether you have general liability insurance."
+  if (!["Yes", "No"].includes(value)) return "Please select a valid answer."
+  return ""
+}
+
+function validateResponseTime(value) {
+  const allowed = ["Same Day", "24 Hours", "48 Hours", "72 Hours"]
+  if (!value) return "Average response time is required."
+  if (!allowed.includes(value)) return "Select a valid response time."
+  return ""
+}
+
+function validateStaffCount(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Number of technicians is required."
+  if (!/^\d+$/.test(v)) return "Number of technicians must be a whole number."
+
+  const num = Number(v)
+  if (!Number.isInteger(num) || num < 1) {
+    return "Number of technicians must be at least 1."
+  }
+
+  return ""
+}
+
+function validateAgree(value) {
+  if (!value) return "You must confirm the information is accurate."
+  return ""
+}
+
+const validationErrors = computed(() => ({
+  companyName: validateCompanyName(form.value.companyName),
+  registrationNumber: validateRegistrationNumber(form.value.registrationNumber),
+  website: validateWebsite(form.value.website),
+  years: validateYears(form.value.years),
+  category: validateCategory(form.value.category),
+  services: validateServices(form.value.services),
+  license: validateLicense(form.value.license),
+  insurance: validateInsurance(form.value.insurance),
+  responseTime: validateResponseTime(form.value.responseTime),
+  staffCount: validateStaffCount(form.value.staffCount),
+  agree: validateAgree(form.value.agree),
+}))
+
 function openModal() {
   open.value = true
   errorMessage.value = ""
@@ -246,6 +550,20 @@ function closeModal() {
   submitted.value = false
   errorMessage.value = ""
   submitting.value = false
+
+  touched.value = {
+    companyName: false,
+    registrationNumber: false,
+    website: false,
+    years: false,
+    category: false,
+    services: false,
+    license: false,
+    insurance: false,
+    responseTime: false,
+    staffCount: false,
+    agree: false,
+  }
 }
 
 function goBack() {
@@ -253,20 +571,19 @@ function goBack() {
   if (step.value > 1) step.value--
 }
 
-/** ✅ EVERYTHING REQUIRED */
 const step2Valid = computed(
   () =>
-    !!form.value.companyName &&
-    !!form.value.registrationNumber &&
-    !!form.value.website &&
-    !!form.value.years
+    !validationErrors.value.companyName &&
+    !validationErrors.value.registrationNumber &&
+    !validationErrors.value.website &&
+    !validationErrors.value.years
 )
 
-const step3Valid = computed(() => !!form.value.category)
-const step4Valid = computed(() => Array.isArray(form.value.services) && form.value.services.length > 0)
-const step5Valid = computed(() => !!form.value.license && !!form.value.insurance)
-const step6Valid = computed(() => !!form.value.responseTime && !!form.value.staffCount)
-const step7Valid = computed(() => !!form.value.agree)
+const step3Valid = computed(() => !validationErrors.value.category)
+const step4Valid = computed(() => !validationErrors.value.services)
+const step5Valid = computed(() => !validationErrors.value.license && !validationErrors.value.insurance)
+const step6Valid = computed(() => !validationErrors.value.responseTime && !validationErrors.value.staffCount)
+const step7Valid = computed(() => !validationErrors.value.agree)
 
 // Controls Next button
 const canGoNext = computed(() => {
@@ -280,17 +597,56 @@ const canGoNext = computed(() => {
 })
 
 // Controls Submit button
-const canSubmit = computed(() => step7Valid.value && !submitting.value)
+const canSubmit = computed(() => {
+  return (
+    step2Valid.value &&
+    step3Valid.value &&
+    step4Valid.value &&
+    step5Valid.value &&
+    step6Valid.value &&
+    step7Valid.value &&
+    !submitting.value
+  )
+})
 
 function validateStepOrShowGeneric() {
   const GENERIC = "Please complete all required fields before continuing."
 
-  if (step.value === 2 && !step2Valid.value) return (errorMessage.value = GENERIC), false
-  if (step.value === 3 && !step3Valid.value) return (errorMessage.value = GENERIC), false
-  if (step.value === 4 && !step4Valid.value) return (errorMessage.value = GENERIC), false
-  if (step.value === 5 && !step5Valid.value) return (errorMessage.value = GENERIC), false
-  if (step.value === 6 && !step6Valid.value) return (errorMessage.value = GENERIC), false
-  if (step.value === 7 && !step7Valid.value) return (errorMessage.value = GENERIC), false
+  if (step.value === 2 && !step2Valid.value) {
+    touchFields(["companyName", "registrationNumber", "website", "years"])
+    errorMessage.value = GENERIC
+    return false
+  }
+
+  if (step.value === 3 && !step3Valid.value) {
+    touchFields(["category"])
+    errorMessage.value = GENERIC
+    return false
+  }
+
+  if (step.value === 4 && !step4Valid.value) {
+    touchFields(["services"])
+    errorMessage.value = GENERIC
+    return false
+  }
+
+  if (step.value === 5 && !step5Valid.value) {
+    touchFields(["license", "insurance"])
+    errorMessage.value = GENERIC
+    return false
+  }
+
+  if (step.value === 6 && !step6Valid.value) {
+    touchFields(["responseTime", "staffCount"])
+    errorMessage.value = GENERIC
+    return false
+  }
+
+  if (step.value === 7 && !step7Valid.value) {
+    touchFields(["agree"])
+    errorMessage.value = GENERIC
+    return false
+  }
 
   errorMessage.value = ""
   return true
@@ -306,7 +662,21 @@ const { $supabase } = useNuxtApp()
 async function submitForm() {
   errorMessage.value = ""
 
-  if (!step7Valid.value) {
+  touchFields([
+    "companyName",
+    "registrationNumber",
+    "website",
+    "years",
+    "category",
+    "services",
+    "license",
+    "insurance",
+    "responseTime",
+    "staffCount",
+    "agree",
+  ])
+
+  if (!canSubmit.value) {
     errorMessage.value = "Please complete all required fields before submitting."
     return
   }

@@ -4,8 +4,8 @@
     <button
       @click="openModal"
       class="px-6 py-2.5 rounded-xl text-[14px] font-medium
-             bg-[#FDC101] text-[#1a1a1a]
-             hover:bg-[#1a1a1a] hover:text-white transition"
+            bg-[#FDC101] text-[#1a1a1a]
+            hover:bg-[#1a1a1a] hover:text-white transition"
     >
       Request a Consultation
     </button>
@@ -26,8 +26,8 @@
           <!-- PANEL -->
           <div
             class="relative z-[100000] w-full max-w-3xl bg-white rounded-2xl
-                   shadow-2xl max-h-[90vh] overflow-hidden flex flex-col
-                   text-[#1a1a1a]"
+                  shadow-2xl max-h-[90vh] overflow-hidden flex flex-col
+                  text-[#1a1a1a]"
             @click.stop
           >
             <!-- HEADER -->
@@ -101,30 +101,66 @@
                 </h3>
 
                 <div class="grid gap-4 sm:grid-cols-2">
-                  <input
-                    v-model="form.fullName"
-                    placeholder="Full Name *"
-                    class="input"
-                  />
+                  <div>
+                    <input
+                      v-model="form.fullName"
+                      placeholder="Full Name *"
+                      class="input"
+                      @blur="touchField('fullName')"
+                    />
+                    <p
+                      v-if="fieldErrors.fullName && (touched.fullName || form.fullName)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ fieldErrors.fullName }}
+                    </p>
+                  </div>
 
-                  <input
-                    v-model="form.companyName"
-                    placeholder="Company Name"
-                    class="input"
-                  />
+                  <div>
+                    <input
+                      v-model="form.companyName"
+                      placeholder="Company Name"
+                      class="input"
+                      @blur="touchField('companyName')"
+                    />
+                    <p
+                      v-if="fieldErrors.companyName && (touched.companyName || form.companyName)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ fieldErrors.companyName }}
+                    </p>
+                  </div>
 
-                  <input
-                    v-model="form.email"
-                    type="email"
-                    placeholder="Email Address *"
-                    class="input"
-                  />
+                  <div>
+                    <input
+                      v-model="form.email"
+                      type="email"
+                      placeholder="Email Address *"
+                      class="input"
+                      @blur="touchField('email')"
+                    />
+                    <p
+                      v-if="fieldErrors.email && (touched.email || form.email)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ fieldErrors.email }}
+                    </p>
+                  </div>
 
-                  <input
-                    v-model="form.phone"
-                    placeholder="Phone Number *"
-                    class="input"
-                  />
+                  <div>
+                    <input
+                      v-model="form.phone"
+                      placeholder="Phone Number *"
+                      class="input"
+                      @blur="touchField('phone')"
+                    />
+                    <p
+                      v-if="fieldErrors.phone && (touched.phone || form.phone)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ fieldErrors.phone }}
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -144,10 +180,18 @@
                       type="radio"
                       :value="option"
                       v-model="form.serviceType"
+                      @change="touchField('serviceType')"
                     />
                     <span>{{ option }}</span>
                   </label>
                 </div>
+
+                <p
+                  v-if="fieldErrors.serviceType && touched.serviceType"
+                  class="text-[12px] text-red-600"
+                >
+                  {{ fieldErrors.serviceType }}
+                </p>
               </div>
 
               <!-- STEP 3 -->
@@ -159,6 +203,7 @@
                 <select
                   v-model="form.propertyLocation"
                   class="input"
+                  @change="touchField('propertyLocation')"
                 >
                   <option value="" disabled>
                     Select City *
@@ -172,6 +217,13 @@
                     {{ city }}
                   </option>
                 </select>
+
+                <p
+                  v-if="fieldErrors.propertyLocation && touched.propertyLocation"
+                  class="text-[12px] text-red-600"
+                >
+                  {{ fieldErrors.propertyLocation }}
+                </p>
               </div>
 
               <!-- STEP 4 -->
@@ -180,12 +232,21 @@
                   Service Details
                 </h3>
 
-                <textarea
-                  v-model="form.scope"
-                  rows="4"
-                  placeholder="Describe your service needs *"
-                  class="input min-h-[120px] h-auto py-3"
-                />
+                <div>
+                  <textarea
+                    v-model="form.scope"
+                    rows="4"
+                    placeholder="Describe your service needs *"
+                    class="input min-h-[120px] h-auto py-3"
+                    @blur="touchField('scope')"
+                  />
+                  <p
+                    v-if="fieldErrors.scope && (touched.scope || form.scope)"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ fieldErrors.scope }}
+                  </p>
+                </div>
               </div>
 
               <!-- STEP 5 -->
@@ -194,12 +255,21 @@
                   Additional Notes
                 </h3>
 
-                <textarea
-                  v-model="form.additionalNotes"
-                  rows="3"
-                  placeholder="Optional notes"
-                  class="input min-h-[96px] h-auto py-3"
-                />
+                <div>
+                  <textarea
+                    v-model="form.additionalNotes"
+                    rows="3"
+                    placeholder="Optional notes"
+                    class="input min-h-[96px] h-auto py-3"
+                    @blur="touchField('additionalNotes')"
+                  />
+                  <p
+                    v-if="fieldErrors.additionalNotes && (touched.additionalNotes || form.additionalNotes)"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ fieldErrors.additionalNotes }}
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -210,7 +280,7 @@
             >
               <button
                 v-if="step > 1"
-                @click="step--"
+                @click="goBack"
                 class="text-[14px]"
                 type="button"
               >
@@ -221,7 +291,7 @@
 
               <button
                 v-if="step < 5"
-                @click="step++"
+                @click="goNext"
                 :disabled="!canGoNext()"
                 type="button"
                 class="px-5 py-2 rounded-full text-white text-[14px]"
@@ -233,10 +303,10 @@
               <button
                 v-else
                 @click="handleSubmit"
-                :disabled="form.scope.trim() === '' || submitting"
+                :disabled="!canSubmit() || submitting"
                 type="button"
                 class="px-5 py-2 rounded-full text-white text-[14px]"
-                :class="form.scope.trim() !== '' && !submitting ? 'bg-[#1a1a1a]' : 'bg-gray-300 cursor-not-allowed'"
+                :class="canSubmit() && !submitting ? 'bg-[#1a1a1a]' : 'bg-gray-300 cursor-not-allowed'"
               >
                 {{ submitting ? "Submitting..." : "Submit" }}
               </button>
@@ -249,7 +319,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive, watch, onMounted, onUnmounted } from "vue"
+import { ref, reactive, watch, onMounted, onUnmounted, computed } from "vue"
 
 const open = ref(false)
 const step = ref(1)
@@ -266,6 +336,17 @@ const form = reactive({
   propertyLocation: "",
   scope: "",
   additionalNotes: "",
+})
+
+const touched = reactive({
+  fullName: false,
+  companyName: false,
+  email: false,
+  phone: false,
+  serviceType: false,
+  propertyLocation: false,
+  scope: false,
+  additionalNotes: false,
 })
 
 const serviceOptions = [
@@ -290,6 +371,109 @@ const cities = [
   "Other (DFW Area)",
 ]
 
+function touchField(field: keyof typeof touched) {
+  touched[field] = true
+}
+
+function touchFields(fields: (keyof typeof touched)[]) {
+  fields.forEach((field) => {
+    touched[field] = true
+  })
+}
+
+function validateFullName(value: string) {
+  const v = value.trim()
+
+  if (!v) return "Full name is required."
+  if (v.length < 3) return "Full name is too short."
+  if (v.split(/\s+/).length < 2) return "Please enter your first and last name."
+  if (!/^[\p{L}\s'.-]+$/u.test(v)) {
+    return "Full name can only contain letters, spaces, apostrophes, periods, and hyphens."
+  }
+
+  return ""
+}
+
+function validateCompanyName(value: string) {
+  const v = value.trim()
+
+  if (!v) return ""
+  if (v.length < 2) return "Company name is too short."
+  if (!/^[\p{L}\p{N}\s&.,'()/-]+$/u.test(v)) {
+    return "Please enter a valid company name."
+  }
+
+  return ""
+}
+
+function validateEmail(value: string) {
+  const v = value.trim()
+
+  if (!v) return "Email address is required."
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) {
+    return "Please enter a valid email address."
+  }
+
+  return ""
+}
+
+function validatePhone(value: string) {
+  const v = value.trim()
+
+  if (!v) return "Phone number is required."
+  if (!/^[+]?[\d\s()\-]+$/.test(v)) {
+    return "Please enter a valid phone number."
+  }
+
+  const digits = v.replace(/\D/g, "")
+  if (digits.length < 7 || digits.length > 15) {
+    return "Phone number must be between 7 and 15 digits."
+  }
+
+  return ""
+}
+
+function validateServiceType(value: string) {
+  if (!value) return "Please select a service category."
+  if (!serviceOptions.includes(value)) return "Please select a valid service category."
+  return ""
+}
+
+function validatePropertyLocation(value: string) {
+  if (!value) return "Please select a city."
+  if (!cities.includes(value)) return "Please select a valid city."
+  return ""
+}
+
+function validateScope(value: string) {
+  const v = value.trim()
+
+  if (!v) return "Service details are required."
+  if (v.length < 15) return "Please provide a bit more detail about your service needs."
+
+  return ""
+}
+
+function validateAdditionalNotes(value: string) {
+  const v = value.trim()
+
+  if (!v) return ""
+  if (v.length < 3) return "Additional notes are too short."
+
+  return ""
+}
+
+const fieldErrors = computed(() => ({
+  fullName: validateFullName(form.fullName),
+  companyName: validateCompanyName(form.companyName),
+  email: validateEmail(form.email),
+  phone: validatePhone(form.phone),
+  serviceType: validateServiceType(form.serviceType),
+  propertyLocation: validatePropertyLocation(form.propertyLocation),
+  scope: validateScope(form.scope),
+  additionalNotes: validateAdditionalNotes(form.additionalNotes),
+}))
+
 function openModal() {
   open.value = true
 }
@@ -299,6 +483,24 @@ function resetForm() {
   submitted.value = false
   submitting.value = false
   errorMessage.value = ""
+
+  form.fullName = ""
+  form.companyName = ""
+  form.email = ""
+  form.phone = ""
+  form.serviceType = ""
+  form.propertyLocation = ""
+  form.scope = ""
+  form.additionalNotes = ""
+
+  touched.fullName = false
+  touched.companyName = false
+  touched.email = false
+  touched.phone = false
+  touched.serviceType = false
+  touched.propertyLocation = false
+  touched.scope = false
+  touched.additionalNotes = false
 }
 
 function closeModal() {
@@ -314,22 +516,23 @@ watch(open, (val) => {
 
 function stepOneValid() {
   return (
-    form.fullName.trim() !== "" &&
-    form.email.trim() !== "" &&
-    form.phone.trim() !== ""
+    !fieldErrors.value.fullName &&
+    !fieldErrors.value.companyName &&
+    !fieldErrors.value.email &&
+    !fieldErrors.value.phone
   )
 }
 
 function stepTwoValid() {
-  return form.serviceType !== ""
+  return !fieldErrors.value.serviceType
 }
 
 function stepThreeValid() {
-  return form.propertyLocation !== ""
+  return !fieldErrors.value.propertyLocation
 }
 
 function stepFourValid() {
-  return form.scope.trim() !== ""
+  return !fieldErrors.value.scope
 }
 
 function canGoNext() {
@@ -340,10 +543,93 @@ function canGoNext() {
   return true
 }
 
+function goBack() {
+  errorMessage.value = ""
+  step.value--
+}
+
+function goNext() {
+  errorMessage.value = ""
+
+  if (step.value === 1) {
+    touchFields(["fullName", "companyName", "email", "phone"])
+    if (!stepOneValid()) {
+      errorMessage.value =
+        fieldErrors.value.fullName ||
+        fieldErrors.value.companyName ||
+        fieldErrors.value.email ||
+        fieldErrors.value.phone ||
+        "Please complete all required fields correctly."
+      return
+    }
+  }
+
+  if (step.value === 2) {
+    touchFields(["serviceType"])
+    if (!stepTwoValid()) {
+      errorMessage.value = fieldErrors.value.serviceType || "Please select a valid service category."
+      return
+    }
+  }
+
+  if (step.value === 3) {
+    touchFields(["propertyLocation"])
+    if (!stepThreeValid()) {
+      errorMessage.value = fieldErrors.value.propertyLocation || "Please select a valid city."
+      return
+    }
+  }
+
+  if (step.value === 4) {
+    touchFields(["scope"])
+    if (!stepFourValid()) {
+      errorMessage.value = fieldErrors.value.scope || "Please describe your service needs."
+      return
+    }
+  }
+
+  step.value++
+}
+
+function canSubmit() {
+  return (
+    stepOneValid() &&
+    stepTwoValid() &&
+    stepThreeValid() &&
+    stepFourValid() &&
+    !fieldErrors.value.additionalNotes
+  )
+}
+
 const { $supabase } = useNuxtApp()
 
 async function handleSubmit() {
   if (submitting.value) return
+
+  touchFields([
+    "fullName",
+    "companyName",
+    "email",
+    "phone",
+    "serviceType",
+    "propertyLocation",
+    "scope",
+    "additionalNotes",
+  ])
+
+  if (!canSubmit()) {
+    errorMessage.value =
+      fieldErrors.value.fullName ||
+      fieldErrors.value.companyName ||
+      fieldErrors.value.email ||
+      fieldErrors.value.phone ||
+      fieldErrors.value.serviceType ||
+      fieldErrors.value.propertyLocation ||
+      fieldErrors.value.scope ||
+      fieldErrors.value.additionalNotes ||
+      "Please complete all required fields correctly."
+    return
+  }
 
   errorMessage.value = ""
   submitting.value = true
@@ -352,14 +638,14 @@ async function handleSubmit() {
     .from("consultation_requests")
     .insert([
       {
-        full_name: form.fullName,
-        company_name: form.companyName,
-        email: form.email,
-        phone: form.phone,
+        full_name: form.fullName.trim(),
+        company_name: form.companyName.trim(),
+        email: form.email.trim(),
+        phone: form.phone.trim(),
         service_type: form.serviceType,
         property_location: form.propertyLocation,
-        scope: form.scope,
-        additional_notes: form.additionalNotes,
+        scope: form.scope.trim(),
+        additional_notes: form.additionalNotes.trim(),
       },
     ])
 
@@ -391,7 +677,7 @@ onUnmounted(() => {
 <style scoped>
 .input {
   @apply w-full h-[44px] px-3 rounded-[8px] border border-[#1a1a1a]/30
-         text-[14px] outline-none focus:border-[#1a1a1a]/70 bg-white;
+        text-[14px] outline-none focus:border-[#1a1a1a]/70 bg-white;
 }
 
 .section-title {

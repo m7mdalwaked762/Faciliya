@@ -59,10 +59,71 @@
                 <h3 class="font-semibold text-[14px]">Personal Information</h3>
 
                 <div class="grid sm:grid-cols-2 gap-4">
-                  <input v-model="form.fullName" placeholder="Full Name *" class="input" />
-                  <input v-model="form.phone" placeholder="Phone *" class="input" />
-                  <input v-model="form.email" placeholder="Email *" class="input" />
-                  <input v-model="form.city" placeholder="City (DFW Area) *" class="input" />
+                  <div>
+                    <input
+                      v-model="form.fullName"
+                      type="text"
+                      placeholder="Full Name *"
+                      class="input"
+                      @blur="touchField('fullName')"
+                    />
+                    <p
+                      v-if="validationErrors.fullName && (touched.fullName || form.fullName)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.fullName }}
+                    </p>
+                  </div>
+
+                  <div>
+                    <input
+                      v-model="form.phone"
+                      type="tel"
+                      inputmode="tel"
+                      placeholder="Phone *"
+                      class="input"
+                      @blur="touchField('phone')"
+                    />
+                    <p
+                      v-if="validationErrors.phone && (touched.phone || form.phone)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.phone }}
+                    </p>
+                  </div>
+
+                  <div>
+                    <input
+                      v-model="form.email"
+                      type="email"
+                      inputmode="email"
+                      placeholder="Email *"
+                      class="input"
+                      @blur="touchField('email')"
+                    />
+                    <p
+                      v-if="validationErrors.email && (touched.email || form.email)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.email }}
+                    </p>
+                  </div>
+
+                  <div>
+                    <input
+                      v-model="form.city"
+                      type="text"
+                      placeholder="City (DFW Area) *"
+                      class="input"
+                      @blur="touchField('city')"
+                    />
+                    <p
+                      v-if="validationErrors.city && (touched.city || form.city)"
+                      class="mt-1 text-[12px] text-red-600"
+                    >
+                      {{ validationErrors.city }}
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -72,10 +133,17 @@
 
                 <div class="grid sm:grid-cols-2 gap-3 text-[13px]">
                   <label v-for="pos in positions" :key="pos" class="flex gap-2">
-                    <input type="radio" :value="pos" v-model="form.position" />
+                    <input type="radio" :value="pos" v-model="form.position" @change="touchField('position')" />
                     <span>{{ pos }}</span>
                   </label>
                 </div>
+
+                <p
+                  v-if="validationErrors.position && touched.position"
+                  class="text-[12px] text-red-600"
+                >
+                  {{ validationErrors.position }}
+                </p>
               </div>
 
               <!-- STEP 3 -->
@@ -112,21 +180,42 @@
 
                 <div>
                   <p class="font-medium mb-2 text-[13px]">Authorized to work in the U.S.? *</p>
-                  <label class="mr-4"><input type="radio" value="Yes" v-model="form.workAuth" /> Yes</label>
-                  <label><input type="radio" value="No" v-model="form.workAuth" /> No</label>
+                  <label class="mr-4"><input type="radio" value="Yes" v-model="form.workAuth" @change="touchField('workAuth')" /> Yes</label>
+                  <label><input type="radio" value="No" v-model="form.workAuth" @change="touchField('workAuth')" /> No</label>
+
+                  <p
+                    v-if="validationErrors.workAuth && touched.workAuth"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.workAuth }}
+                  </p>
                 </div>
 
                 <div>
                   <p class="font-medium mb-2 text-[13px]">Reliable transportation?</p>
-                  <label class="mr-4"><input type="radio" value="Yes" v-model="form.transport" /> Yes</label>
-                  <label><input type="radio" value="No" v-model="form.transport" /> No</label>
+                  <label class="mr-4"><input type="radio" value="Yes" v-model="form.transport" @change="touchField('transport')" /> Yes</label>
+                  <label><input type="radio" value="No" v-model="form.transport" @change="touchField('transport')" /> No</label>
+
+                  <p
+                    v-if="validationErrors.transport && touched.transport"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.transport }}
+                  </p>
                 </div>
 
                 <div>
                   <p class="font-medium mb-2 text-[13px]">Availability *</p>
-                  <label class="mr-4"><input type="radio" value="Full-Time" v-model="form.availability" /> Full-Time</label>
-                  <label class="mr-4"><input type="radio" value="Part-Time" v-model="form.availability" /> Part-Time</label>
-                  <label><input type="radio" value="Flexible" v-model="form.availability" /> Flexible</label>
+                  <label class="mr-4"><input type="radio" value="Full-Time" v-model="form.availability" @change="touchField('availability')" /> Full-Time</label>
+                  <label class="mr-4"><input type="radio" value="Part-Time" v-model="form.availability" @change="touchField('availability')" /> Part-Time</label>
+                  <label><input type="radio" value="Flexible" v-model="form.availability" @change="touchField('availability')" /> Flexible</label>
+
+                  <p
+                    v-if="validationErrors.availability && touched.availability"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.availability }}
+                  </p>
                 </div>
               </div>
 
@@ -134,12 +223,22 @@
               <div v-if="step === 5" class="space-y-8">
                 <h3 class="font-semibold text-[14px]">Experience & Resume</h3>
 
-                <textarea
-                  v-model="form.experience"
-                  rows="4"
-                  placeholder="Relevant Experience *"
-                  class="input"
-                />
+                <div>
+                  <textarea
+                    v-model="form.experience"
+                    rows="4"
+                    placeholder="Relevant Experience *"
+                    class="input"
+                    @blur="touchField('experience')"
+                  />
+
+                  <p
+                    v-if="validationErrors.experience && (touched.experience || form.experience)"
+                    class="mt-1 text-[12px] text-red-600"
+                  >
+                    {{ validationErrors.experience }}
+                  </p>
+                </div>
 
                 <div class="space-y-3">
                   <div
@@ -236,6 +335,18 @@ const successMessage = ref("")
 const cvMessage = ref("")
 const submitting = ref(false)
 const files = ref([])
+
+const touched = ref({
+  fullName: false,
+  phone: false,
+  email: false,
+  city: false,
+  position: false,
+  workAuth: false,
+  transport: false,
+  availability: false,
+  experience: false,
+})
 
 const form = ref({
   fullName: "",
@@ -342,10 +453,133 @@ const currentPosition = computed(() => jobDescriptions[form.value.position])
 
 const hasCv = computed(() => Array.isArray(files.value) && files.value.length > 0)
 
-const step1Valid = computed(() => !!form.value.fullName && !!form.value.phone && !!form.value.email && !!form.value.city)
-const step2Valid = computed(() => !!form.value.position)
-const step4Valid = computed(() => !!form.value.workAuth && !!form.value.availability)
-const step5Valid = computed(() => !!form.value.experience && hasCv.value)
+function touchField(field) {
+  touched.value[field] = true
+}
+
+function touchFields(fieldNames = []) {
+  fieldNames.forEach((field) => {
+    touched.value[field] = true
+  })
+}
+
+function validateFullName(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Full name is required."
+  if (v.length < 3) return "Full name is too short."
+  if (v.split(/\s+/).length < 2) return "Please enter your first and last name."
+  if (!/^[\p{L}\s'.-]+$/u.test(v)) {
+    return "Full name can only contain letters, spaces, apostrophes, periods, and hyphens."
+  }
+
+  return ""
+}
+
+function validatePhone(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Phone number is required."
+  if (!/^[+]?[\d\s()\-]+$/.test(v)) return "Phone number format is invalid."
+
+  const digits = v.replace(/\D/g, "")
+  if (digits.length < 7 || digits.length > 15) {
+    return "Phone number must be between 7 and 15 digits."
+  }
+
+  return ""
+}
+
+function validateEmail(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Email is required."
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return "Please enter a valid email address."
+
+  return ""
+}
+
+function validateCity(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "City is required."
+  if (v.length < 2) return "City name is too short."
+  if (!/^[\p{L}\s'.-]+$/u.test(v)) {
+    return "City can only contain letters, spaces, apostrophes, periods, and hyphens."
+  }
+
+  return ""
+}
+
+function validatePosition(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Please select a position."
+  if (!positions.includes(v)) return "Please select a valid position."
+
+  return ""
+}
+
+function validateWorkAuth(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Please select your work authorization status."
+  if (!["Yes", "No"].includes(v)) return "Please select a valid answer."
+
+  return ""
+}
+
+function validateTransport(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return ""
+  if (!["Yes", "No"].includes(v)) return "Please select a valid answer."
+
+  return ""
+}
+
+function validateAvailability(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Please select your availability."
+  if (!["Full-Time", "Part-Time", "Flexible"].includes(v)) return "Please select a valid availability option."
+
+  return ""
+}
+
+function validateExperience(value) {
+  const v = String(value || "").trim()
+
+  if (!v) return "Relevant experience is required."
+  if (v.length < 20) return "Please provide at least 20 characters of relevant experience."
+
+  return ""
+}
+
+const validationErrors = computed(() => ({
+  fullName: validateFullName(form.value.fullName),
+  phone: validatePhone(form.value.phone),
+  email: validateEmail(form.value.email),
+  city: validateCity(form.value.city),
+  position: validatePosition(form.value.position),
+  workAuth: validateWorkAuth(form.value.workAuth),
+  transport: validateTransport(form.value.transport),
+  availability: validateAvailability(form.value.availability),
+  experience: validateExperience(form.value.experience),
+}))
+
+const step1Valid = computed(() => {
+  return (
+    !validationErrors.value.fullName &&
+    !validationErrors.value.phone &&
+    !validationErrors.value.email &&
+    !validationErrors.value.city
+  )
+})
+
+const step2Valid = computed(() => !validationErrors.value.position)
+const step4Valid = computed(() => !validationErrors.value.workAuth && !validationErrors.value.transport && !validationErrors.value.availability)
+const step5Valid = computed(() => !validationErrors.value.experience && hasCv.value)
 
 const canGoNext = computed(() => {
   if (step.value === 1) return step1Valid.value
@@ -355,7 +589,9 @@ const canGoNext = computed(() => {
   return true
 })
 
-const canSubmit = computed(() => step5Valid.value && !submitting.value)
+const canSubmit = computed(() => {
+  return step1Valid.value && step2Valid.value && step4Valid.value && step5Valid.value && !submitting.value
+})
 
 function resetState() {
   step.value = 1
@@ -366,6 +602,18 @@ function resetState() {
   cvMessage.value = ""
   submitting.value = false
   files.value = []
+
+  touched.value = {
+    fullName: false,
+    phone: false,
+    email: false,
+    city: false,
+    position: false,
+    workAuth: false,
+    transport: false,
+    availability: false,
+    experience: false,
+  }
 
   form.value = {
     fullName: "",
@@ -441,17 +689,32 @@ function handleDrop(e) {
 
 function nextStep() {
   if (step.value === 1 && !step1Valid.value) {
-    errorMessage.value = "Please complete all required fields before continuing."
+    touchFields(["fullName", "phone", "email", "city"])
+    errorMessage.value =
+      validationErrors.value.fullName ||
+      validationErrors.value.phone ||
+      validationErrors.value.email ||
+      validationErrors.value.city ||
+      "Please complete all required fields before continuing."
     return
   }
+
   if (step.value === 2 && !step2Valid.value) {
-    errorMessage.value = "Please select a position before continuing."
+    touchFields(["position"])
+    errorMessage.value = validationErrors.value.position || "Please select a position before continuing."
     return
   }
+
   if (step.value === 4 && !step4Valid.value) {
-    errorMessage.value = "Please answer all employment questions before continuing."
+    touchFields(["workAuth", "transport", "availability"])
+    errorMessage.value =
+      validationErrors.value.workAuth ||
+      validationErrors.value.transport ||
+      validationErrors.value.availability ||
+      "Please answer all employment questions before continuing."
     return
   }
+
   errorMessage.value = ""
   successMessage.value = ""
   step.value++
@@ -493,8 +756,31 @@ async function uploadResume() {
 async function submitForm() {
   if (submitting.value) return
 
-  if (!step5Valid.value) {
-    errorMessage.value = "Please complete all required fields and upload your CV before submitting."
+  touchFields([
+    "fullName",
+    "phone",
+    "email",
+    "city",
+    "position",
+    "workAuth",
+    "transport",
+    "availability",
+    "experience",
+  ])
+
+  if (!canSubmit.value) {
+    errorMessage.value =
+      validationErrors.value.fullName ||
+      validationErrors.value.phone ||
+      validationErrors.value.email ||
+      validationErrors.value.city ||
+      validationErrors.value.position ||
+      validationErrors.value.workAuth ||
+      validationErrors.value.transport ||
+      validationErrors.value.availability ||
+      validationErrors.value.experience ||
+      (!hasCv.value ? "Please upload your CV before submitting." : "") ||
+      "Please complete all required fields and upload your CV before submitting."
     return
   }
 
