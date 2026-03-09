@@ -279,11 +279,7 @@ useHead({
             </a>
           </p>
 
-          <p>
-            <a href="mailto:ghaleb@faciliyallc.com" class="hover:underline">
-              ghaleb@faciliyallc.com
-            </a>
-          </p>
+        
 
           <p>
             <a href="tel:+19724825958" class="hover:underline">
