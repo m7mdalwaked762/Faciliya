@@ -36,6 +36,9 @@
         <SwiperSlide>
           <img src="/img/1234.webp" alt="" class="h-[100dvh] w-full object-cover object-center" />
         </SwiperSlide>
+          <SwiperSlide>
+          <img src="/img/123.jpg" alt="" class="h-[100dvh] w-full object-cover object-center" />
+        </SwiperSlide>
       </Swiper>
 
       <!-- STRONG DARK OVERLAY (✅ fixed: add bg-gradient-to-b) -->
@@ -56,7 +59,8 @@
               data-aos-delay="0"
             >
               FACILIYA LLC <br />
-              Structured Operations. Intelligent Oversight. Reliable Execution.
+
+            Structured Operations. Intelligent Oversight. Reliable Execution.
             </h1>
 
             <p
@@ -90,154 +94,173 @@
       <div class="relative">
         <!-- OUR DIVISIONS (NO borders) -->
         <section class="px-4 md:px-8 lg:px-28 py-20">
-          <div class="text-center max-w-3xl mx-auto">
-            <p class="text-[#FDC101] text-[13px] tracking-[2px] uppercase font-semibold" data-aos="fade-up" data-aos-delay="0">
-              Divisions
-            </p>
+  <div class="text-center max-w-3xl mx-auto">
+    <p
+      class="text-[#FDC101] text-[13px] tracking-[2px] uppercase font-semibold"
+      data-aos="fade-up"
+      data-aos-delay="0"
+    >
+      Divisions
+    </p>
 
-            <h2 class="mt-3 text-[32px] md:text-[40px] font-semibold text-white tracking-tight" data-aos="fade-up" data-aos-delay="120">
-              Our Divisions
-            </h2>
+    <h2
+      class="mt-3 text-[32px] md:text-[40px] font-semibold text-white tracking-tight"
+      data-aos="fade-up"
+      data-aos-delay="120"
+    >
+      Our Divisions
+    </h2>
 
-            <p class="mt-4 text-[16px] md:text-[18px] text-white/85 leading-relaxed" data-aos="fade-up" data-aos-delay="220">
-              Structured operational delivery across corporate, private, and event environments.
-            </p>
-          </div>
+    <p
+      class="mt-4 text-[16px] md:text-[18px] text-white/85 leading-relaxed"
+      data-aos="fade-up"
+      data-aos-delay="220"
+    >
+      Structured operational delivery across corporate, private, and event environments.
+    </p>
+  </div>
 
-          <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Card 1 -->
-            <div
-              class="group flex flex-col justify-between rounded-2xl p-10 min-h-[340px]
-                     bg-white shadow-[0_18px_60px_rgba(0,0,0,0.22)]
-                     transition-all duration-300
-                     hover:-translate-y-2 hover:shadow-[0_22px_70px_rgba(0,0,0,0.28)]"
-              data-aos="fade-up"
-              data-aos-delay="0"
-            >
-              <div>
-                <div class="w-[80px] h-[80px] rounded-full bg-[#3A2D7F]/6 flex items-center justify-center mb-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#FDC101]" viewBox="0 0 24 24">
-                    <g fill="none">
-                      <path
-                        d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018"
-                      />
-                      <path
-                        fill="currentColor"
-                        d="M21 7a1 1 0 1 1 0 2v10a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2V9a1 1 0 0 1 0-2zM7 11a1 1 0 0 0-1 1v7h2v-7a1 1 0 0 0-1-1m5 0a1 1 0 0 0-1 1v7h2v-7a1 1 0 0 0-1-1m5 0a1 1 0 0 0-1 1v7h2v-7a1 1 0 0 0-1-1m1-7a1 1 0 1 1 0 2H6a1 1 0 0 1 0-2z"
-                      />
-                    </g>
-                  </svg>
-                </div>
+  <div class="mt-16 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+    <!-- Card 1 -->
+    <NuxtLink
+      to="/Corporate_Asset_Governance"
+      class="group relative overflow-hidden rounded-[28px] min-h-[420px] sm:min-h-[460px] lg:min-h-[500px]
+             shadow-[0_18px_60px_rgba(0,0,0,0.28)] transition-all duration-500
+             hover:-translate-y-2 hover:shadow-[0_24px_80px_rgba(0,0,0,0.34)]"
+      data-aos="fade-up"
+      data-aos-delay="0"
+    >
+      <!-- Background Image -->
+      <img
+        src="/img/ba1a13103982683.5f58f60129825.jpg"
+        alt="Corporate & Asset Governance"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
 
-                <h3 class="text-[20px] font-semibold text-[#1a1a1a] tracking-wide">
-                  Corporate &amp; Asset Governance
-                </h3>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.45)_45%,rgba(0,0,0,0.2)_100%)]"></div>
 
-                <div class="mt-6 w-12 h-[2px] bg-[#FDC101] transition-all duration-300 group-hover:w-20"></div>
+      <!-- Content -->
+      <div class="relative z-10 flex h-full flex-col justify-end p-7 sm:p-8 md:p-9 text-white">
+        <p class="text-[13px] uppercase tracking-[2px] text-[#FDC101] font-semibold">
+          Division
+        </p>
 
-                <p class="mt-6 text-[15px] text-[#1a1a1a]/70 leading-relaxed">
-                  Integrated Facilities Management powered by structured governance architecture and operational intelligence.
-                </p>
-              </div>
+        <h3 class="mt-3 text-[24px] sm:text-[26px] md:text-[28px] font-semibold leading-tight max-w-[400px]">
+          Corporate &amp; Asset Governance
+        </h3>
 
-              <NuxtLink
-                to="/Corporate_Asset_Governance"
-                class="mt-10 inline-flex items-center gap-2 text-[14px] font-medium text-[#3A2D7F] hover:text-[#FDC101] transition"
-              >
-                Learn More
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7V16" />
-                </svg>
-              </NuxtLink>
-            </div>
+        <p class="mt-4 text-[15px] sm:text-[16px] text-white/85 leading-relaxed max-w-[420px]">
+          Integrated Facilities Management powered by structured governance architecture and operational intelligence.
+        </p>
 
-            <!-- Card 2 -->
-            <div
-              class="group flex flex-col justify-between rounded-2xl p-10 min-h-[340px]
-                     bg-white shadow-[0_18px_60px_rgba(0,0,0,0.22)]
-                     transition-all duration-300
-                     hover:-translate-y-2 hover:shadow-[0_22px_70px_rgba(0,0,0,0.28)]"
-              data-aos="fade-up"
-              data-aos-delay="120"
-            >
-              <div>
-                <div class="w-[80px] h-[80px] rounded-full bg-[#3A2D7F]/6 flex items-center justify-center mb-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#FDC101]" viewBox="0 0 24 24">
-                    <path
-                      fill="currentColor"
-                      d="M17.55 12L14 8.45l1.425-1.4l2.125 2.125l4.25-4.25l1.4 1.425zM9 12q-1.65 0-2.825-1.175T5 8t1.175-2.825T9 4t2.825 1.175T13 8t-1.175 2.825T9 12m-8 8v-2.8q0-.85.438-1.562T2.6 14.55q1.55-.775 3.15-1.162T9 13t3.25.388t3.15 1.162q.725.375 1.163 1.088T17 17.2V20z"
-                    />
-                  </svg>
-                </div>
+        <div class="mt-7">
+          <span
+            class="inline-flex items-center justify-center rounded-[12px] border border-white/25 bg-white/12
+                   px-5 py-3 text-[14px] font-medium text-white backdrop-blur-sm transition
+                   group-hover:bg-[#FDC101] group-hover:text-[#1a1a1a] group-hover:border-[#FDC101]"
+          >
+            Learn More
+          </span>
+        </div>
+      </div>
+    </NuxtLink>
 
-                <h3 class="text-[20px] font-semibold text-[#1a1a1a] tracking-wide">
-                  Private Client Staffing
-                </h3>
+    <!-- Card 2 -->
+    <NuxtLink
+      to="/Private_Services"
+      class="group relative overflow-hidden rounded-[28px] min-h-[420px] sm:min-h-[460px] lg:min-h-[500px]
+             shadow-[0_18px_60px_rgba(0,0,0,0.28)] transition-all duration-500
+             hover:-translate-y-2 hover:shadow-[0_24px_80px_rgba(0,0,0,0.34)]"
+      data-aos="fade-up"
+      data-aos-delay="120"
+    >
+      <!-- Background Image -->
+      <img
+        src="/img/NYC-personal-assistant(1).jpg"
+        alt="Private Client Staffing"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
 
-                <div class="mt-6 w-12 h-[2px] bg-[#FDC101] transition-all duration-300 group-hover:w-20"></div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.45)_45%,rgba(0,0,0,0.2)_100%)]"></div>
 
-                <p class="mt-6 text-[15px] text-[#1a1a1a]/70 leading-relaxed">
-                  Monthly-based residential staffing solutions delivered with discretion, reliability, and structured oversight.
-                </p>
-              </div>
+      <!-- Content -->
+      <div class="relative z-10 flex h-full flex-col justify-end p-7 sm:p-8 md:p-9 text-white">
+        <p class="text-[13px] uppercase tracking-[2px] text-[#FDC101] font-semibold">
+          Division
+        </p>
 
-              <NuxtLink
-                to="/Private_Services"
-                class="mt-10 inline-flex items-center gap-2 text-[14px] font-medium text-[#3A2D7F] hover:text-[#FDC101] transition"
-              >
-                Learn More
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7V16" />
-                </svg>
-              </NuxtLink>
-            </div>
+        <h3 class="mt-3 text-[24px] sm:text-[26px] md:text-[28px] font-semibold leading-tight max-w-[400px]">
+          Private Client Staffing
+        </h3>
 
-            <!-- Card 3 -->
-            <div
-              class="group flex flex-col justify-between rounded-2xl p-10 min-h-[340px]
-                     bg-white shadow-[0_18px_60px_rgba(0,0,0,0.22)]
-                     transition-all duration-300
-                     hover:-translate-y-2 hover:shadow-[0_22px_70px_rgba(0,0,0,0.28)]"
-              data-aos="fade-up"
-              data-aos-delay="240"
-            >
-              <div>
-                <div class="w-[80px] h-[80px] rounded-full bg-[#3A2D7F]/6 flex items-center justify-center mb-8">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-[#FDC101]" viewBox="0 0 24 24">
-                    <path
-                      fill="currentColor"
-                      d="m10.95 15.45l3.475-3.475q.3-.3.725-.3t.725.3t.3.725t-.3.725L11.65 17.65q-.3.3-.7.3t-.7-.3l-2.125-2.125q-.3-.3-.3-.725t.3-.725t.725-.3t.725.3zM5 22q-.825 0-1.412-.587T3 20V6q0-.825.588-1.412T5 4h1V3q0-.425.288-.712T7 2t.713.288T8 3v1h8V3q0-.425.288-.712T17 2t.713.288T18 3v1h1q.825 0 1.413.588T21 6v14q0 .825-.587 1.413T19 22zm0-2h14V10H5z"
-                    />
-                  </svg>
-                </div>
+        <p class="mt-4 text-[15px] sm:text-[16px] text-white/85 leading-relaxed max-w-[420px]">
+          Monthly-based residential staffing solutions delivered with discretion, reliability, and structured oversight.
+        </p>
 
-                <h3 class="text-[20px] font-semibold text-[#1a1a1a] tracking-wide">
-                  Events &amp; Occasion Services
-                </h3>
+        <div class="mt-7">
+          <span
+            class="inline-flex items-center justify-center rounded-[12px] border border-white/25 bg-white/12
+                   px-5 py-3 text-[14px] font-medium text-white backdrop-blur-sm transition
+                   group-hover:bg-[#FDC101] group-hover:text-[#1a1a1a] group-hover:border-[#FDC101]"
+          >
+            Learn More
+          </span>
+        </div>
+      </div>
+    </NuxtLink>
 
-                <div class="mt-6 w-12 h-[2px] bg-[#FDC101] transition-all duration-300 group-hover:w-20"></div>
+    <!-- Card 3 -->
+    <NuxtLink
+      to="/Event_Services"
+      class="group relative overflow-hidden rounded-[28px] min-h-[420px] sm:min-h-[460px] lg:min-h-[500px]
+             shadow-[0_18px_60px_rgba(0,0,0,0.28)] transition-all duration-500
+             hover:-translate-y-2 hover:shadow-[0_24px_80px_rgba(0,0,0,0.34)]"
+      data-aos="fade-up"
+      data-aos-delay="240"
+    >
+      <!-- Background Image -->
+      <img
+        src="/img/event-staffing-1-1024x1024.jpg"
+        alt="Events & Occasion Services"
+        class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+      />
 
-                <p class="mt-6 text-[15px] text-[#1a1a1a]/70 leading-relaxed">
-                  Disciplined operational support for private and corporate events requiring professional execution.
-                </p>
-              </div>
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.45)_45%,rgba(0,0,0,0.2)_100%)]"></div>
 
-              <NuxtLink
-                to="/Event_Services"
-                class="mt-10 inline-flex items-center gap-2 text-[14px] font-medium text-[#3A2D7F] hover:text-[#FDC101] transition"
-              >
-                Learn More
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H8M17 7V16" />
-                </svg>
-              </NuxtLink>
-            </div>
-          </div>
+      <!-- Content -->
+      <div class="relative z-10 flex h-full flex-col justify-end p-7 sm:p-8 md:p-9 text-white">
+        <p class="text-[13px] uppercase tracking-[2px] text-[#FDC101] font-semibold">
+          Division
+        </p>
 
-          <div class="mt-14 flex justify-center" data-aos="fade-up" data-aos-delay="360">
-            <div class="h-[2px] w-16 bg-[#FDC101]/80"></div>
-          </div>
-        </section>
+        <h3 class="mt-3 text-[24px] sm:text-[26px] md:text-[28px] font-semibold leading-tight max-w-[400px]">
+          Events &amp; Occasion Services
+        </h3>
+
+        <p class="mt-4 text-[15px] sm:text-[16px] text-white/85 leading-relaxed max-w-[420px]">
+          Disciplined operational support for private and corporate events requiring professional execution.
+        </p>
+
+        <div class="mt-7">
+          <span
+            class="inline-flex items-center justify-center rounded-[12px] border border-white/25 bg-white/12
+                   px-5 py-3 text-[14px] font-medium text-white backdrop-blur-sm transition
+                   group-hover:bg-[#FDC101] group-hover:text-[#1a1a1a] group-hover:border-[#FDC101]"
+          >
+            Learn More
+          </span>
+        </div>
+      </div>
+    </NuxtLink>
+  </div>
+
+  <div class="mt-14 flex justify-center" data-aos="fade-up" data-aos-delay="360">
+    <div class="h-[2px] w-16 bg-[#FDC101]/80"></div>
+  </div>
+</section>
 
         <!-- CERTIFICATIONS (NO borders) -->
         <section class="px-4 md:px-8 lg:px-28 py-14">
