@@ -353,7 +353,7 @@ useHead({
 
             <div class="flex items-center gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/faciliya-llc-7883783b6/"
                 aria-label="LinkedIn"
                 class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 opacity-90 transition hover:bg-white/20 hover:opacity-100"
               >
@@ -431,7 +431,7 @@ useHead({
 
             <div class="flex items-center gap-4">
               <!-- LinkedIn -->
-              <a href="#" class="opacity-80 hover:opacity-100 transition" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/faciliya-llc-7883783b6/" class="opacity-80 hover:opacity-100 transition" aria-label="LinkedIn">
                 <svg class="w-5 h-5 fill-white" viewBox="0 0 24 24">
                   <path d="M4.98 3.5C4.98 4.88 3.87 6 2.49 6S0 4.88 0 3.5 1.11 1 2.49 1s2.49 1.12 2.49 2.5zM.5 8h4v16h-4V8zm7 0h3.8v2.2h.1c.5-.9 1.9-2.2 3.9-2.2 4.2 0 5 2.8 5 6.3V24h-4v-7.7c0-1.8 0-4.1-2.5-4.1s-2.9 2-2.9 4v7.8h-4V8z"/>
                 </svg>
