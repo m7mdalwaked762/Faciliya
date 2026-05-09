@@ -1,3 +1,14 @@
+Here are the key changes made:
+
+- Removed `experience` and `hasCv` from `step5Valid` and `canSubmit` validation
+- Removed required markers and validation error displays for experience and resume fields
+- Updated placeholder text to remove the `*` from "Relevant Experience"
+- Removed the "CV is required to submit" hint text
+- Kept the fields functional — users can still fill them in and upload a CV, it's just not required
+
+Here's the full updated code:
+
+```vue
 <template>
   <div>
     <!-- TRIGGER -->
@@ -227,17 +238,9 @@
                   <textarea
                     v-model="form.experience"
                     rows="4"
-                    placeholder="Relevant Experience *"
+                    placeholder="Relevant Experience (optional)"
                     class="input"
-                    @blur="touchField('experience')"
                   />
-
-                  <p
-                    v-if="validationErrors.experience && (touched.experience || form.experience)"
-                    class="mt-1 text-[12px] text-red-600"
-                  >
-                    {{ validationErrors.experience }}
-                  </p>
                 </div>
 
                 <div class="space-y-3">
@@ -260,8 +263,8 @@
                     />
 
                     <div class="space-y-2">
-                      <div>Drag & drop resumes here (PDF/DOCX • 5MB max) *</div>
-                      <div class="text-[#1a1a1a]/60 text-[12px]">CV is required to submit.</div>
+                      <div>Drag & drop resumes here (PDF/DOCX • 5MB max)</div>
+                      <div class="text-[#1a1a1a]/60 text-[12px]">Optional — you can submit without a CV.</div>
                     </div>
                   </div>
 
@@ -345,7 +348,6 @@ const touched = ref({
   workAuth: false,
   transport: false,
   availability: false,
-  experience: false,
 })
 
 const form = ref({
@@ -416,7 +418,7 @@ const jobDescriptions = {
   "Valet Attendant": {
     summary: "Provides safe and efficient vehicle handling services while maintaining high hospitality standards.",
     responsibilities: ["Park and retrieve vehicles safely", "Maintain traffic flow and entry coordination", "Deliver courteous and professional guest interaction"],
-    qualifications: ["Valid driver’s license", "Clean driving record", "Customer service mindset"],
+    qualifications: ["Valid driver's license", "Clean driving record", "Customer service mindset"],
   },
 
   "Cleaning Personnel": {
@@ -443,6 +445,7 @@ const jobDescriptions = {
     qualifications: ["Experience in data analysis or operational reporting", "Strong analytical mindset", "Familiarity with performance tracking systems preferred"],
   },
 }
+
 const { $supabase } = useNuxtApp()
 
 const STORAGE_BUCKET = "resumes"
@@ -450,8 +453,6 @@ const STORAGE_FOLDER = "employment"
 const TABLE_NAME = "employment_applications"
 
 const currentPosition = computed(() => jobDescriptions[form.value.position])
-
-const hasCv = computed(() => Array.isArray(files.value) && files.value.length > 0)
 
 function touchField(field) {
   touched.value[field] = true
@@ -465,94 +466,62 @@ function touchFields(fieldNames = []) {
 
 function validateFullName(value) {
   const v = String(value || "").trim()
-
   if (!v) return "Full name is required."
   if (v.length < 3) return "Full name is too short."
   if (v.split(/\s+/).length < 2) return "Please enter your first and last name."
-  if (!/^[\p{L}\s'.-]+$/u.test(v)) {
-    return "Full name can only contain letters, spaces, apostrophes, periods, and hyphens."
-  }
-
+  if (!/^[\p{L}\s'.-]+$/u.test(v)) return "Full name can only contain letters, spaces, apostrophes, periods, and hyphens."
   return ""
 }
 
 function validatePhone(value) {
   const v = String(value || "").trim()
-
   if (!v) return "Phone number is required."
   if (!/^[+]?[\d\s()\-]+$/.test(v)) return "Phone number format is invalid."
-
   const digits = v.replace(/\D/g, "")
-  if (digits.length < 7 || digits.length > 15) {
-    return "Phone number must be between 7 and 15 digits."
-  }
-
+  if (digits.length < 7 || digits.length > 15) return "Phone number must be between 7 and 15 digits."
   return ""
 }
 
 function validateEmail(value) {
   const v = String(value || "").trim()
-
   if (!v) return "Email is required."
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return "Please enter a valid email address."
-
   return ""
 }
 
 function validateCity(value) {
   const v = String(value || "").trim()
-
   if (!v) return "City is required."
   if (v.length < 2) return "City name is too short."
-  if (!/^[\p{L}\s'.-]+$/u.test(v)) {
-    return "City can only contain letters, spaces, apostrophes, periods, and hyphens."
-  }
-
+  if (!/^[\p{L}\s'.-]+$/u.test(v)) return "City can only contain letters, spaces, apostrophes, periods, and hyphens."
   return ""
 }
 
 function validatePosition(value) {
   const v = String(value || "").trim()
-
   if (!v) return "Please select a position."
   if (!positions.includes(v)) return "Please select a valid position."
-
   return ""
 }
 
 function validateWorkAuth(value) {
   const v = String(value || "").trim()
-
   if (!v) return "Please select your work authorization status."
   if (!["Yes", "No"].includes(v)) return "Please select a valid answer."
-
   return ""
 }
 
 function validateTransport(value) {
   const v = String(value || "").trim()
-
   if (!v) return ""
   if (!["Yes", "No"].includes(v)) return "Please select a valid answer."
-
   return ""
 }
 
 function validateAvailability(value) {
   const v = String(value || "").trim()
-
   if (!v) return "Please select your availability."
   if (!["Full-Time", "Part-Time", "Flexible"].includes(v)) return "Please select a valid availability option."
-
-  return ""
-}
-
-function validateExperience(value) {
-  const v = String(value || "").trim()
-
-  if (!v) return "Relevant experience is required."
-  if (v.length < 20) return "Please provide at least 20 characters of relevant experience."
-
   return ""
 }
 
@@ -565,21 +534,21 @@ const validationErrors = computed(() => ({
   workAuth: validateWorkAuth(form.value.workAuth),
   transport: validateTransport(form.value.transport),
   availability: validateAvailability(form.value.availability),
-  experience: validateExperience(form.value.experience),
 }))
 
-const step1Valid = computed(() => {
-  return (
-    !validationErrors.value.fullName &&
-    !validationErrors.value.phone &&
-    !validationErrors.value.email &&
-    !validationErrors.value.city
-  )
-})
+const step1Valid = computed(() =>
+  !validationErrors.value.fullName &&
+  !validationErrors.value.phone &&
+  !validationErrors.value.email &&
+  !validationErrors.value.city
+)
 
 const step2Valid = computed(() => !validationErrors.value.position)
-const step4Valid = computed(() => !validationErrors.value.workAuth && !validationErrors.value.transport && !validationErrors.value.availability)
-const step5Valid = computed(() => !validationErrors.value.experience && hasCv.value)
+const step4Valid = computed(() =>
+  !validationErrors.value.workAuth &&
+  !validationErrors.value.transport &&
+  !validationErrors.value.availability
+)
 
 const canGoNext = computed(() => {
   if (step.value === 1) return step1Valid.value
@@ -589,9 +558,9 @@ const canGoNext = computed(() => {
   return true
 })
 
-const canSubmit = computed(() => {
-  return step1Valid.value && step2Valid.value && step4Valid.value && step5Valid.value && !submitting.value
-})
+const canSubmit = computed(() =>
+  step1Valid.value && step2Valid.value && step4Valid.value && !submitting.value
+)
 
 function resetState() {
   step.value = 1
@@ -612,7 +581,6 @@ function resetState() {
     workAuth: false,
     transport: false,
     availability: false,
-    experience: false,
   }
 
   form.value = {
@@ -729,10 +697,7 @@ function sanitizeFileName(name = "") {
 
 async function uploadResume() {
   const file = files.value?.[0]
-
-  if (!file) {
-    throw new Error("CV is required.")
-  }
+  if (!file) return null
 
   const cleanName = sanitizeFileName(file.name || "resume")
   const filePath = `${STORAGE_FOLDER}/${Date.now()}_${cleanName}`
@@ -744,29 +709,15 @@ async function uploadResume() {
       contentType: file.type || undefined,
     })
 
-  if (error) {
-    throw error
-  }
+  if (error) throw error
 
-  return {
-    filePath,
-  }
+  return { filePath }
 }
 
 async function submitForm() {
   if (submitting.value) return
 
-  touchFields([
-    "fullName",
-    "phone",
-    "email",
-    "city",
-    "position",
-    "workAuth",
-    "transport",
-    "availability",
-    "experience",
-  ])
+  touchFields(["fullName", "phone", "email", "city", "position", "workAuth", "transport", "availability"])
 
   if (!canSubmit.value) {
     errorMessage.value =
@@ -778,9 +729,7 @@ async function submitForm() {
       validationErrors.value.workAuth ||
       validationErrors.value.transport ||
       validationErrors.value.availability ||
-      validationErrors.value.experience ||
-      (!hasCv.value ? "Please upload your CV before submitting." : "") ||
-      "Please complete all required fields and upload your CV before submitting."
+      "Please complete all required fields before submitting."
     return
   }
 
@@ -802,8 +751,8 @@ async function submitForm() {
       work_auth: form.value.workAuth,
       transport: form.value.transport || null,
       availability: form.value.availability,
-      experience: form.value.experience.trim(),
-      resume_url: uploadedResume.filePath,
+      experience: form.value.experience.trim() || null,
+      resume_url: uploadedResume?.filePath || null,
     }
 
     const { error } = await $supabase
